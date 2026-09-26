@@ -87,7 +87,7 @@ const hoverCategory = ref(null)
       font-weight: 700;
       color: $xtxColor;
       letter-spacing: 6px;
-      font-family: 'Noto Serif SC', serif;
+      font-family: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', SimSun, serif;
       line-height: 1.2;
     }
 

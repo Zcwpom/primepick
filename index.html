@@ -1,17 +1,61 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="zh-CN">
 
 <head>
   <meta charset="UTF-8">
   <link rel="icon" href="/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>优品购 - PrimePick</title>
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_2143783_iq6z4ey5vu.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap">
+  <title>优品购 PrimePick · 精选好物商城</title>
+  <meta name="description"
+    content="优品购 PrimePick —— 基于 Vue 3 + Vite 构建的电商 SPA，覆盖商品浏览、搜索筛选、购物车、下单支付与订单管理的完整购物链路。">
+  <meta name="theme-color" content="#C4A46C">
+
+  <!-- 图标字体：预连接 + 同步加载，避免图标闪烁 -->
+  <link rel="preconnect" href="https://at.alicdn.com" crossorigin>
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_2143783_iq6z4ey5vu.css">
+
+  <!-- 品牌衬线字体：用 media 切换技巧异步加载，不阻塞首屏渲染。
+       国内访问 Google Fonts 不稳定时会自动回退到系统衬线字体
+       （见各组件 font-family 声明里的兜底字体栈）。 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" media="print" onload="this.media='all'"
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap">
+
+  <style>
+    /* 首屏占位：JS 解析执行完成前避免整屏白屏，Vue 挂载后会自动替换掉它 */
+    .app-boot {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', SimSun, serif;
+    }
+
+    .app-boot__logo {
+      margin: 0;
+      font-size: 32px;
+      letter-spacing: 8px;
+      color: #C4A46C;
+    }
+
+    .app-boot__text {
+      margin: 12px 0 0;
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: #8C8C8C;
+    }
+  </style>
 </head>
 
 <body>
-  <div id="app"></div>
+  <div id="app">
+    <div class="app-boot">
+      <p class="app-boot__logo">优品购</p>
+      <p class="app-boot__text">PrimePick 正在加载…</p>
+    </div>
+  </div>
   <script type="module" src="/src/main.js"></script>
 </body>
 

@@ -52,7 +52,7 @@ const { data: newList } = useAsyncData(async () => {
   color: #2C2C2C;
   letter-spacing: 4px;
   margin: 0 0 8px;
-  font-family: 'Noto Serif SC', serif;
+  font-family: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', SimSun, serif;
 }
 
 .section-subtitle {
