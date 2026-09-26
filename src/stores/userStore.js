@@ -2,32 +2,19 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import { loginAPI } from '@/apis/user'
 
-// 本地测试账号（API 不可用时使用）
-const MOCK_USERS = [
-  { account: 'xiaotuxian001', password: '123456', nickname: '测试用户1', avatar: '' },
-]
-
 export const useUserStore = defineStore('user', () => {
   const userInfo = ref({})
 
+  /**
+   * 登录
+   *
+   * 注：原先这里有一段「接口不可用时用本地硬编码账号兜底」的逻辑，已删除。
+   * 假数据兜底会掩盖真实错误（比如密码错误也会被兜底逻辑吞掉），
+   * 也让 store 承担了本不属于它的职责。接口问题交给 mock 层或 mock 服务解决。
+   */
   const getUserInfo = async ({ account, password }) => {
-    try {
-      const res = await loginAPI({ account, password })
-      userInfo.value = res.result
-    } catch {
-      // API 不可用时使用本地模拟登录
-      const user = MOCK_USERS.find(u => u.account === account && u.password === password)
-      if (user) {
-        userInfo.value = {
-          account: user.account,
-          nickname: user.nickname,
-          avatar: user.avatar,
-          token: 'mock-token-' + Date.now()
-        }
-      } else {
-        throw new Error('账号或密码错误')
-      }
-    }
+    const res = await loginAPI({ account, password })
+    userInfo.value = res.result
   }
 
   const clearUserInfo = () => {

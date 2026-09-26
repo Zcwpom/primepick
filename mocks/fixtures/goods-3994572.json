@@ -1,0 +1,425 @@
+{
+  "code": "1",
+  "msg": "操作成功",
+  "result": {
+    "id": "3994572",
+    "name": "伊海诗冬日出行多功能防风保暖围脖",
+    "spuCode": "3994572",
+    "desc": "时尚针织印花面料，多种穿戴方式，正反两穿，亲肤保暖",
+    "price": "35.00",
+    "oldPrice": "35.00",
+    "discount": 1,
+    "inventory": 549061202,
+    "brand": {
+      "id": "spider99999999999",
+      "name": "传智自有品牌",
+      "nameEn": "chuanzhi",
+      "logo": "https://yanxuan-item.nosdn.127.net/f6ddd429632de6170900dc2fbc541fd8.png?type=webp&imageView&thumbnail=78x78&quality=95",
+      "picture": "https://yanxuan-item.nosdn.127.net/f6ddd429632de6170900dc2fbc541fd8.png?type=webp&imageView&thumbnail=78x78&quality=95",
+      "type": null,
+      "desc": null,
+      "place": null
+    },
+    "salesCount": 2264,
+    "commentCount": 0,
+    "collectCount": 1,
+    "mainVideos": [],
+    "videoScale": 1,
+    "mainPictures": [
+      "https://yanxuan-item.nosdn.127.net/25effebb31ea6fc58b92f5a6aecda8b9.png",
+      "https://yanxuan-item.nosdn.127.net/eac0f7f296bde8ee28f86a588fb0a9b8.png",
+      "https://yanxuan-item.nosdn.127.net/6ea4b26d971b510d5ca91b292524a473.png",
+      "https://yanxuan-item.nosdn.127.net/bbdf5c675106ebd4c6edc3fb3537794f.png",
+      "https://yanxuan-item.nosdn.127.net/bac289739c817cbe94dd0cd208e52219.png"
+    ],
+    "specs": [
+      {
+        "name": "款式",
+        "id": "1482381679085617153",
+        "values": [
+          {
+            "name": "双层螺纹-山脉蓝",
+            "picture": "https://yanxuan-item.nosdn.127.net/1434c5d7ca4e24a6e8e95e3f925931a6.jpg",
+            "desc": "户外装备-销售属性款式-双层螺纹-山脉蓝-规格属性图片"
+          },
+          {
+            "name": "双层螺纹-山脉红",
+            "picture": "https://yanxuan-item.nosdn.127.net/15d436c8441a2072b8ee0e29cc68b020.jpg",
+            "desc": "户外装备-销售属性款式-双层螺纹-山脉红-规格属性图片"
+          },
+          {
+            "name": "双层螺纹-腰果黑",
+            "picture": "https://yanxuan-item.nosdn.127.net/7807085011d3b6483361176c8987a22d.jpg",
+            "desc": "户外装备-销售属性款式-双层螺纹-腰果黑-规格属性图片"
+          },
+          {
+            "name": "双层内外一样-土耳其紫",
+            "picture": "https://yanxuan-item.nosdn.127.net/48d3865959d3799c5379f350782b4da3.jpg",
+            "desc": "户外装备-销售属性款式-双层内外一样-土耳其紫-规格属性图片"
+          },
+          {
+            "name": "双层有绒毛-民俗黑",
+            "picture": "https://yanxuan-item.nosdn.127.net/f1ee3cb6d2440cbc5c4b8db690e302bd.jpg",
+            "desc": "户外装备-销售属性款式-双层有绒毛-民俗黑-规格属性图片"
+          },
+          {
+            "name": "双层有绒毛-黑色",
+            "picture": "https://yanxuan-item.nosdn.127.net/e4b2e86c269bd829c1be928f9c804366.jpg",
+            "desc": "户外装备-销售属性款式-双层有绒毛-黑色-规格属性图片"
+          },
+          {
+            "name": "双层内外一样-土耳其咖",
+            "picture": "https://yanxuan-item.nosdn.127.net/748d182f51cc841376df7f6285658961.jpg",
+            "desc": "户外装备-销售属性款式-双层内外一样-土耳其咖-规格属性图片"
+          },
+          {
+            "name": "双层有绒毛-民俗红",
+            "picture": "https://yanxuan-item.nosdn.127.net/dee8db90cdb9f395f4821167e79a9b02.jpg",
+            "desc": "户外装备-销售属性款式-双层有绒毛-民俗红-规格属性图片"
+          },
+          {
+            "name": "双层内外一样-波兰黑",
+            "picture": "https://yanxuan-item.nosdn.127.net/10656eb5dae3cb4ec02ac35c6f058d1d.jpg",
+            "desc": "户外装备-销售属性款式-双层内外一样-波兰黑-规格属性图片"
+          },
+          {
+            "name": "双层有绒毛-民俗蓝",
+            "picture": "https://yanxuan-item.nosdn.127.net/3898ca776068a5478f33d9dd0b7ca31e.jpg",
+            "desc": "户外装备-销售属性款式-双层有绒毛-民俗蓝-规格属性图片"
+          },
+          {
+            "name": "双层有绒毛-中灰",
+            "picture": "https://yanxuan-item.nosdn.127.net/0cc7ea312431e59f39d3719035f07bda.jpg",
+            "desc": "户外装备-销售属性款式-双层有绒毛-中灰-规格属性图片"
+          }
+        ]
+      }
+    ],
+    "skus": [
+      {
+        "id": "300240248",
+        "skuCode": "300240248",
+        "price": "35.00",
+        "oldPrice": "39.00",
+        "inventory": 0,
+        "picture": "https://yanxuan-item.nosdn.127.net/15d436c8441a2072b8ee0e29cc68b020.jpg",
+        "specs": [
+          {
+            "name": "款式",
+            "valueName": "双层螺纹-山脉红"
+          }
+        ]
+      },
+      {
+        "id": "300240249",
+        "skuCode": "300240249",
+        "price": "35.00",
+        "oldPrice": "39.00",
+        "inventory": 0,
+        "picture": "https://yanxuan-item.nosdn.127.net/1434c5d7ca4e24a6e8e95e3f925931a6.jpg",
+        "specs": [
+          {
+            "name": "款式",
+            "valueName": "双层螺纹-山脉蓝"
+          }
+        ]
+      },
+      {
+        "id": "300240250",
+        "skuCode": "300240250",
+        "price": "35.00",
+        "oldPrice": "39.00",
+        "inventory": 7303,
+        "picture": "https://yanxuan-item.nosdn.127.net/7807085011d3b6483361176c8987a22d.jpg",
+        "specs": [
+          {
+            "name": "款式",
+            "valueName": "双层螺纹-腰果黑"
+          }
+        ]
+      },
+      {
+        "id": "300244779",
+        "skuCode": "300244779",
+        "price": "35.00",
+        "oldPrice": "39.00",
+        "inventory": 0,
+        "picture": "https://yanxuan-item.nosdn.127.net/748d182f51cc841376df7f6285658961.jpg",
+        "specs": [
+          {
+            "name": "款式",
+            "valueName": "双层内外一样-土耳其咖"
+          }
+        ]
+      },
+      {
+        "id": "300244780",
+        "skuCode": "300244780",
+        "price": "35.00",
+        "oldPrice": "39.00",
+        "inventory": 366,
+        "picture": "https://yanxuan-item.nosdn.127.net/48d3865959d3799c5379f350782b4da3.jpg",
+        "specs": [
+          {
+            "name": "款式",
+            "valueName": "双层内外一样-土耳其紫"
+          }
+        ]
+      },
+      {
+        "id": "300244782",
+        "skuCode": "300244782",
+        "price": "35.00",
+        "oldPrice": "39.00",
+        "inventory": 9662,
+        "picture": "https://yanxuan-item.nosdn.127.net/e4b2e86c269bd829c1be928f9c804366.jpg",
+        "specs": [
+          {
+            "name": "款式",
+            "valueName": "双层有绒毛-黑色"
+          }
+        ]
+      },
+      {
+        "id": "300244783",
+        "skuCode": "300244783",
+        "price": "35.00",
+        "oldPrice": "39.00",
+        "inventory": 4509,
+        "picture": "https://yanxuan-item.nosdn.127.net/f1ee3cb6d2440cbc5c4b8db690e302bd.jpg",
+        "specs": [
+          {
+            "name": "款式",
+            "valueName": "双层有绒毛-民俗黑"
+          }
+        ]
+      },
+      {
+        "id": "300247605",
+        "skuCode": "300247605",
+        "price": "35.00",
+        "oldPrice": "39.00",
+        "inventory": 6349,
+        "picture": "https://yanxuan-item.nosdn.127.net/dee8db90cdb9f395f4821167e79a9b02.jpg",
+        "specs": [
+          {
+            "name": "款式",
+            "valueName": "双层有绒毛-民俗红"
+          }
+        ]
+      },
+      {
+        "id": "300247606",
+        "skuCode": "300247606",
+        "price": "35.00",
+        "oldPrice": "39.00",
+        "inventory": 6459,
+        "picture": "https://yanxuan-item.nosdn.127.net/3898ca776068a5478f33d9dd0b7ca31e.jpg",
+        "specs": [
+          {
+            "name": "款式",
+            "valueName": "双层有绒毛-民俗蓝"
+          }
+        ]
+      },
+      {
+        "id": "300247607",
+        "skuCode": "300247607",
+        "price": "35.00",
+        "oldPrice": "39.00",
+        "inventory": 9129,
+        "picture": "https://yanxuan-item.nosdn.127.net/10656eb5dae3cb4ec02ac35c6f058d1d.jpg",
+        "specs": [
+          {
+            "name": "款式",
+            "valueName": "双层内外一样-波兰黑"
+          }
+        ]
+      },
+      {
+        "id": "300247608",
+        "skuCode": "300247608",
+        "price": "35.00",
+        "oldPrice": "39.00",
+        "inventory": 3752,
+        "picture": "https://yanxuan-item.nosdn.127.net/0cc7ea312431e59f39d3719035f07bda.jpg",
+        "specs": [
+          {
+            "name": "款式",
+            "valueName": "双层有绒毛-中灰"
+          }
+        ]
+      }
+    ],
+    "categories": [
+      {
+        "id": "109313003",
+        "name": "户外装备",
+        "layer": 2,
+        "parent": {
+          "id": "109243029",
+          "name": "运动",
+          "layer": 1,
+          "parent": null
+        }
+      },
+      {
+        "id": "109243029",
+        "name": "运动",
+        "layer": 1,
+        "parent": null
+      }
+    ],
+    "details": {
+      "pictures": [
+        "https://yanxuan-item.nosdn.127.net/6e2d9c913c347f670b85d06c1b055b93.jpg",
+        "https://yanxuan-item.nosdn.127.net/583fc26a26e212c4a26588d4f6be53c0.jpg",
+        "https://yanxuan-item.nosdn.127.net/a4264c1cae2aeda079e56ad31c4ec862.jpg",
+        "https://yanxuan-item.nosdn.127.net/0c75ac261ba4da527ab09bcfd2c61fba.jpg",
+        "https://yanxuan-item.nosdn.127.net/31e756bafa4d4cb60597bf94d836f9cc.jpg",
+        "https://yanxuan-item.nosdn.127.net/fb6748c28da536d6c8b5c837df669c44.jpg",
+        "https://yanxuan-item.nosdn.127.net/3bbb88e715d3b1445651b9705aa7066b.jpg",
+        "https://yanxuan-item.nosdn.127.net/04d27bf5c2f0f8472ccdd4aa51e37720.jpg",
+        "https://yanxuan-item.nosdn.127.net/4fe59fb7dae5d7318877e79e262c8590.jpg",
+        "https://yanxuan-item.nosdn.127.net/ff0a05ceca7db905e88f5ff0cd2d1658.jpg",
+        "https://yanxuan-item.nosdn.127.net/3894db22455e85bdfcd3b42f2e5fda84.jpg",
+        "https://yanxuan-item.nosdn.127.net/b137dae2e97bc4249b2147fbf9fcce8a.jpg",
+        "https://yanxuan-item.nosdn.127.net/87411f9d485556e41b39c90515e2a098.jpg",
+        "https://yanxuan-item.nosdn.127.net/61ca13a442665da7be385fd71fdabd75.jpg",
+        "https://yanxuan-item.nosdn.127.net/e3f35f4b9ea77580e8bcf68e4cd268a5.jpg",
+        "https://yanxuan-item.nosdn.127.net/bf21078ea7f2802d2cc52fb506988fae.jpg",
+        "https://yanxuan-item.nosdn.127.net/7ac989c10066521e0ebabb8f86f0ec68.jpg",
+        "https://yanxuan-item.nosdn.127.net/764ba5f7f525a43ac5c5672956bd0528.jpg",
+        "https://yanxuan-item.nosdn.127.net/5494f19b2cf2437de2242c18cbbe2968.jpg",
+        "https://yanxuan-item.nosdn.127.net/cc9e570c51ed4fb161d4762b870d2e5a.jpg",
+        "https://yanxuan-item.nosdn.127.net/f58530d1d528829ef0a1cd10e05df6f4.jpg",
+        "https://yanxuan-item.nosdn.127.net/4562c75985db3fef80b8b40009cdf510.jpg",
+        "https://yanxuan-item.nosdn.127.net/9e29626f11453fa57f3fd86579c62cfc.jpg",
+        "https://yanxuan-item.nosdn.127.net/558e4178e421298fb6faaf9a8c1f0f04.jpg",
+        "https://yanxuan-item.nosdn.127.net/a6d6af34afcb1f82a5e01c8ba3afbe11.jpg",
+        "https://yanxuan-item.nosdn.127.net/125a754b89aa3c2576ddbd0006feab48.jpg",
+        "https://yanxuan-item.nosdn.127.net/f38b14cbef5cbeab1d8416e7a958db7f.jpg",
+        "https://yanxuan-item.nosdn.127.net/b1d4d5d290f8e16d466efec78a4dc6a7.jpg",
+        "https://yanxuan-item.nosdn.127.net/f2786423593949e27fe01c18b538644e.jpg",
+        "https://yanxuan-item.nosdn.127.net/771ae2804222228bdbfe4886270d20df.jpg",
+        "https://yanxuan-item.nosdn.127.net/7ed2a9760768da5b7e2c86b55d1aae92.jpg",
+        "https://yanxuan-item.nosdn.127.net/9f9ba53320686a086b31e91de1b21239.jpg",
+        "https://yanxuan-item.nosdn.127.net/06209c8ff15fcbb30a6d23b41fec3bce.jpg",
+        "https://yanxuan-item.nosdn.127.net/4fa00fe1191945a205b25674d551c1b1.jpg",
+        "https://yanxuan-item.nosdn.127.net/a67a75cebcb593bc949df084e4bbdfe0.jpg",
+        "https://yanxuan-item.nosdn.127.net/c6a75bb53b5dba45bd1663c47696747d.jpg",
+        "https://yanxuan-item.nosdn.127.net/8abd9f0ea60eb789721047482f3f0c82.jpg",
+        "https://yanxuan-item.nosdn.127.net/000ef663cd46f530e74159434be2f576.jpg",
+        "https://yanxuan-item.nosdn.127.net/843796d67f78365f8fd85d519f2d6967.jpg",
+        "https://yanxuan-item.nosdn.127.net/4eb3c77a118ae70c6cd06cc2d1f5421c.jpg",
+        "https://yanxuan-item.nosdn.127.net/cf6318e69e7d7ed127d7f55f5b610dcc.jpg",
+        "https://yanxuan-item.nosdn.127.net/a1d6b25041a8a6592eed1f3705ae432d.jpg",
+        "https://yanxuan-item.nosdn.127.net/89675082b69142de8ef70b6e7aa900fb.jpg",
+        "https://yanxuan-item.nosdn.127.net/203a1be6f656950eea264882a7b9ba31.jpg",
+        "https://yanxuan-item.nosdn.127.net/d47a9a4de9e44476667b42d46385ff25.jpg",
+        "https://yanxuan-item.nosdn.127.net/6976e53b3aef16dc3895f0ad407e8cde.jpg",
+        "https://yanxuan-item.nosdn.127.net/345de4cf05083228717a00baf3ec6c20.jpg",
+        "https://yanxuan-item.nosdn.127.net/acc0df5ad702e676708cc98976528802.jpg",
+        "https://yanxuan-item.nosdn.127.net/4b6573084ac676d84d81d9e5633104c5.jpg",
+        "https://yanxuan-item.nosdn.127.net/f14433976359409330b3a8e9e4b6c478.jpg",
+        "https://yanxuan-item.nosdn.127.net/4abdbe9ff08b822133db44c0b73e972b.jpg",
+        "https://yanxuan-item.nosdn.127.net/dd2d0505ff6c6c45ec786bd3e4159a37.jpg",
+        "https://yanxuan-item.nosdn.127.net/214e4edcf93258c3d5133fee6958259f.jpg",
+        "https://yanxuan-item.nosdn.127.net/8e6b65cf76c4eb0aab71a6f6c8050df0.jpg",
+        "https://yanxuan-item.nosdn.127.net/c63b0f644e67e7a929a6a59154431806.jpg",
+        "https://yanxuan-item.nosdn.127.net/a59cdd9c38dd452f63ed4779f83ab639.jpg",
+        "https://yanxuan-item.nosdn.127.net/12cdbe3c9c68af7087e65a0b4daa3693.jpg",
+        "https://yanxuan-item.nosdn.127.net/851d36c1e5d659aaedf6e55aacb15221.jpg",
+        "https://yanxuan-item.nosdn.127.net/0d291271b0092d0bd549c43e91c62aa2.jpg",
+        "https://yanxuan-item.nosdn.127.net/81d62b4423b3336093e38190eda001ef.jpg",
+        "https://yanxuan-item.nosdn.127.net/86bb3d56a9b260b550a063d80f3888a4.jpg",
+        "https://yanxuan-item.nosdn.127.net/864f2a057c773399f947a8542fd1144d.jpg",
+        "https://yanxuan-item.nosdn.127.net/fa67d0bc97a5ddd12d9f6c16081e634d.jpg",
+        "https://yanxuan-item.nosdn.127.net/c8382de34720e0639c3a09ae1349aaa4.jpg"
+      ],
+      "properties": [
+        {
+          "name": "品牌",
+          "value": "网易严选推荐选品，本产品为伊海诗品牌，广州伊海诗贸易有限公司为该产品在中国的经销商"
+        },
+        {
+          "name": "温馨提示",
+          "value": "本产品无法完全平铺，外观是扭曲的三维环状，此设计是属于多功能特殊设计，根据佩戴方法可以用作面罩、围脖、头巾使用。"
+        }
+      ]
+    },
+    "isPreSale": false,
+    "isCollect": null,
+    "recommends": null,
+    "userAddresses": null,
+    "similarProducts": [
+      {
+        "id": "3994572",
+        "name": "伊海诗冬日出行多功能防风保暖围脖",
+        "desc": "时尚针织印花面料，多种穿戴方式，正反两穿，亲肤保暖",
+        "price": "35.00",
+        "picture": "https://yanxuan-item.nosdn.127.net/25effebb31ea6fc58b92f5a6aecda8b9.png",
+        "orderNum": 28156
+      },
+      {
+        "id": "3550194",
+        "name": "防晒快干长檐棒球帽",
+        "desc": "遮阳防晒,保暖新潮",
+        "price": "69.00",
+        "picture": "https://yanxuan-item.nosdn.127.net/7d0b373a6a63882783202c836bae264d.png",
+        "orderNum": 2335
+      },
+      {
+        "id": "1369155859933827074",
+        "name": "钻石陶瓷涂层多用锅18cm 小奶锅",
+        "desc": "安全耐用，易于清洗",
+        "price": "149.00",
+        "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/6fdcac19-dd44-442c-9212-f7ec3cf3ed18.jpg",
+        "orderNum": 310
+      },
+      {
+        "id": "3994572",
+        "name": "伊海诗冬日出行多功能防风保暖围脖",
+        "desc": "时尚针织印花面料，多种穿戴方式，正反两穿，亲肤保暖",
+        "price": "35.00",
+        "picture": "https://yanxuan-item.nosdn.127.net/25effebb31ea6fc58b92f5a6aecda8b9.png",
+        "orderNum": 28156
+      }
+    ],
+    "hotByDay": [
+      {
+        "id": "3994572",
+        "name": "伊海诗冬日出行多功能防风保暖围脖",
+        "desc": "时尚针织印花面料，多种穿戴方式，正反两穿，亲肤保暖",
+        "price": "35.00",
+        "picture": "https://yanxuan-item.nosdn.127.net/25effebb31ea6fc58b92f5a6aecda8b9.png",
+        "orderNum": 28156
+      },
+      {
+        "id": "4027998",
+        "name": "亮碟多效合一洗涤块495g",
+        "desc": "洗碗机专用，强力去污",
+        "price": "69.90",
+        "picture": "https://yanxuan-item.nosdn.127.net/e07c2b63765cf9f4a46d489c6e09c1c1.jpg",
+        "orderNum": 11815
+      },
+      {
+        "id": "4026450",
+        "name": "趣味小恐龙绣花，男童灯芯绒衬衫",
+        "desc": "趣味小恐龙绣花，满版老虎印花，5色可选",
+        "price": "89.00",
+        "picture": "https://yanxuan-item.nosdn.127.net/e68d406a58622a8d850de442aacfcf2e.jpg",
+        "orderNum": 18073
+      },
+      {
+        "id": "4023839",
+        "name": "日本冰块冰球制冰模具",
+        "desc": "轻轻一拍，轻松取冰",
+        "price": "29.80",
+        "picture": "https://yanxuan-item.nosdn.127.net/2be38fc160992fe41f7d4a45bd0f90e5.png",
+        "orderNum": 14585
+      }
+    ],
+    "evaluationInfo": null
+  }
+}

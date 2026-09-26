@@ -1,0 +1,452 @@
+{
+  "code": "1",
+  "msg": "操作成功",
+  "result": [
+    {
+      "id": "1005000",
+      "name": "居家",
+      "picture": "https://yanxuan-item.nosdn.127.net/01227c93e9098342be591ea57b8953c7.jpg?quality=95&thumbnail=610x610&imageView",
+      "saleInfo": "全场3件8折",
+      "children": [
+        {
+          "id": "1005999003",
+          "name": "居家生活用品",
+          "layer": 2,
+          "parent": null
+        },
+        {
+          "id": "1008017",
+          "name": "收纳",
+          "layer": 2,
+          "parent": null
+        },
+        {
+          "id": "1017000",
+          "name": "宠物食品",
+          "layer": 2,
+          "parent": null
+        },
+        {
+          "id": "109243003",
+          "name": "艺术藏品",
+          "layer": 2,
+          "parent": null
+        },
+        {
+          "id": "109248004",
+          "name": "宠物用品",
+          "layer": 2,
+          "parent": null
+        },
+        {
+          "id": "109293000",
+          "name": "家庭医疗",
+          "layer": 2,
+          "parent": null
+        },
+        {
+          "id": "109308000",
+          "name": "中医保健",
+          "layer": 2,
+          "parent": null
+        }
+      ],
+      "goods": [
+        {
+          "id": "1369155859933827074",
+          "name": "钻石陶瓷涂层多用锅18cm 小奶锅",
+          "desc": "安全耐用，易于清洗",
+          "price": "149.00",
+          "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/6fdcac19-dd44-442c-9212-f7ec3cf3ed18.jpg",
+          "orderNum": 310
+        },
+        {
+          "id": "1183010",
+          "name": "给衣柜减减肥，真空防潮压缩袋",
+          "desc": "手动压缩，节省空间",
+          "price": "79.00",
+          "picture": "https://yanxuan-item.nosdn.127.net/06461cea9e56b56dd4276e1cb81dd884.png",
+          "orderNum": 113
+        },
+        {
+          "id": "1108008",
+          "name": "爆款明星好物，抽屉式透明储物柜",
+          "desc": "抽屉随意拉，东西随意拿，7款尺寸，随意叠加搭配",
+          "price": "129.00",
+          "picture": "https://yanxuan-item.nosdn.127.net/76a5304c9d7378a83e63554f3077d98b.png",
+          "orderNum": 8528
+        },
+        {
+          "id": "4001880",
+          "name": "朱炳仁·铜彩色生肖铜雕摆件",
+          "desc": "十二生肖萌宝系列吉祥物，吉祥又好运",
+          "price": "680.00",
+          "picture": "https://yanxuan-item.nosdn.127.net/04753036f123a8ff1b56db60fe440f47.jpg",
+          "orderNum": 18678
+        },
+        {
+          "id": "4001920",
+          "name": "朱炳仁铜·猫型吉祥物装饰工艺摆件",
+          "desc": "灵性十足的黑色招财猫，周而复始，财源不断",
+          "price": "1888.00",
+          "picture": "https://yanxuan-item.nosdn.127.net/6e38fc94a8fe72c9d139bc48ba6d9814.jpg",
+          "orderNum": 4395
+        },
+        {
+          "id": "1028004",
+          "name": "衣柜省空间神器，棉麻涤·收纳挂袋",
+          "desc": "实用棉麻，悬挂牢固",
+          "price": "55.00",
+          "picture": "https://yanxuan-item.nosdn.127.net/49e21db0fe13c0ff1789a79a8ba48468.jpg",
+          "orderNum": 4822
+        },
+        {
+          "id": "4000295",
+          "name": "星云吉彩系列花器新年创意花瓶摆件朱炳仁",
+          "desc": "星云吉彩，一路繁花。花瓶造型挺秀、俏丽，更为丰满圆润；五彩斑斓色彩，莹润光泽的质感，又显娇嫩。置于台前感受花与花器的和谐之美，获得精神的美感和愉悦。采用国家非遗百年传统工艺及国艺釉彩铜独创工艺，简约时尚的设计，雅致意趣。",
+          "price": "442.00",
+          "picture": "https://yanxuan-item.nosdn.127.net/2dd8fe9b59774c7ca160bb2d5741c763.jpg",
+          "orderNum": 7181
+        },
+        {
+          "id": "3997602",
+          "name": "暖腰暖腹暖胃，蕲艾暖宫腰带",
+          "desc": "暖宫暖腰暖胃，大面积热敷≈3片暖宝宝",
+          "price": "49.00",
+          "picture": "https://yanxuan-item.nosdn.127.net/9892cc73945da1591fa5259ad076b23c.jpg",
+          "orderNum": 116
+        }
+      ]
+    },
+    {
+      "id": "1005002",
+      "name": "美食",
+      "picture": "https://yanxuan-item.nosdn.127.net/d0176b163973961ed01818d04ee94a06.png?quality=95&thumbnail=610x610&imageView",
+      "saleInfo": "大额优惠\r\n等你来拿",
+      "children": [
+        {
+          "id": "1005012",
+          "name": "南北干货",
+          "layer": 2,
+          "parent": null
+        },
+        {
+          "id": "1036003",
+          "name": "调味酱菜",
+          "layer": 2,
+          "parent": null
+        },
+        {
+          "id": "109201001",
+          "name": "方便食品",
+          "layer": 2,
+          "parent": null
+        },
+        {
+          "id": "109206007",
+          "name": "米面粮油",
+          "layer": 2,
+          "parent": null
+        },
+        {
+          "id": "109264007",
+          "name": "名酒馆",
+          "layer": 2,
+          "parent": null
+        },
+        {
+          "id": "109285003",
+          "name": "进口酒",
+          "layer": 2,
+          "parent": null
+        }
+      ],
+      "goods": [
+        {
+          "id": "1189003",
+          "name": "古田糯耳150克",
+          "desc": "加热易糯，一煮即稠",
+          "price": "26.00",
+          "picture": "https://yanxuan-item.nosdn.127.net/e8534f5e88af5aa5366786998c84543f.png",
+          "orderNum": 5777
+        },
+        {
+          "id": "1189004",
+          "name": "竹荪25克",
+          "desc": "菌中皇后，汤品添鲜",
+          "price": "28.00",
+          "picture": "https://yanxuan-item.nosdn.127.net/c74e739833078c887a7d275c1caf81b5.png",
+          "orderNum": 35
+        },
+        {
+          "id": "1135059",
+          "name": "手工八年老陈醋500毫升",
+          "desc": "地道醇香，醋酸浓郁",
+          "price": "30.00",
+          "picture": "https://yanxuan-item.nosdn.127.net/77da20e77b02830a26f931901ac1a9e0.png",
+          "orderNum": 28
+        },
+        {
+          "id": "1135079",
+          "name": "免浸泡，12种谷物一次同享，五谷米400克",
+          "desc": "无需浸泡，同煮同熟",
+          "price": "9.90",
+          "picture": "https://yanxuan-item.nosdn.127.net/bfe70bd66efe94f2f18061c707d2a097.png",
+          "orderNum": 33
+        },
+        {
+          "id": "1135075",
+          "name": "来自东北的“黑珍珠”，黑米470克*3袋",
+          "desc": "米汁香稠，Q弹醇香",
+          "price": "42.80",
+          "picture": "https://yanxuan-item.nosdn.127.net/1452cfeb14b5d252fb1ba97b278e9cc3.png",
+          "orderNum": 13348
+        },
+        {
+          "id": "1135080",
+          "name": "加量50%不加价，贵州兴仁薏仁米600克",
+          "desc": "粒粒饱满，颗颗香糯",
+          "price": "19.00",
+          "picture": "https://yanxuan-item.nosdn.127.net/3e93790bba8db8aab54ee5ba72799567.png",
+          "orderNum": 1859
+        },
+        {
+          "id": "1188005",
+          "name": "莆田桂圆肉368克",
+          "desc": "香甜滑软，弹嫩甘糯",
+          "price": "52.00",
+          "picture": "https://yanxuan-item.nosdn.127.net/92b975037935a47835737e6bb2611a39.jpg",
+          "orderNum": 4365
+        },
+        {
+          "id": "3998106",
+          "name": "德国莫泽尔传统版雷司令干白2019750ml",
+          "desc": "来自摩泽尔传奇名庄",
+          "price": "138.00",
+          "picture": "https://yanxuan-item.nosdn.127.net/bcb8efeee3977d417b961c1eba4584a5.jpg",
+          "orderNum": 69
+        }
+      ]
+    },
+    {
+      "id": "1010000",
+      "name": "服饰",
+      "picture": "https://yjy-oss-files.oss-cn-zhangjiakou.aliyuncs.com/tuxian/kitchen_goods_cover.jpg",
+      "saleInfo": "大额优惠\r\n等你来拿",
+      "children": [
+        {
+          "id": "109303000",
+          "name": "钱包/胸包",
+          "layer": 2,
+          "parent": null
+        },
+        {
+          "id": "109311005",
+          "name": "女式靴子",
+          "layer": 2,
+          "parent": null
+        },
+        {
+          "id": "109311006",
+          "name": "女式休闲鞋",
+          "layer": 2,
+          "parent": null
+        },
+        {
+          "id": "109311007",
+          "name": "女式运动鞋",
+          "layer": 2,
+          "parent": null
+        },
+        {
+          "id": "109315000",
+          "name": "11.11购物狂欢",
+          "layer": 2,
+          "parent": null
+        },
+        {
+          "id": "109318003",
+          "name": "【年末狂欢季】",
+          "layer": 2,
+          "parent": null
+        }
+      ],
+      "goods": [
+        {
+          "id": "4019044",
+          "name": "自我态度男式多功能多层格局休闲胸包",
+          "desc": "休闲潮流男士斜挎包",
+          "price": "146.00",
+          "picture": "https://yanxuan-item.nosdn.127.net/ac33cf37023facd976dd46dc637c45a8.jpg",
+          "orderNum": 3436
+        },
+        {
+          "id": "4013563",
+          "name": "轻松出行复古经典老花时尚女式钥匙包",
+          "desc": "简约潮流女士钥匙包",
+          "price": "88.00",
+          "picture": "https://yanxuan-item.nosdn.127.net/cedfb4827ca489e574abeb5d19ce21e5.jpg",
+          "orderNum": 29
+        },
+        {
+          "id": "4013716",
+          "name": "别致优雅男式新潮头层牛皮钥匙包",
+          "desc": "可旋转五金挂钩，悬挂方便",
+          "price": "106.00",
+          "picture": "https://yanxuan-item.nosdn.127.net/72f50e8d10cf3c6a040c2f800774b007.jpg",
+          "orderNum": 6963
+        },
+        {
+          "id": "4001285",
+          "name": "英伦长柄自动晴雨伞",
+          "desc": "雨天有情调，英伦风设计，给你好品味",
+          "price": "40.90",
+          "picture": "https://yanxuan-item.nosdn.127.net/e77b8f4a8ddd1e777394d84347859f7c.png",
+          "orderNum": 701
+        },
+        {
+          "id": "4000102",
+          "name": "男式零感无压加厚保暖羽绒服",
+          "desc": "为「轻暖」而生",
+          "price": "409.00",
+          "picture": "https://yanxuan-item.nosdn.127.net/0ff69c2099d98aa3cdddcb0edb9108a0.png",
+          "orderNum": 648
+        },
+        {
+          "id": "4000620",
+          "name": "「一件三穿好过冬」男中长款鹅绒防水外套",
+          "desc": "一件衣服三种穿法，应对多变天气",
+          "price": "659.00",
+          "picture": "https://yanxuan-item.nosdn.127.net/aa9e03278e3274a2a83f3f8e7df5ee6f.png",
+          "orderNum": 1953
+        },
+        {
+          "id": "4000283",
+          "name": "轻商旅小黑盒耐磨防刮纯PC拉杆箱（20/24）",
+          "desc": "商旅两用，格调出行",
+          "price": "399.00",
+          "picture": "https://yanxuan-item.nosdn.127.net/12a750021e9cc50b8b314dffa8755d75.png",
+          "orderNum": 546
+        },
+        {
+          "id": "4000582",
+          "name": "靓丽色彩，超软一脚蹬运动休闲女鞋",
+          "desc": "运动出游两不误，舒适百搭的一双好鞋",
+          "price": "220.00",
+          "picture": "https://yanxuan-item.nosdn.127.net/4a64a5a54d588eaf5be48647b0ac83bd.png",
+          "orderNum": 571
+        }
+      ]
+    },
+    {
+      "id": "1011000",
+      "name": "母婴",
+      "picture": "https://yanxuan-item.nosdn.127.net/d0176b163973961ed01818d04ee94a06.png?quality=95&thumbnail=610x610&imageView",
+      "saleInfo": "大额优惠\r\n等你来拿",
+      "children": [
+        {
+          "id": "1020003",
+          "name": "T恤/polo/衬衫",
+          "layer": 2,
+          "parent": null
+        },
+        {
+          "id": "1037006",
+          "name": "儿童鞋",
+          "layer": 2,
+          "parent": null
+        },
+        {
+          "id": "109243018",
+          "name": "外套/套装",
+          "layer": 2,
+          "parent": null
+        },
+        {
+          "id": "109243019",
+          "name": "裤子/裙装",
+          "layer": 2,
+          "parent": null
+        },
+        {
+          "id": "109243021",
+          "name": "连体衣/礼盒",
+          "layer": 2,
+          "parent": null
+        },
+        {
+          "id": "109243022",
+          "name": "学步鞋",
+          "layer": 2,
+          "parent": null
+        }
+      ],
+      "goods": [
+        {
+          "id": "4026450",
+          "name": "趣味小恐龙绣花，男童灯芯绒衬衫",
+          "desc": "趣味小恐龙绣花，满版老虎印花，5色可选",
+          "price": "89.00",
+          "picture": "https://yanxuan-item.nosdn.127.net/e68d406a58622a8d850de442aacfcf2e.jpg",
+          "orderNum": 18073
+        },
+        {
+          "id": "4023738",
+          "name": "舒适软弹，糖果色儿童网孔透气运动鞋25-30",
+          "desc": "防踢鞋头，透气网孔更舒适",
+          "price": "139.00",
+          "picture": "https://yanxuan-item.nosdn.127.net/c437179bc1d0d5ad77a79f15a5c6f166.png",
+          "orderNum": 4179
+        },
+        {
+          "id": "4023641",
+          "name": "防踢鞋头，儿童学步健康机能鞋21-30",
+          "desc": "包头防踢用心呵护",
+          "price": "129.00",
+          "picture": "https://yanxuan-item.nosdn.127.net/33ba674fbb13e2380ee8a74371eacf43.jpg",
+          "orderNum": 2976
+        },
+        {
+          "id": "4005106",
+          "name": "新疆棉，儿童色织条纹短袖连体衣59-90cm",
+          "desc": "100%棉面料，穿着舒适透气",
+          "price": "59.00",
+          "picture": "https://yanxuan-item.nosdn.127.net/2b3748a78c10027dca96504d05acc4bc.png",
+          "orderNum": 1307
+        },
+        {
+          "id": "4007963",
+          "name": "新疆棉宝宝时尚涂鸦短袖连体衣59-90cm",
+          "desc": "创意手绘图案，透气纯棉面料，3色可选",
+          "price": "69.00",
+          "picture": "https://yanxuan-item.nosdn.127.net/a8b170b3114d33dae0ae98cddb5fb3f6.jpg",
+          "orderNum": 2032
+        },
+        {
+          "id": "4005108",
+          "name": "儿童亚麻夏凉宽松萝卜裤防蚊裤66-130cm",
+          "desc": "100%天然亚麻面料，凉爽舒适，透气不闷热",
+          "price": "95.00",
+          "picture": "https://yanxuan-item.nosdn.127.net/2c61c7b96488f940904d697bdb401250.jpg",
+          "orderNum": 1329
+        },
+        {
+          "id": "4007902",
+          "name": "纯棉舒适女童印花荷叶袖小衫90-140cm",
+          "desc": "圈圈花图案，拼接大喇叭袖型",
+          "price": "139.00",
+          "picture": "https://yanxuan-item.nosdn.127.net/11d0160b0a30c344d1b250c3e613fbb7.jpg",
+          "orderNum": 1608
+        },
+        {
+          "id": "4007498",
+          "name": "ins风小碎花泡泡袖衬110-160cm",
+          "desc": "全棉面料，高支高密底布，手感柔软舒适，贴身穿着亲肤透气；经典娃娃衫，泡泡袖设计，增添可爱蓬松感；后背全开门襟，方便穿脱。",
+          "price": "99.00",
+          "picture": "https://yanxuan-item.nosdn.127.net/c07edde1047fa1bd0b795bed136c2bb2.jpg",
+          "orderNum": 10849
+        }
+      ]
+    }
+  ]
+}

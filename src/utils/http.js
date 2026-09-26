@@ -5,7 +5,8 @@ import { useUserStore } from '@/stores/userStore'
 import router from '@/router'
 
 const httpInstance = axios.create({
-  baseURL: 'http://pcapi-xiaotuxian-front-devtest.itheima.net',
+  // 接口前缀来自环境变量：开发/演示走 /api（由 mock 或代理接管），部署时可指向真实后端
+  baseURL: import.meta.env.VITE_API_BASE || '/api',
   timeout: 5000
 })
 
@@ -25,7 +26,8 @@ httpInstance.interceptors.request.use(config => {
 
 // axios响应式拦截器
 httpInstance.interceptors.response.use(res => res.data, e => {
-  ElMessage({ type: 'error', message: e.response?.data?.message || '请求失败' })
+  // 后端错误信息字段是 msg，这里同时兼容 message
+  ElMessage({ type: 'error', message: e.response?.data?.msg || e.response?.data?.message || '请求失败' })
   if (e.response?.status === 401) {
     const userStore = useUserStore()
     userStore.clearUserInfo()

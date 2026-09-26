@@ -1,0 +1,305 @@
+{
+  "apiBase": "https://pcapi-xiaotuxian-front-devtest.itheima.net",
+  "capturedAt": "2026-09-26T14:03:49.234Z",
+  "endpoints": [
+    {
+      "file": "category-head.json",
+      "method": "GET",
+      "path": "/home/category/head",
+      "auth": false,
+      "note": "顶部导航分类"
+    },
+    {
+      "file": "home-banner.json",
+      "method": "GET",
+      "path": "/home/banner",
+      "query": {
+        "distributionSite": 1
+      },
+      "auth": false,
+      "note": "首页轮播"
+    },
+    {
+      "file": "home-new.json",
+      "method": "GET",
+      "path": "/home/new",
+      "auth": false,
+      "note": "新鲜好物"
+    },
+    {
+      "file": "home-hot.json",
+      "method": "GET",
+      "path": "/home/hot",
+      "auth": false,
+      "note": "人气推荐"
+    },
+    {
+      "file": "home-goods.json",
+      "method": "GET",
+      "path": "/home/goods",
+      "auth": false,
+      "note": "全部商品模块（首页楼层）"
+    },
+    {
+      "file": "goods-relevant.json",
+      "method": "GET",
+      "path": "/goods/relevant",
+      "query": {
+        "limit": 4
+      },
+      "auth": false,
+      "note": "猜你喜欢"
+    },
+    {
+      "file": "category-1005000.json",
+      "method": "GET",
+      "path": "/category",
+      "query": {
+        "id": "1005000"
+      },
+      "auth": false,
+      "note": "分类页 1005000"
+    },
+    {
+      "file": "sub-filter-1005999003.json",
+      "method": "GET",
+      "path": "/category/sub/filter",
+      "query": {
+        "id": "1005999003"
+      },
+      "auth": false,
+      "note": "二级筛选 1005999003"
+    },
+    {
+      "file": "sub-filter-1008017.json",
+      "method": "GET",
+      "path": "/category/sub/filter",
+      "query": {
+        "id": "1008017"
+      },
+      "auth": false,
+      "note": "二级筛选 1008017"
+    },
+    {
+      "file": "goods-list-category-p1.json",
+      "method": "POST",
+      "path": "/category/goods/temporary",
+      "body": {
+        "categoryId": "1005000",
+        "page": 1,
+        "pageSize": 20,
+        "sortField": "publishTime"
+      },
+      "auth": false,
+      "note": "分类商品列表 第1页"
+    },
+    {
+      "file": "goods-list-category-p2.json",
+      "method": "POST",
+      "path": "/category/goods/temporary",
+      "body": {
+        "categoryId": "1005000",
+        "page": 2,
+        "pageSize": 20,
+        "sortField": "publishTime"
+      },
+      "auth": false,
+      "note": "分类商品列表 第2页（无限滚动用）"
+    },
+    {
+      "file": "goods-list-keyword-shoes.json",
+      "method": "POST",
+      "path": "/category/goods/temporary",
+      "body": {
+        "page": 1,
+        "pageSize": 20,
+        "sortField": "publishTime",
+        "keyword": "鞋"
+      },
+      "auth": false,
+      "note": "搜索 鞋"
+    },
+    {
+      "file": "goods-1369155859933827074.json",
+      "method": "GET",
+      "path": "/goods",
+      "query": {
+        "id": "1369155859933827074"
+      },
+      "auth": false,
+      "note": "商品详情 1369155859933827074"
+    },
+    {
+      "file": "goods-hot-1-1369155859933827074.json",
+      "method": "GET",
+      "path": "/goods/hot",
+      "query": {
+        "id": "1369155859933827074",
+        "type": 1,
+        "limit": 3
+      },
+      "auth": false,
+      "note": "24小时热销榜"
+    },
+    {
+      "file": "goods-3994572.json",
+      "method": "GET",
+      "path": "/goods",
+      "query": {
+        "id": "3994572"
+      },
+      "auth": false,
+      "note": "商品详情 3994572"
+    },
+    {
+      "file": "goods-hot-1-3994572.json",
+      "method": "GET",
+      "path": "/goods/hot",
+      "query": {
+        "id": "3994572",
+        "type": 1,
+        "limit": 3
+      },
+      "auth": false,
+      "note": "24小时热销榜"
+    },
+    {
+      "file": "goods-4026116.json",
+      "method": "GET",
+      "path": "/goods",
+      "query": {
+        "id": "4026116"
+      },
+      "auth": false,
+      "note": "商品详情 4026116"
+    },
+    {
+      "file": "goods-hot-1-4026116.json",
+      "method": "GET",
+      "path": "/goods/hot",
+      "query": {
+        "id": "4026116",
+        "type": 1,
+        "limit": 3
+      },
+      "auth": false,
+      "note": "24小时热销榜"
+    },
+    {
+      "file": "goods-4027998.json",
+      "method": "GET",
+      "path": "/goods",
+      "query": {
+        "id": "4027998"
+      },
+      "auth": false,
+      "note": "商品详情 4027998"
+    },
+    {
+      "file": "goods-hot-1-4027998.json",
+      "method": "GET",
+      "path": "/goods/hot",
+      "query": {
+        "id": "4027998",
+        "type": 1,
+        "limit": 3
+      },
+      "auth": false,
+      "note": "24小时热销榜"
+    },
+    {
+      "file": "goods-hot-2.json",
+      "method": "GET",
+      "path": "/goods/hot",
+      "query": {
+        "type": 2,
+        "limit": 3
+      },
+      "auth": false,
+      "note": "周热销榜"
+    },
+    {
+      "file": "login.json",
+      "method": "POST",
+      "path": "/login",
+      "body": {
+        "account": "xiaotuxian001",
+        "password": "123456"
+      },
+      "auth": false,
+      "note": "登录（含 token）"
+    },
+    {
+      "file": "member-cart.json",
+      "method": "GET",
+      "path": "/member/cart",
+      "auth": true,
+      "note": "购物车列表"
+    },
+    {
+      "file": "member-cart-insert.json",
+      "method": "POST",
+      "path": "/member/cart",
+      "body": {
+        "skuId": "1369155862131642369",
+        "count": 1
+      },
+      "auth": true,
+      "note": "加入购物车"
+    },
+    {
+      "file": "member-cart-after-insert.json",
+      "method": "GET",
+      "path": "/member/cart",
+      "auth": true,
+      "note": "加购后的购物车列表"
+    },
+    {
+      "file": "member-cart-merge.json",
+      "method": "POST",
+      "path": "/member/cart/merge",
+      "body": [
+        {
+          "skuId": "1369155862131642369",
+          "count": 1,
+          "selected": true
+        }
+      ],
+      "auth": true,
+      "note": "本地购物车合并"
+    },
+    {
+      "file": "member-cart-after-merge.json",
+      "method": "GET",
+      "path": "/member/cart",
+      "auth": true,
+      "note": "合并后的购物车列表"
+    },
+    {
+      "file": "member-address.json",
+      "method": "GET",
+      "path": "/member/address",
+      "auth": true,
+      "note": "收货地址列表"
+    },
+    {
+      "file": "order-pre.json",
+      "method": "GET",
+      "path": "/member/order/pre",
+      "auth": true,
+      "note": "结算页信息"
+    },
+    {
+      "file": "order-list.json",
+      "method": "GET",
+      "path": "/member/order",
+      "query": {
+        "orderState": 0,
+        "page": 1,
+        "pageSize": 2
+      },
+      "auth": true,
+      "note": "订单列表（全部）"
+    }
+  ]
+}

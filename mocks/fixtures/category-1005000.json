@@ -1,0 +1,351 @@
+{
+  "code": "1",
+  "msg": "操作成功",
+  "result": {
+    "id": "1005000",
+    "name": "居家",
+    "picture": null,
+    "children": [
+      {
+        "id": "1005999003",
+        "name": "居家生活用品",
+        "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-22/7f6a7b20-7902-4b43-b9c5-f33151ef1334.jpg",
+        "parentId": null,
+        "parentName": null,
+        "goods": [
+          {
+            "id": "1369155859933827074",
+            "name": "钻石陶瓷涂层多用锅18cm 小奶锅",
+            "desc": "安全耐用，易于清洗",
+            "price": "149.00",
+            "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/6fdcac19-dd44-442c-9212-f7ec3cf3ed18.jpg",
+            "orderNum": 310
+          },
+          {
+            "id": "1379052170040578049",
+            "name": "极光限定 珠光蓝珐琅锅",
+            "desc": null,
+            "price": "199.00",
+            "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/7f483771-6831-4a7a-abdb-2625acb755f3.png",
+            "orderNum": 234
+          }
+        ],
+        "categories": null,
+        "brands": null,
+        "saleProperties": null
+      },
+      {
+        "id": "1008017",
+        "name": "收纳",
+        "picture": "https://yanxuan.nosdn.127.net/366989e4d730594e86fcd60b5ab19acc.png",
+        "parentId": null,
+        "parentName": null,
+        "goods": [
+          {
+            "id": "1183010",
+            "name": "给衣柜减减肥，真空防潮压缩袋",
+            "desc": "手动压缩，节省空间",
+            "price": "79.00",
+            "picture": "https://yanxuan-item.nosdn.127.net/06461cea9e56b56dd4276e1cb81dd884.png",
+            "orderNum": 113
+          },
+          {
+            "id": "1108008",
+            "name": "爆款明星好物，抽屉式透明储物柜",
+            "desc": "抽屉随意拉，东西随意拿，7款尺寸，随意叠加搭配",
+            "price": "129.00",
+            "picture": "https://yanxuan-item.nosdn.127.net/76a5304c9d7378a83e63554f3077d98b.png",
+            "orderNum": 8528
+          },
+          {
+            "id": "1028004",
+            "name": "衣柜省空间神器，棉麻涤·收纳挂袋",
+            "desc": "实用棉麻，悬挂牢固",
+            "price": "55.00",
+            "picture": "https://yanxuan-item.nosdn.127.net/49e21db0fe13c0ff1789a79a8ba48468.jpg",
+            "orderNum": 4822
+          },
+          {
+            "id": "1252031",
+            "name": "换季好帮手，大容量防尘衣物收纳袋",
+            "desc": "棉被收纳，干净防尘",
+            "price": "69.00",
+            "picture": "https://yanxuan-item.nosdn.127.net/75f6cc2c037c09e957cbcc336cf4a652.png",
+            "orderNum": 5463
+          },
+          {
+            "id": "1225018",
+            "name": "可水洗的布艺收纳盒",
+            "desc": "三种规格，收纳杂物",
+            "price": "29.90",
+            "picture": "https://yanxuan-item.nosdn.127.net/5a608974e36c829898df20fd0ebf184a.png",
+            "orderNum": 8163
+          }
+        ],
+        "categories": null,
+        "brands": null,
+        "saleProperties": null
+      },
+      {
+        "id": "1017000",
+        "name": "宠物食品",
+        "picture": "https://yanxuan.nosdn.127.net/b42a85ef15f856081ea9f49e5f6893e2.png",
+        "parentId": null,
+        "parentName": null,
+        "goods": [
+          {
+            "id": "3847005",
+            "name": "浓缩的精华，宠物化毛营养膏120克/支",
+            "desc": "温和化毛，补充营养，二合一",
+            "price": "39.00",
+            "picture": "https://yanxuan-item.nosdn.127.net/a36c88ef48b14320166fab465686479f.jpg",
+            "orderNum": 8370
+          },
+          {
+            "id": "3407081",
+            "name": "全面助力发育，全价幼猫粮（阶段）1.8千克",
+            "desc": "营养易吸收，严苛选料，健康成长",
+            "price": "99.00",
+            "picture": "https://yanxuan-item.nosdn.127.net/395e781595f60b4e2c7aaab2420da3cd.png",
+            "orderNum": 4357
+          },
+          {
+            "id": "3425016",
+            "name": "定制专属配方，全价中大型犬犬粮2千克",
+            "desc": "呵护关节，稳健成长健骨骼",
+            "price": "69.00",
+            "picture": "https://yanxuan-item.nosdn.127.net/536a8d363b0324f8c03cb37b795fcdfb.png",
+            "orderNum": 4101
+          },
+          {
+            "id": "3405016",
+            "name": "无谷慕斯罐头（猫）170克*12罐",
+            "desc": "三文鱼研磨，添加时令鱼籽",
+            "price": "132.00",
+            "picture": "https://yanxuan-item.nosdn.127.net/9736c4ff50a9481e527b27e8aad61f03.png",
+            "orderNum": 1915
+          },
+          {
+            "id": "1318002",
+            "name": "每一口都有七种肉，全价猫粮",
+            "desc": "多肉零谷物，升级低便臭配方",
+            "price": "88.00",
+            "picture": "https://yanxuan-item.nosdn.127.net/ec16c3f1df988da3429f7d639eea8a84.jpg",
+            "orderNum": 7041
+          }
+        ],
+        "categories": null,
+        "brands": null,
+        "saleProperties": null
+      },
+      {
+        "id": "109243003",
+        "name": "艺术藏品",
+        "picture": "https://yanxuan.nosdn.127.net/9544b81aaa14c26a8038c2365ff3c2bc.png",
+        "parentId": null,
+        "parentName": null,
+        "goods": [
+          {
+            "id": "4001880",
+            "name": "朱炳仁·铜彩色生肖铜雕摆件",
+            "desc": "十二生肖萌宝系列吉祥物，吉祥又好运",
+            "price": "680.00",
+            "picture": "https://yanxuan-item.nosdn.127.net/04753036f123a8ff1b56db60fe440f47.jpg",
+            "orderNum": 18678
+          },
+          {
+            "id": "4001920",
+            "name": "朱炳仁铜·猫型吉祥物装饰工艺摆件",
+            "desc": "灵性十足的黑色招财猫，周而复始，财源不断",
+            "price": "1888.00",
+            "picture": "https://yanxuan-item.nosdn.127.net/6e38fc94a8fe72c9d139bc48ba6d9814.jpg",
+            "orderNum": 4395
+          },
+          {
+            "id": "4000295",
+            "name": "星云吉彩系列花器新年创意花瓶摆件朱炳仁",
+            "desc": "星云吉彩，一路繁花。花瓶造型挺秀、俏丽，更为丰满圆润；五彩斑斓色彩，莹润光泽的质感，又显娇嫩。置于台前感受花与花器的和谐之美，获得精神的美感和愉悦。采用国家非遗百年传统工艺及国艺釉彩铜独创工艺，简约时尚的设计，雅致意趣。",
+            "price": "442.00",
+            "picture": "https://yanxuan-item.nosdn.127.net/2dd8fe9b59774c7ca160bb2d5741c763.jpg",
+            "orderNum": 7181
+          },
+          {
+            "id": "4001798",
+            "name": "海洋之歌·艺术雕塑摆件",
+            "desc": "白夜通话番外系列《海洋之歌》，温暖治愈",
+            "price": "67.00",
+            "picture": "https://yanxuan-item.nosdn.127.net/c25af46c2d3df0cbf933dd31c5e7ad6a.jpg",
+            "orderNum": 7998
+          },
+          {
+            "id": "3993860",
+            "name": "国大师匠造落款宫廷聚宝缸摆件",
+            "desc": "生财聚宝,藏风聚气,",
+            "price": "508.00",
+            "picture": "https://yanxuan-item.nosdn.127.net/a4e343fcffdb13eaf37428ad851dfb2a.png",
+            "orderNum": 2448
+          }
+        ],
+        "categories": null,
+        "brands": null,
+        "saleProperties": null
+      },
+      {
+        "id": "109248004",
+        "name": "宠物用品",
+        "picture": "https://yanxuan.nosdn.127.net/e766b09029ca00680d1e651b5cdc42bd.png",
+        "parentId": null,
+        "parentName": null,
+        "goods": [
+          {
+            "id": "3986658",
+            "name": "快速吸水防回渗，宠物训导垫S码80片/袋",
+            "desc": "漏斗般吸水，一垫多用更省心",
+            "price": "35.80",
+            "picture": "https://yanxuan-item.nosdn.127.net/17f5a18b4125733023cad09d6b7852db.jpg",
+            "orderNum": 34
+          },
+          {
+            "id": "1435024",
+            "name": "快速吸水，2毫米豆腐猫砂绿茶味2.6千克",
+            "desc": "抑菌除味，冲厕清理，高性价比",
+            "price": "32.00",
+            "picture": "https://yanxuan-item.nosdn.127.net/674ac83c4a82f8b005dc57919e084ca9.png",
+            "orderNum": 17920
+          },
+          {
+            "id": "1435025",
+            "name": "还原猫咪排泄天性，进口膨润土砂6千克",
+            "desc": "进口矿砂，强力除臭凝结",
+            "price": "59.00",
+            "picture": "https://yanxuan-item.nosdn.127.net/4c271a733bb1461d39162c0d807b1b02.png",
+            "orderNum": 46
+          },
+          {
+            "id": "4000278",
+            "name": "不易带出，3毫米原味豆腐猫砂2.6千克",
+            "desc": "经典3mm颗粒，强吸水，强包裹",
+            "price": "29.00",
+            "picture": "https://yanxuan-item.nosdn.127.net/9d9590bdb4f7cdd874de6a4554abcff9.jpg",
+            "orderNum": 6776
+          },
+          {
+            "id": "3990319",
+            "name": "智能饮水机滤芯三片装",
+            "desc": "生物感应，紫外除菌，健康活泉",
+            "price": "42.00",
+            "picture": "https://yanxuan-item.nosdn.127.net/240983ccc935146a4795e3990d30468d.jpg",
+            "orderNum": 6762
+          }
+        ],
+        "categories": null,
+        "brands": null,
+        "saleProperties": null
+      },
+      {
+        "id": "109293000",
+        "name": "家庭医疗",
+        "picture": "https://yanxuan.nosdn.127.net/3f34039fa8c26e18e2f4fc96ed8cb6de.png",
+        "parentId": null,
+        "parentName": null,
+        "goods": [
+          {
+            "id": "3995913",
+            "name": "家庭常备红外线耳温式体温计",
+            "desc": "耳温式体温计测量更准确",
+            "price": "139.00",
+            "picture": "https://yanxuan-item.nosdn.127.net/cb09d868c280608a29c1d131dbc08061.jpg",
+            "orderNum": 6599
+          },
+          {
+            "id": "3988985",
+            "name": "医用级缓鼻塞，可调式鼻腔清洗器",
+            "desc": "医用级洗鼻器，深度清洁疏通鼻腔",
+            "price": "39.00",
+            "picture": "https://yanxuan-item.nosdn.127.net/3cfb2027c8644fe4a29d4809f6a3ad7e.png",
+            "orderNum": 21018
+          },
+          {
+            "id": "1469019",
+            "name": "伤口也炫酷，AQR防水创口贴100片/300片装",
+            "desc": "防水阻菌，黏贴透气舒适",
+            "price": "9.90",
+            "picture": "https://yanxuan-item.nosdn.127.net/d8ebf1cdc7d452468abe0456123ca95e.png",
+            "orderNum": 10097
+          },
+          {
+            "id": "3997974",
+            "name": "入门首选，语音播报电子血压计",
+            "desc": "全程语音指导，一键测量，监测心率，贴心守护爸妈健康",
+            "price": "109.00",
+            "picture": "https://yanxuan-item.nosdn.127.net/8f0c15f981c5cbcb1aa17215a259fa62.png",
+            "orderNum": 4387
+          },
+          {
+            "id": "3997406",
+            "name": "支撑颈椎无负担，颈椎固定器",
+            "desc": "0.23KG轻量化设计，支撑颈椎，低头族救星",
+            "price": "299.00",
+            "picture": "https://yanxuan-item.nosdn.127.net/0cdfd546f8675669b87716114ad5900a.jpg",
+            "orderNum": 3712
+          }
+        ],
+        "categories": null,
+        "brands": null,
+        "saleProperties": null
+      },
+      {
+        "id": "109308000",
+        "name": "中医保健",
+        "picture": "https://yanxuan.nosdn.127.net/2bfba997fd031317caecc4f0bad17569.png",
+        "parentId": null,
+        "parentName": null,
+        "goods": [
+          {
+            "id": "3997602",
+            "name": "暖腰暖腹暖胃，蕲艾暖宫腰带",
+            "desc": "暖宫暖腰暖胃，大面积热敷≈3片暖宝宝",
+            "price": "49.00",
+            "picture": "https://yanxuan-item.nosdn.127.net/9892cc73945da1591fa5259ad076b23c.jpg",
+            "orderNum": 116
+          },
+          {
+            "id": "3993481",
+            "name": "带提手可站立炫彩硅胶热水袋",
+            "desc": "杯型式设计，轻松注水防烫伤",
+            "price": "35.00",
+            "picture": "https://yanxuan-item.nosdn.127.net/0b120e1c37f312981f4f2242997cc862.png",
+            "orderNum": 2399
+          },
+          {
+            "id": "3995284",
+            "name": "新年佳礼，家用SPA多功能按摩床垫",
+            "desc": "坐卧两用，随时随地做spa，多个场合随你心意",
+            "price": "599.00",
+            "picture": "https://yanxuan-item.nosdn.127.net/c41003c6df90d7673195dcc2482e13f3.jpg",
+            "orderNum": 4258
+          },
+          {
+            "id": "3992367",
+            "name": "七夕礼物·挺拔身姿，隐形内穿矫姿带",
+            "desc": "众筹爆品回归，专注矫姿20年，轻松矫正身姿",
+            "price": "149.00",
+            "picture": "https://yanxuan-item.nosdn.127.net/7d1bc78607a08c088b2a7cdbe88c05af.png",
+            "orderNum": 7170
+          },
+          {
+            "id": "3991840",
+            "name": "消炎镇痛一贴灵医用冷敷贴60贴/盒",
+            "desc": "mini型尺寸设计性价比更高",
+            "price": "79.00",
+            "picture": "https://yanxuan-item.nosdn.127.net/d3807695c7d42a0247e308a936201d7c.jpg",
+            "orderNum": 5995
+          }
+        ],
+        "categories": null,
+        "brands": null,
+        "saleProperties": null
+      }
+    ]
+  }
+}

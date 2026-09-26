@@ -1,0 +1,93 @@
+{
+  "code": "1",
+  "msg": "操作成功",
+  "result": {
+    "counts": 30753,
+    "pageSize": 2,
+    "pages": 15377,
+    "page": 1,
+    "items": [
+      {
+        "id": "2103739319482060801",
+        "createTime": "2026-09-26 14:51:54",
+        "payType": 1,
+        "orderState": 1,
+        "payLatestTime": "2026-09-26 15:21:54",
+        "postFee": 5,
+        "payMoney": 75,
+        "totalMoney": 70,
+        "totalNum": 2,
+        "skus": [
+          {
+            "id": "2103739319490449410",
+            "spuId": "3994572",
+            "name": "伊海诗冬日出行多功能防风保暖围脖",
+            "quantity": 1,
+            "image": "https://yanxuan-item.nosdn.127.net/25effebb31ea6fc58b92f5a6aecda8b9.png",
+            "realPay": 35,
+            "curPrice": 35,
+            "totalMoney": null,
+            "properties": [
+              {
+                "propertyMainName": "款式",
+                "propertyValueName": "双层有绒毛-民俗蓝"
+              }
+            ],
+            "attrsText": "款式:双层有绒毛-民俗蓝 "
+          },
+          {
+            "id": "2103739319494643713",
+            "spuId": "3994572",
+            "name": "伊海诗冬日出行多功能防风保暖围脖",
+            "quantity": 1,
+            "image": "https://yanxuan-item.nosdn.127.net/25effebb31ea6fc58b92f5a6aecda8b9.png",
+            "realPay": 35,
+            "curPrice": 35,
+            "totalMoney": null,
+            "properties": [
+              {
+                "propertyMainName": "款式",
+                "propertyValueName": "双层有绒毛-中灰"
+              }
+            ],
+            "attrsText": "款式:双层有绒毛-中灰 "
+          }
+        ],
+        "payChannel": 1,
+        "countdown": -1
+      },
+      {
+        "id": "2103691206969004034",
+        "createTime": "2026-09-26 11:40:43",
+        "payType": 1,
+        "orderState": 1,
+        "payLatestTime": "2026-09-26 12:10:43",
+        "postFee": 5,
+        "payMoney": 40,
+        "totalMoney": 35,
+        "totalNum": 1,
+        "skus": [
+          {
+            "id": "2103691206977392642",
+            "spuId": "3994572",
+            "name": "伊海诗冬日出行多功能防风保暖围脖",
+            "quantity": 1,
+            "image": "https://yanxuan-item.nosdn.127.net/25effebb31ea6fc58b92f5a6aecda8b9.png",
+            "realPay": 35,
+            "curPrice": 35,
+            "totalMoney": null,
+            "properties": [
+              {
+                "propertyMainName": "款式",
+                "propertyValueName": "双层内外一样-土耳其紫"
+              }
+            ],
+            "attrsText": "款式:双层内外一样-土耳其紫 "
+          }
+        ],
+        "payChannel": 1,
+        "countdown": -1
+      }
+    ]
+  }
+}

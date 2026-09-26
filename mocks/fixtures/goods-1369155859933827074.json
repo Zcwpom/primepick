@@ -1,0 +1,477 @@
+{
+  "code": "1",
+  "msg": "操作成功",
+  "result": {
+    "id": "1369155859933827074",
+    "name": "钻石陶瓷涂层多用锅18cm 小奶锅",
+    "spuCode": "goods-spu-001",
+    "desc": "安全耐用，易于清洗",
+    "price": "128.00",
+    "oldPrice": "128.00",
+    "discount": 1,
+    "inventory": 0,
+    "brand": null,
+    "salesCount": 0,
+    "commentCount": 0,
+    "collectCount": 1,
+    "mainVideos": [],
+    "videoScale": null,
+    "mainPictures": [
+      "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/6fdcac19-dd44-442c-9212-f7ec3cf3ed18.jpg",
+      "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/45fd1372-05d2-4ff8-8669-79463a1e589f.jpg",
+      "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/e5a9f569-accc-4006-9064-2180e7f2b691.jpg",
+      "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/81119a14-5311-4011-af4a-273894375c74.jpg",
+      "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/dafec715-761b-438b-afc8-1e3f55bf3c1c.png"
+    ],
+    "specs": [
+      {
+        "name": "颜色",
+        "id": "1369139574067957762",
+        "values": [
+          {
+            "name": "黑色",
+            "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/cd6c46b6-b944-4479-b547-cdee294568a1.png",
+            "desc": ""
+          },
+          {
+            "name": "蓝色",
+            "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/2d5ba800-1868-48c8-9213-1a5f8965a05b.png",
+            "desc": ""
+          }
+        ]
+      },
+      {
+        "name": "尺寸",
+        "id": "1369141324204216321",
+        "values": [
+          {
+            "name": "30cm",
+            "picture": null,
+            "desc": ""
+          },
+          {
+            "name": "20cm",
+            "picture": null,
+            "desc": ""
+          },
+          {
+            "name": "10cm",
+            "picture": null,
+            "desc": ""
+          }
+        ]
+      },
+      {
+        "name": "产地",
+        "id": "1369141916305723393",
+        "values": [
+          {
+            "name": "日本",
+            "picture": null,
+            "desc": ""
+          },
+          {
+            "name": "中国",
+            "picture": null,
+            "desc": ""
+          }
+        ]
+      }
+    ],
+    "skus": [
+      {
+        "id": "1369155862131642369",
+        "skuCode": "goods-sku-001",
+        "price": "128.00",
+        "oldPrice": "200.00",
+        "inventory": 0,
+        "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/2d5ba800-1868-48c8-9213-1a5f8965a05b.png",
+        "specs": [
+          {
+            "name": "颜色",
+            "valueName": "蓝色"
+          },
+          {
+            "name": "尺寸",
+            "valueName": "20cm"
+          },
+          {
+            "name": "产地",
+            "valueName": "中国"
+          }
+        ]
+      },
+      {
+        "id": "1369155863389933570",
+        "skuCode": "goods-sku-007",
+        "price": "128.00",
+        "oldPrice": "200.00",
+        "inventory": 99654,
+        "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/cd6c46b6-b944-4479-b547-cdee294568a1.png",
+        "specs": [
+          {
+            "name": "颜色",
+            "valueName": "黑色"
+          },
+          {
+            "name": "尺寸",
+            "valueName": "20cm"
+          },
+          {
+            "name": "产地",
+            "valueName": "中国"
+          }
+        ]
+      },
+      {
+        "id": "1369155864430120962",
+        "skuCode": "goods-sku-003",
+        "price": "128.00",
+        "oldPrice": "200.00",
+        "inventory": 99706,
+        "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/2d5ba800-1868-48c8-9213-1a5f8965a05b.png",
+        "specs": [
+          {
+            "name": "颜色",
+            "valueName": "蓝色"
+          },
+          {
+            "name": "尺寸",
+            "valueName": "10cm"
+          },
+          {
+            "name": "产地",
+            "valueName": "中国"
+          }
+        ]
+      },
+      {
+        "id": "1369155865461919746",
+        "skuCode": "goods-sku-009",
+        "price": "128.00",
+        "oldPrice": "200.00",
+        "inventory": 99926,
+        "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/cd6c46b6-b944-4479-b547-cdee294568a1.png",
+        "specs": [
+          {
+            "name": "颜色",
+            "valueName": "黑色"
+          },
+          {
+            "name": "尺寸",
+            "valueName": "10cm"
+          },
+          {
+            "name": "产地",
+            "valueName": "中国"
+          }
+        ]
+      },
+      {
+        "id": "1369155866451775490",
+        "skuCode": "goods-sku-005",
+        "price": "128.00",
+        "oldPrice": "210.00",
+        "inventory": 99797,
+        "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/2d5ba800-1868-48c8-9213-1a5f8965a05b.png",
+        "specs": [
+          {
+            "name": "颜色",
+            "valueName": "蓝色"
+          },
+          {
+            "name": "尺寸",
+            "valueName": "30cm"
+          },
+          {
+            "name": "产地",
+            "valueName": "中国"
+          }
+        ]
+      },
+      {
+        "id": "1369155867420659714",
+        "skuCode": "goods-sku-011",
+        "price": "128.00",
+        "oldPrice": "200.00",
+        "inventory": 99843,
+        "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/cd6c46b6-b944-4479-b547-cdee294568a1.png",
+        "specs": [
+          {
+            "name": "颜色",
+            "valueName": "黑色"
+          },
+          {
+            "name": "尺寸",
+            "valueName": "30cm"
+          },
+          {
+            "name": "产地",
+            "valueName": "中国"
+          }
+        ]
+      },
+      {
+        "id": "1369155868389543937",
+        "skuCode": "goods-sku-002",
+        "price": "128.00",
+        "oldPrice": "200.00",
+        "inventory": 99429,
+        "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/2d5ba800-1868-48c8-9213-1a5f8965a05b.png",
+        "specs": [
+          {
+            "name": "颜色",
+            "valueName": "蓝色"
+          },
+          {
+            "name": "尺寸",
+            "valueName": "20cm"
+          },
+          {
+            "name": "产地",
+            "valueName": "日本"
+          }
+        ]
+      },
+      {
+        "id": "1369155869354233857",
+        "skuCode": "goods-sku-008",
+        "price": "128.00",
+        "oldPrice": "200.00",
+        "inventory": 0,
+        "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/cd6c46b6-b944-4479-b547-cdee294568a1.png",
+        "specs": [
+          {
+            "name": "颜色",
+            "valueName": "黑色"
+          },
+          {
+            "name": "尺寸",
+            "valueName": "20cm"
+          },
+          {
+            "name": "产地",
+            "valueName": "日本"
+          }
+        ]
+      },
+      {
+        "id": "1369155870306340866",
+        "skuCode": "goods-sku-004",
+        "price": "128.00",
+        "oldPrice": "200.00",
+        "inventory": 99936,
+        "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/2d5ba800-1868-48c8-9213-1a5f8965a05b.png",
+        "specs": [
+          {
+            "name": "颜色",
+            "valueName": "蓝色"
+          },
+          {
+            "name": "尺寸",
+            "valueName": "10cm"
+          },
+          {
+            "name": "产地",
+            "valueName": "日本"
+          }
+        ]
+      },
+      {
+        "id": "1369155871241670658",
+        "skuCode": "goods-sku-010",
+        "price": "128.00",
+        "oldPrice": "200.00",
+        "inventory": 99952,
+        "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/cd6c46b6-b944-4479-b547-cdee294568a1.png",
+        "specs": [
+          {
+            "name": "颜色",
+            "valueName": "黑色"
+          },
+          {
+            "name": "尺寸",
+            "valueName": "10cm"
+          },
+          {
+            "name": "产地",
+            "valueName": "日本"
+          }
+        ]
+      },
+      {
+        "id": "1369155872197971970",
+        "skuCode": "goods-sku-006",
+        "price": "148.00",
+        "oldPrice": "190.00",
+        "inventory": 99805,
+        "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/2d5ba800-1868-48c8-9213-1a5f8965a05b.png",
+        "specs": [
+          {
+            "name": "颜色",
+            "valueName": "蓝色"
+          },
+          {
+            "name": "尺寸",
+            "valueName": "30cm"
+          },
+          {
+            "name": "产地",
+            "valueName": "日本"
+          }
+        ]
+      },
+      {
+        "id": "1369155873162661889",
+        "skuCode": "goods-sku-012",
+        "price": "148.00",
+        "oldPrice": "210.00",
+        "inventory": 99645,
+        "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/cd6c46b6-b944-4479-b547-cdee294568a1.png",
+        "specs": [
+          {
+            "name": "颜色",
+            "valueName": "黑色"
+          },
+          {
+            "name": "尺寸",
+            "valueName": "30cm"
+          },
+          {
+            "name": "产地",
+            "valueName": "日本"
+          }
+        ]
+      }
+    ],
+    "categories": [
+      {
+        "id": "1005999003",
+        "name": "居家生活用品",
+        "layer": 2,
+        "parent": {
+          "id": "1005000",
+          "name": "居家",
+          "layer": 1,
+          "parent": null
+        }
+      },
+      {
+        "id": "1005000",
+        "name": "居家",
+        "layer": 1,
+        "parent": null
+      }
+    ],
+    "details": {
+      "pictures": [
+        "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/fcc3e819-87b7-4e3c-8717-4fa1eda492bf.jpg",
+        "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/e5a9f569-accc-4006-9064-2180e7f2b691.jpg",
+        "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/049e0be5-4eca-4ef2-b5ee-a64f1c797027.jpg"
+      ],
+      "properties": [
+        {
+          "name": "额定电压功率",
+          "value": "120V 50/60Hz 1200W"
+        },
+        {
+          "name": "执行标准",
+          "value": "GB4706.1-2005"
+        },
+        {
+          "name": "适用发量",
+          "value": "多"
+        },
+        {
+          "name": "适用发质",
+          "value": "油性"
+        },
+        {
+          "name": "适用场景",
+          "value": "旅行"
+        },
+        {
+          "name": "适用人群",
+          "value": "老年人"
+        },
+        {
+          "name": "功能",
+          "value": "养发功能"
+        }
+      ]
+    },
+    "isPreSale": false,
+    "isCollect": null,
+    "recommends": null,
+    "userAddresses": null,
+    "similarProducts": [
+      {
+        "id": "1369155859933827074",
+        "name": "钻石陶瓷涂层多用锅18cm 小奶锅",
+        "desc": "安全耐用，易于清洗",
+        "price": "149.00",
+        "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/6fdcac19-dd44-442c-9212-f7ec3cf3ed18.jpg",
+        "orderNum": 310
+      },
+      {
+        "id": "3994572",
+        "name": "伊海诗冬日出行多功能防风保暖围脖",
+        "desc": "时尚针织印花面料，多种穿戴方式，正反两穿，亲肤保暖",
+        "price": "35.00",
+        "picture": "https://yanxuan-item.nosdn.127.net/25effebb31ea6fc58b92f5a6aecda8b9.png",
+        "orderNum": 28156
+      },
+      {
+        "id": "4026116",
+        "name": "探险者黑胶防晒防雨遮阳伞户外钓鱼伞",
+        "desc": "防雨遮阳隔绝紫外线",
+        "price": "169.00",
+        "picture": "https://yanxuan-item.nosdn.127.net/66090c5de391e43e4516601e14870842.jpg",
+        "orderNum": 16892
+      },
+      {
+        "id": "4027998",
+        "name": "亮碟多效合一洗涤块495g",
+        "desc": "洗碗机专用，强力去污",
+        "price": "69.90",
+        "picture": "https://yanxuan-item.nosdn.127.net/e07c2b63765cf9f4a46d489c6e09c1c1.jpg",
+        "orderNum": 11815
+      }
+    ],
+    "hotByDay": [
+      {
+        "id": "3994572",
+        "name": "伊海诗冬日出行多功能防风保暖围脖",
+        "desc": "时尚针织印花面料，多种穿戴方式，正反两穿，亲肤保暖",
+        "price": "35.00",
+        "picture": "https://yanxuan-item.nosdn.127.net/25effebb31ea6fc58b92f5a6aecda8b9.png",
+        "orderNum": 28156
+      },
+      {
+        "id": "4027998",
+        "name": "亮碟多效合一洗涤块495g",
+        "desc": "洗碗机专用，强力去污",
+        "price": "69.90",
+        "picture": "https://yanxuan-item.nosdn.127.net/e07c2b63765cf9f4a46d489c6e09c1c1.jpg",
+        "orderNum": 11815
+      },
+      {
+        "id": "4026450",
+        "name": "趣味小恐龙绣花，男童灯芯绒衬衫",
+        "desc": "趣味小恐龙绣花，满版老虎印花，5色可选",
+        "price": "89.00",
+        "picture": "https://yanxuan-item.nosdn.127.net/e68d406a58622a8d850de442aacfcf2e.jpg",
+        "orderNum": 18073
+      },
+      {
+        "id": "4023839",
+        "name": "日本冰块冰球制冰模具",
+        "desc": "轻轻一拍，轻松取冰",
+        "price": "29.80",
+        "picture": "https://yanxuan-item.nosdn.127.net/2be38fc160992fe41f7d4a45bd0f90e5.png",
+        "orderNum": 14585
+      }
+    ],
+    "evaluationInfo": null
+  }
+}

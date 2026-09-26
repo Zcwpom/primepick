@@ -1,0 +1,235 @@
+{
+  "code": "1",
+  "msg": "操作成功",
+  "result": {
+    "id": "4027998",
+    "name": "亮碟多效合一洗涤块495g",
+    "spuCode": "4027998",
+    "desc": "洗碗机专用，强力去污",
+    "price": "69.90",
+    "oldPrice": "69.90",
+    "discount": 1,
+    "inventory": 1554984,
+    "brand": {
+      "id": "spider99999999999",
+      "name": "传智自有品牌",
+      "nameEn": "chuanzhi",
+      "logo": "https://yanxuan-item.nosdn.127.net/f6ddd429632de6170900dc2fbc541fd8.png?type=webp&imageView&thumbnail=78x78&quality=95",
+      "picture": "https://yanxuan-item.nosdn.127.net/f6ddd429632de6170900dc2fbc541fd8.png?type=webp&imageView&thumbnail=78x78&quality=95",
+      "type": null,
+      "desc": null,
+      "place": null
+    },
+    "salesCount": 48,
+    "commentCount": 0,
+    "collectCount": 1,
+    "mainVideos": [],
+    "videoScale": 1,
+    "mainPictures": [
+      "https://yanxuan-item.nosdn.127.net/e07c2b63765cf9f4a46d489c6e09c1c1.jpg",
+      "https://yanxuan-item.nosdn.127.net/0710ac62f2ab29f94156812238ecad68.jpg",
+      "https://yanxuan-item.nosdn.127.net/7d5109fb0e18833edf19dcbf237a0359.jpg",
+      "https://yanxuan-item.nosdn.127.net/762807396d6684454857414580a7d453.jpg",
+      "https://yanxuan-item.nosdn.127.net/a560abb8588e662e606a7d87bac17feb.jpg"
+    ],
+    "specs": [
+      {
+        "name": "finish亮碟多效合一洗涤块495g",
+        "id": "1482377662322311170",
+        "values": [
+          {
+            "name": "495g",
+            "picture": "https://yanxuan-item.nosdn.127.net/05693601102168ec4e9e55ad629cff91.jpg",
+            "desc": "清洁用品-销售属性finish亮碟多效合一洗涤块495g-495g-规格属性图片"
+          }
+        ]
+      }
+    ],
+    "skus": [
+      {
+        "id": "300486500",
+        "skuCode": "300486500",
+        "price": "69.90",
+        "oldPrice": "69.90",
+        "inventory": 363,
+        "picture": "https://yanxuan-item.nosdn.127.net/05693601102168ec4e9e55ad629cff91.jpg",
+        "specs": [
+          {
+            "name": "finish亮碟多效合一洗涤块495g",
+            "valueName": "495g"
+          }
+        ]
+      }
+    ],
+    "categories": [
+      {
+        "id": "109275000",
+        "name": "清洁用品",
+        "layer": 2,
+        "parent": {
+          "id": "1019000",
+          "name": "严选",
+          "layer": 1,
+          "parent": null
+        }
+      },
+      {
+        "id": "1019000",
+        "name": "严选",
+        "layer": 1,
+        "parent": null
+      }
+    ],
+    "details": {
+      "pictures": [
+        "https://yanxuan-item.nosdn.127.net/b0e87a640642cbe42662caf0f1cc6411.jpg",
+        "https://yanxuan-item.nosdn.127.net/9850ff524af3c6eaa6fbfe4f9c83e3fc.jpg",
+        "https://yanxuan-item.nosdn.127.net/c2f823bcdb0143d525dd817d0c01b57f.jpg",
+        "https://yanxuan-item.nosdn.127.net/3ddafa096a6f9d2b7fd68185170c2020.jpg",
+        "https://yanxuan-item.nosdn.127.net/70eabcf6aa15000bdbf49d760ac1bc51.jpg",
+        "https://yanxuan-item.nosdn.127.net/36d2861df25c9be2f89e8e8401ddb3f3.jpg",
+        "https://yanxuan-item.nosdn.127.net/8fb58fc119ba4e22d964ca46fd243107.jpg",
+        "https://yanxuan-item.nosdn.127.net/130f5e9b0c8351699b5d4b8608f53aa2.jpg",
+        "https://yanxuan-item.nosdn.127.net/d400e01abc9cb316939664ca4aa2bc2f.jpg",
+        "https://yanxuan-item.nosdn.127.net/0fe6d277514b322a11b10f38dc511db7.jpg",
+        "https://yanxuan-item.nosdn.127.net/4170ebfda57659ce3e9e7e6aaba34f5a.jpg",
+        "https://yanxuan-item.nosdn.127.net/f3c0aa50928c61b87214e0e18054b61d.jpg",
+        "https://yanxuan-item.nosdn.127.net/1c562656d578a629e06ab808f29626f2.jpg",
+        "https://yanxuan-item.nosdn.127.net/0884309465e872377800f5e7e2831758.jpg",
+        "https://yanxuan-item.nosdn.127.net/729b382dad07150b3cb6c04acc0040af.jpg",
+        "https://yanxuan-item.nosdn.127.net/71922e354a7cdada76d6ab159d2237c6.jpg",
+        "https://yanxuan-item.nosdn.127.net/c89a436d053a15ea41c83391be5eafe6.jpg",
+        "https://yanxuan-item.nosdn.127.net/c3796c02aaf66f5a7748f176cb2e45eb.jpg",
+        "https://yanxuan-item.nosdn.127.net/f72c2dc15704976245bfc2c1cc771e59.jpg",
+        "https://yanxuan-item.nosdn.127.net/d39a8ce1dd4664e1540269e475377419.jpg",
+        "https://yanxuan-item.nosdn.127.net/10990a3453a29cfd8b878c8467eda931.jpg",
+        "https://yanxuan-item.nosdn.127.net/d92a5355c2166f05c9fbb80abbdb97ca.jpg",
+        "https://yanxuan-item.nosdn.127.net/147aed0bf2c46a2554b02c6e00441299.jpg",
+        "https://yanxuan-item.nosdn.127.net/5fbb5bfadd008554392d9eb3e5f23cbf.jpg",
+        "https://yanxuan-item.nosdn.127.net/abb9eedcc2e1516839b75a84f2275380.jpg",
+        "https://yanxuan-item.nosdn.127.net/03184ec49674183115083509d34327f7.jpg",
+        "https://yanxuan-item.nosdn.127.net/96e3c191524e165a45083e154c6655de.jpg",
+        "https://yanxuan-item.nosdn.127.net/02b3418aa5ea7703317ab199a30f4517.jpg",
+        "https://yanxuan-item.nosdn.127.net/678ef899763dca27faca3f6040100668.jpg",
+        "https://yanxuan-item.nosdn.127.net/b061a50569c86a6e1d293d02c84fdea1.jpg",
+        "https://yanxuan-item.nosdn.127.net/3eba32a76ad3efc9146e8cc929bfc849.jpg",
+        "https://yanxuan-item.nosdn.127.net/da3291099c1cef12e776270a8f89ffe8.jpg",
+        "https://yanxuan-item.nosdn.127.net/95c8f412b0d724fdc7e2bce47fcc9fd7.jpg",
+        "https://yanxuan-item.nosdn.127.net/9b83cf4a8032b58d7f6fdab37a0cbf8a.jpg",
+        "https://yanxuan-item.nosdn.127.net/187ab92b7f4ef979bbd9eab995d85d1f.jpg",
+        "https://yanxuan-item.nosdn.127.net/e63205fbc96c56ede47e3a2618ddae14.jpg",
+        "https://yanxuan-item.nosdn.127.net/3a81a6a0756001d13287052c6df3d3fa.jpg",
+        "https://yanxuan-item.nosdn.127.net/3a8ef0bffb81bfcc6ea99d9097759437.jpg",
+        "https://yanxuan-item.nosdn.127.net/6bc84a480f68e738c8099be70df1ac76.jpg",
+        "https://yanxuan-item.nosdn.127.net/4af0f45bfd4d26786cba3125fe66ff75.jpg",
+        "https://yanxuan-item.nosdn.127.net/7711e9ee8b25b391e2a42a5ecc28b2d2.jpg",
+        "https://yanxuan-item.nosdn.127.net/c99a11ede29e7cb0f0e4541346bc6695.jpg",
+        "https://yanxuan-item.nosdn.127.net/288798d31570e4753186e9c60dd62272.jpg",
+        "https://yanxuan-item.nosdn.127.net/7d1c8e9da2ed9eb09d9169d74df0dc1f.jpg",
+        "https://yanxuan-item.nosdn.127.net/4cb1d69b2f4e9f0c9cba68e649c8e067.jpg",
+        "https://yanxuan-item.nosdn.127.net/5c329f387606985a28dbe42879cb0ef7.jpg",
+        "https://yanxuan-item.nosdn.127.net/cfb890bdf52f45aec7b5be9b4738504c.jpg",
+        "https://yanxuan-item.nosdn.127.net/d956efc6062360d4e1ec22d1c7e3a7d3.jpg",
+        "https://yanxuan-item.nosdn.127.net/5e8d21c5d604de6c647e0ca6bb7397ff.jpg",
+        "https://yanxuan-item.nosdn.127.net/f104e60912468d917aa300c04f10fc25.jpg",
+        "https://yanxuan-item.nosdn.127.net/a9e38d56a2a6994fcefac73fca072aa8.jpg",
+        "https://yanxuan-item.nosdn.127.net/a2d17a5f1af5373d9a52198a550d1c97.jpg"
+      ],
+      "properties": [
+        {
+          "name": "适用范围",
+          "value": "不锈钢专用、洗碗机专用、厨房油污、餐具"
+        },
+        {
+          "name": "功效",
+          "value": "除菌消臭、去污"
+        },
+        {
+          "name": "产地",
+          "value": "波兰"
+        },
+        {
+          "name": "保质期",
+          "value": "2年"
+        },
+        {
+          "name": "适用场景",
+          "value": "厨房清洁"
+        }
+      ]
+    },
+    "isPreSale": false,
+    "isCollect": null,
+    "recommends": null,
+    "userAddresses": null,
+    "similarProducts": [
+      {
+        "id": "4027998",
+        "name": "亮碟多效合一洗涤块495g",
+        "desc": "洗碗机专用，强力去污",
+        "price": "69.90",
+        "picture": "https://yanxuan-item.nosdn.127.net/e07c2b63765cf9f4a46d489c6e09c1c1.jpg",
+        "orderNum": 11815
+      },
+      {
+        "id": "4010699",
+        "name": "除味净化神器Mootaa冰箱抑菌清洁剂250ml",
+        "desc": "除臭杀毒，持久保鲜，解决冰箱各种食材串味产生的难闻气味",
+        "price": "35.00",
+        "picture": "https://yanxuan-item.nosdn.127.net/838c1b94f15e3b200bea21cef8989592.png",
+        "orderNum": 1212
+      },
+      {
+        "id": "4017718",
+        "name": "油污克星Mootaa重油污清洁剂",
+        "desc": "一喷快速溶解油污",
+        "price": "49.00",
+        "picture": "https://yanxuan-item.nosdn.127.net/53a1579ead54c61a9b296d20c78a67ff.jpg",
+        "orderNum": 2043
+      },
+      {
+        "id": "3990343",
+        "name": "【囤货装】日本橙油精华去油污泡沫3瓶装",
+        "desc": "强力除油污，萃取橙油精华",
+        "price": "67.50",
+        "picture": "https://yanxuan-item.nosdn.127.net/188e05584a056b0e2f17e8c568da8c00.png",
+        "orderNum": 28
+      }
+    ],
+    "hotByDay": [
+      {
+        "id": "3994572",
+        "name": "伊海诗冬日出行多功能防风保暖围脖",
+        "desc": "时尚针织印花面料，多种穿戴方式，正反两穿，亲肤保暖",
+        "price": "35.00",
+        "picture": "https://yanxuan-item.nosdn.127.net/25effebb31ea6fc58b92f5a6aecda8b9.png",
+        "orderNum": 28156
+      },
+      {
+        "id": "4027998",
+        "name": "亮碟多效合一洗涤块495g",
+        "desc": "洗碗机专用，强力去污",
+        "price": "69.90",
+        "picture": "https://yanxuan-item.nosdn.127.net/e07c2b63765cf9f4a46d489c6e09c1c1.jpg",
+        "orderNum": 11815
+      },
+      {
+        "id": "4026450",
+        "name": "趣味小恐龙绣花，男童灯芯绒衬衫",
+        "desc": "趣味小恐龙绣花，满版老虎印花，5色可选",
+        "price": "89.00",
+        "picture": "https://yanxuan-item.nosdn.127.net/e68d406a58622a8d850de442aacfcf2e.jpg",
+        "orderNum": 18073
+      },
+      {
+        "id": "4023839",
+        "name": "日本冰块冰球制冰模具",
+        "desc": "轻轻一拍，轻松取冰",
+        "price": "29.80",
+        "picture": "https://yanxuan-item.nosdn.127.net/2be38fc160992fe41f7d4a45bd0f90e5.png",
+        "orderNum": 14585
+      }
+    ],
+    "evaluationInfo": null
+  }
+}

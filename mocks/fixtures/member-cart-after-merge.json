@@ -1,0 +1,24 @@
+{
+  "code": "1",
+  "msg": "操作成功",
+  "result": [
+    {
+      "id": "1369155859933827074",
+      "skuId": "1369155862131642369",
+      "name": "钻石陶瓷涂层多用锅18cm 小奶锅",
+      "attrsText": "颜色:蓝色 产地:中国 尺寸:20cm ",
+      "specs": [],
+      "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/6fdcac19-dd44-442c-9212-f7ec3cf3ed18.jpg",
+      "price": "128.00",
+      "nowPrice": "128.00",
+      "nowOriginalPrice": "128.00",
+      "selected": true,
+      "stock": 0,
+      "count": 2,
+      "isEffective": false,
+      "discount": null,
+      "isCollect": false,
+      "postFee": 0
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "code": "1",
+  "msg": "操作成功",
+  "result": [
+    {
+      "id": "2078042051122827266",
+      "receiver": "zs",
+      "contact": "13900002020",
+      "provinceCode": "210000",
+      "cityCode": "210200",
+      "countyCode": "210202",
+      "address": "xx街路",
+      "isDefault": 1,
+      "fullLocation": "辽宁省 大连市 中山区",
+      "postalCode": "111006",
+      "addressTags": "家里"
+    },
+    {
+      "id": "2078066448550334465",
+      "receiver": "胡",
+      "contact": "18170832250",
+      "provinceCode": "江西省南昌市",
+      "cityCode": "362500",
+      "countyCode": "215455",
+      "address": "青云谱区",
+      "isDefault": 1,
+      "fullLocation": "",
+      "postalCode": "1008611",
+      "addressTags": "F1"
+    },
+    {
+      "id": "2078293652014108673",
+      "receiver": "sss112",
+      "contact": "123",
+      "provinceCode": "121234",
+      "cityCode": "124123424",
+      "countyCode": "1234123412",
+      "address": "555",
+      "isDefault": 1,
+      "fullLocation": "",
+      "postalCode": "13241341324",
+      "addressTags": "xxxxxxxx"
+    },
+    {
+      "id": "2078294302835871745",
+      "receiver": "sss",
+      "contact": "123",
+      "provinceCode": "12323",
+      "cityCode": "25255243",
+      "countyCode": "23452455",
+      "address": "bbbbbbbbbbbbbbbbbbbb",
+      "isDefault": 1,
+      "fullLocation": "",
+      "postalCode": "123456",
+      "addressTags": "112rrrr"
+    },
+    {
+      "id": "2096756292319186946",
+      "receiver": "hu",
+      "contact": "18170832250",
+      "provinceCode": "knlj",
+      "cityCode": "jvvjv",
+      "countyCode": "xdnng",
+      "address": "dnzn",
+      "isDefault": 1,
+      "fullLocation": "",
+      "postalCode": "fdznd",
+      "addressTags": "db"
+    },
+    {
+      "id": "2099357610896527362",
+      "receiver": "老李",
+      "contact": "13900002020",
+      "provinceCode": "210000",
+      "cityCode": "210200",
+      "countyCode": "210202",
+      "address": "xxx街xxx路",
+      "isDefault": 1,
+      "fullLocation": "辽宁省 大连市 中山区",
+      "postalCode": "111006",
+      "addressTags": "家里"
+    },
+    {
+      "id": "2102794018990592002",
+      "receiver": "test user",
+      "contact": "13800000000",
+      "provinceCode": "210000",
+      "cityCode": "210200",
+      "countyCode": "210202",
+      "address": "test road 1",
+      "isDefault": 0,
+      "fullLocation": "辽宁省 大连市 中山区",
+      "postalCode": "111006",
+      "addressTags": "home"
+    }
+  ]
+}
