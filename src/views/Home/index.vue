@@ -13,8 +13,8 @@ import HomePanel from './components/HomePanel.vue'
 <HomeBanner />
 <HomeCategory />
 </div>
-<HomeHot />
 <HomeNew />
+<HomeHot />
 <HomeProduct />
 <!-- 测试面板组件 -->
 <HomePanel title="新鲜好物" subTitle="新鲜出炉 品质靠谱">
