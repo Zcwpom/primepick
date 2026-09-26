@@ -15,21 +15,11 @@ const cartStore = useCartStore()
 const formRef = ref(null)
 const loginMode = ref('password') // password | sms
 
-// 测试账号列表
-const testAccounts = [
-  { label: '测试1', account: '1311111111', password: '123456' },
-]
-
 const userInfo = ref({
   account: '1311111111',
   password: '123456',
   agree: true
 })
-
-const selectAccount = (acc) => {
-  userInfo.value.account = acc.account
-  userInfo.value.password = acc.password
-}
 
 const rules = {
   account: [
@@ -141,19 +131,6 @@ const doLogin = () => {
           <!-- 短信登录（占位） -->
           <div v-show="loginMode === 'sms'" class="sms-placeholder">
             <p>短信登录功能开发中</p>
-          </div>
-
-          <!-- 快捷测试账号 -->
-          <div class="test-accounts">
-            <span class="test-label">测试账号：</span>
-            <span
-              v-for="acc in testAccounts"
-              :key="acc.account"
-              class="test-chip"
-              @click="selectAccount(acc)"
-            >
-              {{ acc.label }}
-            </span>
           </div>
 
           <!-- 底部链接 -->
@@ -378,35 +355,6 @@ const doLogin = () => {
   text-align: center;
   color: #999;
   font-size: 14px;
-}
-
-/* 测试账号 */
-.test-accounts {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin: 12px 0 16px;
-}
-
-.test-label {
-  font-size: 12px;
-  color: #999;
-}
-
-.test-chip {
-  font-size: 12px;
-  color: $xtxColor;
-  cursor: pointer;
-  padding: 2px 10px;
-  border: 1px solid $xtxColor;
-  border-radius: 12px;
-  transition: all 0.2s;
-
-  &:hover {
-    background: $xtxColor;
-    color: #fff;
-  }
 }
 
 /* 底部链接 */
