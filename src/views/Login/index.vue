@@ -16,7 +16,7 @@ const formRef = ref(null)
 const loginMode = ref('password') // password | sms
 
 const userInfo = ref({
-  account: '1311111111',
+  account: 'xiaotuxian001',
   password: '123456',
   agree: true
 })
@@ -56,7 +56,7 @@ const doLogin = () => {
     <!-- 顶栏 -->
     <header class="login-header">
       <div class="header-inner">
-        <RouterLink to="/" class="login-logo">PrimePick</RouterLink>
+        <RouterLink to="/" class="login-logo">优品购</RouterLink>
         <RouterLink to="/" class="to-home">进入网站首页</RouterLink>
       </div>
     </header>

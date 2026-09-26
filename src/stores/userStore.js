@@ -4,7 +4,7 @@ import { loginAPI } from '@/apis/user'
 
 // 本地测试账号（API 不可用时使用）
 const MOCK_USERS = [
-  { account: '1311111111', password: '123456', nickname: '测试用户1', avatar: '' },
+  { account: 'xiaotuxian001', password: '123456', nickname: '测试用户1', avatar: '' },
 ]
 
 export const useUserStore = defineStore('user', () => {
