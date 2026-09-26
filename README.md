@@ -75,9 +75,9 @@ PrimePick 是一个前后端分离的电商前台项目，实现了完整的购�
 
 | 指标 | 优化前 | 优化后 | 变化 |
 | --- | ---: | ---: | ---: |
-| 首屏 JS（gzip） | 174.89 kB | **121.70 kB** | **−30%** |
+| 首屏 JS（gzip） | 174.89 kB | **122.17 kB** | **−30%** |
 | 首屏 CSS（gzip） | 33.70 kB | **14.32 kB** | **−58%** |
-| 首屏合计（gzip） | 208.59 kB | **136.01 kB** | **−35%** |
+| 首屏合计（gzip） | 208.59 kB | **136.49 kB** | **−35%** |
 | 最大单 chunk | 506.67 kB ⚠️ 触发 Vite 体积告警 | **80.86 kB** | 告警消失 |
 | 产物数量 | 1 个 JS + 1 个 CSS | **64 个按路由/依赖拆分的 chunk** | 按需加载 |
 | 生产构建耗时 | 14.60 s | **3.58 s** | **−75%** |
@@ -92,6 +92,29 @@ PrimePick 是一个前后端分离的电商前台项目，实现了完整的购�
    > 踩过的坑：一开始按 `node_modules` 一把梭分了 `element-plus` / `vendor` 两组，结果把只在懒加载页面用到的库强行并入首屏依赖，首屏从 413 kB 反弹到 643 kB。**分包不是越细越好，要看模块是否真的在首屏依赖图里。**
 3. **体积预算门禁**：`scripts/size-report.mjs` 解析构建产物，首屏 JS/CSS 超出预算（135 kB / 20 kB）直接以非 0 退出码失败，并接入 CI Job Summary —— 体积回退不会悄悄溜进主干。
 4. **清理死代码与死资源**：删除脚手架残留（`App.vue` 中 60 行无匹配元素的 scoped 样式、`assets/base.css`、`assets/main.css`、6 个未引用图片）、重复的根目录 `settings.json` / `extensions.json`。
+
+### 运行时指标（Lighthouse，实测）
+
+构建体积只是一半，另一半是用户实际感受到的指标。用 headless Chrome 对**构建产物**跑 Lighthouse
+（desktop preset、mock 模式，即部署演示的真实形态）：
+
+| 分类 | 首测 | 修复后 | 主要来源 |
+| --- | ---: | ---: | --- |
+| Performance | 94 | 94 | —— |
+| Accessibility | 85 | **97** | 表单标签 / 地标 / 标题层级 / 图片 alt |
+| Best Practices | 81 | **100** | 混合内容（http 图片）全部升级 https |
+| SEO | 92 | **100** | 图片 alt |
+
+| 指标 | 值 |
+| --- | --- |
+| First Contentful Paint | **0.5 s** |
+| Largest Contentful Paint | **1.5 s** |
+| Cumulative Layout Shift | **0.005** |
+| Total Blocking Time | 30 – 90 ms（单次 Lighthouse 有波动，故给区间） |
+
+完整分析见 [`docs/performance.md`](docs/performance.md)：包含每项改动对应哪个审计项、
+**仍未解决的 614 项色彩对比度**（精确到「改 3 个颜色 token 可覆盖」的数值分析，属于品牌视觉决策）、
+LCP 不可发现性的根因（需要 SSR 才能根治）、以及完整的复现命令。
 
 ## 工程化规范
 
