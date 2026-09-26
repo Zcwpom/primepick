@@ -37,8 +37,10 @@ export default defineConfig(({ mode }) => {
       },
       proxy: {
         '/api': {
-          // 只有 VITE_USE_MOCK=false 时才会真的走到这里
-          target: env.VITE_PROXY_TARGET || 'https://pcapi-xiaotuxian-front-devtest.itheima.net',
+          // 只有 VITE_USE_MOCK=false 时才会真的走到这里。
+          // 默认值刻意指向本地（将来的自建后端），而不是任何第三方服务器 ——
+          // 「默认依赖别人家的接口」是这个项目最初最致命的问题，不能让它悄悄回来。
+          target: env.VITE_PROXY_TARGET || 'http://127.0.0.1:3000',
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/api/, '')
         }

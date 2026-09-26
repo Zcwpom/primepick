@@ -14,7 +14,14 @@ const API_BASE = (import.meta.env.VITE_API_BASE || '/api').replace(/\/+$/, '')
 export const apiPath = (path) => `${API_BASE}${path}`
 
 // 一次性把 fixtures 目录下所有真实响应收进来（构建期静态分析，无需异步加载）
-const modules = import.meta.glob('./fixtures/*.json', { eager: true, import: 'default' })
+//
+// 排除 _manifest.json：它只是「抓取来源 + 端点清单」的元数据（给 scripts/fixture-summary.mjs 看），
+// 没有任何运行时逻辑需要它。放进来会连同**抓取来源域名**一起被打进产物 ——
+// 面试官打开 devtools 就能看到数据是从哪个第三方接口抓的。
+const modules = import.meta.glob(['./fixtures/*.json', '!./fixtures/_manifest.json'], {
+  eager: true,
+  import: 'default',
+})
 
 export const fixtures = Object.fromEntries(
   Object.entries(modules).map(([path, data]) => [

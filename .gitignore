@@ -41,3 +41,6 @@ __screenshots__/
 
 # Vite
 *.timestamp-*-*.mjs
+
+# Lighthouse 原始报告：体积大且是可再生成的产物，结论整理进 docs/performance.md
+lighthouse-report.json
