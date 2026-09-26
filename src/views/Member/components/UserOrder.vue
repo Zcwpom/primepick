@@ -1,4 +1,7 @@
 <script setup>
+import { getUserOrder } from '@/apis/order'
+import { onMounted, ref } from 'vue'
+
 // tab列表
 const tabTypes = [
   { name: "all", label: "全部订单" },
@@ -9,15 +12,67 @@ const tabTypes = [
   { name: "complete", label: "已完成" },
   { name: "cancel", label: "已取消" }
 ]
+
+// 订单状态映射
+const stateMap = {
+  all: 0,
+  unpay: 1,
+  deliver: 2,
+  receive: 3,
+  comment: 4,
+  complete: 5,
+  cancel: 6
+}
+
+// 格式化订单状态显示
+const fomartPayState = (payState) => {
+  const stateMap = {
+    1: '待付款',
+    2: '待发货',
+    3: '待收货',
+    4: '待评价',
+    5: '已完成',
+    6: '已取消'
+  }
+  return stateMap[payState]
+}
+
 // 订单列表
-const orderList = []
+const orderList = ref([])
+const total = ref(0)
+const params = ref({
+  orderState: 0,
+  page: 1,
+  pageSize: 2
+})
+
+const getOrderList = async () => {
+  const res = await getUserOrder(params.value)
+  orderList.value = res.result.items
+  total.value = res.result.counts
+}
+
+onMounted(() => getOrderList())
+
+// tab切换
+const tabChange = (type) => {
+  params.value.orderState = stateMap[type]
+  params.value.page = 1
+  getOrderList()
+}
+
+// 页数切换
+const pageChange = (page) => {
+  params.value.page = page
+  getOrderList()
+}
 </script>
 
 <template>
   <div class="order-container">
-    <el-tabs>
+    <el-tabs @tab-change="tabChange">
       <!-- tab切换 -->
-      <el-tab-pane v-for="item in tabTypes" :key="item.name" :label="item.label" />
+      <el-tab-pane v-for="item in tabTypes" :key="item.name" :label="item.label" :name="item.name" />
 
       <div class="main-container">
         <div class="holder-container" v-if="orderList.length === 0">
@@ -56,7 +111,7 @@ const orderList = []
                 </ul>
               </div>
               <div class="column state">
-                <p>{{ order.orderState }}</p>
+                <p>{{ fomartPayState(order.orderState) }}</p>
                 <p v-if="order.orderState === 3">
                   <a href="javascript:;" class="green">查看物流</a>
                 </p>
@@ -91,8 +146,14 @@ const orderList = []
             </div>
           </div>
           <!-- 分页 -->
-          <div class="pagination-container">
-            <el-pagination background layout="prev, pager, next" />
+          <div class="pagination-container" v-if="total > params.pageSize">
+            <el-pagination
+              :total="total"
+              @current-change="pageChange"
+              :page-size="params.pageSize"
+              background
+              layout="prev, pager, next"
+            />
           </div>
         </div>
       </div>

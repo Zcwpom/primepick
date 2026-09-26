@@ -45,3 +45,17 @@ export const getGoodsAPI = () => {
     url: '/home/goods'
   })
 }
+
+/**
+ * @description: 获取猜你喜欢
+ * @param {*} { limit = 4 }
+ * @return {*}
+ */
+export const getLikeListAPI = ({ limit = 4 } = {}) => {
+  return httpInstance({
+    url: '/goods/relevant',
+    params: {
+      limit
+    }
+  })
+}
