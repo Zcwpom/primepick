@@ -89,7 +89,7 @@ onMounted(() => {
                 </dl>
               </div>
               <!-- sku组件 -->
-
+               <XtxSku :goods="goods" />
               <!-- 数据组件 -->
 
               <!-- 按钮组件 -->
