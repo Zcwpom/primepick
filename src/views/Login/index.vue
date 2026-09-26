@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
 import { ref } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
@@ -42,8 +41,13 @@ const doLogin = () => {
   const { account, password } = userInfo.value
   formRef.value.validate(async (valid) => {
     if (!valid) return
-    await userStore.getUserInfo({ account, password })
-    await cartStore.mergeLocalCart()
+    try {
+      await userStore.getUserInfo({ account, password })
+      await cartStore.mergeLocalCart()
+    } catch {
+      // 失败提示已由 axios 拦截器统一给出，这里只需要中断后续流程
+      return
+    }
     ElMessage({ type: 'success', message: '登录成功' })
     const redirectUrl = route.query.redirectUrl || '/'
     router.replace(redirectUrl)
@@ -77,19 +81,13 @@ const doLogin = () => {
 
         <!-- 右侧：表单 -->
         <div class="card-right">
-          <!-- 选项卡 -->
+          <!-- 选项卡（当前仅支持账号密码登录：短信登录需要短信服务，接入前不做假入口） -->
           <div class="tab-nav">
             <span
               class="tab-item"
               :class="{ active: loginMode === 'password' }"
               @click="loginMode = 'password'"
             >密码登录</span>
-            <span class="tab-divider">|</span>
-            <span
-              class="tab-item"
-              :class="{ active: loginMode === 'sms' }"
-              @click="loginMode = 'sms'"
-            >短信登录</span>
           </div>
 
           <!-- 密码登录表单 -->
@@ -127,11 +125,6 @@ const doLogin = () => {
               </el-button>
             </el-form-item>
           </el-form>
-
-          <!-- 短信登录（占位） -->
-          <div v-show="loginMode === 'sms'" class="sms-placeholder">
-            <p>短信登录功能开发中</p>
-          </div>
 
           <!-- 底部链接 -->
           <div class="bottom-links">
@@ -190,7 +183,7 @@ const doLogin = () => {
   font-weight: 700;
   color: $xtxColor;
   letter-spacing: 4px;
-  font-family: 'Noto Serif SC', serif;
+  font-family: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', SimSun, serif;
   text-decoration: none;
 }
 
@@ -299,11 +292,6 @@ const doLogin = () => {
   }
 }
 
-.tab-divider {
-  color: #ddd;
-  font-size: 14px;
-}
-
 /* 表单 */
 .login-form {
   :deep(.el-input__wrapper) {
@@ -350,13 +338,6 @@ const doLogin = () => {
 }
 
 /* 短信登录占位 */
-.sms-placeholder {
-  padding: 40px 0;
-  text-align: center;
-  color: #999;
-  font-size: 14px;
-}
-
 /* 底部链接 */
 .bottom-links {
   display: flex;

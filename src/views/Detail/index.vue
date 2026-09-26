@@ -1,7 +1,6 @@
-<!-- eslint-disable vue/multi-word-component-names -->
  <script setup>
 import { getDetailAPI } from "@/apis/detail";
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import DetailHot from './components/DetailHot.vue'
 import { useCartStore } from '@/stores/cartStore'
@@ -26,7 +25,7 @@ const addToCart = () => {
   cartStore.addCart({
     skuId: selectedSku.value.skuId,
     count: count.value,
-    picture: goods.value.mainPictures[0],
+    picture: goods.value.mainPictures?.[0] || '',
     name: goods.value.name,
     price: selectedSku.value.price,
     nowPrice: selectedSku.value.price,
@@ -39,6 +38,20 @@ const { data: goods } = useAsyncData(async () => {
   return res.result
 }, { default: {} })
 
+/**
+ * 面包屑由 categories 推导，而不是在模板里写死 categories[0] / categories[1]。
+ * 真实接口返回的顺序是「叶子 → 父级」，而且**可能只有一级**（部分商品没有二级分类），
+ * 原来的硬下标一旦越界就会在渲染期抛 TypeError —— 整个页面内容区变成空白。
+ * 这类字段缺失在真实数据里很常见，是被 mock 的真实响应暴露出来的。
+ */
+const breadcrumbs = computed(() => {
+  const [leaf, parent] = goods.value?.categories || []
+  const items = []
+  if (parent?.id) items.push({ id: parent.id, name: parent.name, path: `/category/${parent.id}` })
+  if (leaf?.id) items.push({ id: leaf.id, name: leaf.name, path: `/subCategory/sub/${leaf.id}` })
+  return items
+})
+
 </script>
 
 <template>
@@ -48,9 +61,8 @@ const { data: goods } = useAsyncData(async () => {
       <div class="bread-container">
         <el-breadcrumb separator=">">
           <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-          <el-breadcrumb-item :to="{ path: `/category/${goods.categories[1].id}` }">{{ goods.categories[1].name }}
-          </el-breadcrumb-item>
-          <el-breadcrumb-item :to="{ path: `/subCategory/sub/${goods.categories[0].id}` }">{{ goods.categories[0].name }}
+          <el-breadcrumb-item v-for="item in breadcrumbs" :key="item.id" :to="{ path: item.path }">
+            {{ item.name }}
           </el-breadcrumb-item>
           <el-breadcrumb-item>{{ goods.name }}</el-breadcrumb-item>
         </el-breadcrumb>
@@ -61,7 +73,7 @@ const { data: goods } = useAsyncData(async () => {
           <div class="goods-info">
             <div class="media">
               <!-- 图片预览区 -->
-              <XtxImageView :imageList="goods.mainPictures" />
+              <XtxImageView :imageList="goods.mainPictures || []" />
               <!-- 统计数量 -->
               <ul class="goods-sales">
                 <li>
@@ -72,17 +84,15 @@ const { data: goods } = useAsyncData(async () => {
                 <li>
                   <p>商品评价</p>
                   <p> {{ goods.commentCount }}+ </p>
-                  <p @click="ElMessage.info('查看评价功能开发中')"><i class="iconfont icon-comment-filling"></i>查看评价</p>
                 </li>
                 <li>
                   <p>收藏人气</p>
                   <p> {{ goods.collectCount }}+ </p>
-                  <p @click="ElMessage.info('收藏功能开发中')"><i class="iconfont icon-favorite-filling"></i>收藏商品</p>
                 </li>
                 <li>
                   <p>品牌信息</p>
-                  <p> {{ goods.brand.name }} </p>
-                  <p @click="ElMessage.info('品牌主页功能开发中')"><i class="iconfont icon-dynamic-filling"></i>品牌主页</p>
+                  <!-- brand 在真实数据里可能整体缺失，直接取 .name 会让整页崩掉 -->
+                  <p> {{ goods.brand?.name || '暂无品牌' }} </p>
                 </li>
               </ul>
             </div>
@@ -105,7 +115,6 @@ const { data: goods } = useAsyncData(async () => {
                     <span>无忧退货</span>
                     <span>快速退款</span>
                     <span>免费包邮</span>
-                    <a href="javascript:;" @click="ElMessage.info('服务详情功能开发中')">了解详情</a>
                   </dd>
                 </dl>
               </div>
@@ -135,13 +144,13 @@ const { data: goods } = useAsyncData(async () => {
                 <div class="goods-detail">
                   <!-- 属性 -->
                   <ul class="attrs">
-                    <li v-for="item in goods.details.properties" :key="item.value">
+                    <li v-for="item in goods.details.properties || []" :key="item.value">
                       <span class="dt">{{ item.name }}</span>
                       <span class="dd">{{ item.value }}</span>
                     </li>
                   </ul>
                   <!-- 图片 -->
-                 <img v-for="item in goods.details.pictures" :key="item" :src="item" alt="">
+                 <img v-for="item in goods.details.pictures || []" :key="item" :src="item" alt="">
                 </div>
               </div>
             </div>
@@ -314,22 +323,6 @@ const { data: goods } = useAsyncData(async () => {
         &:nth-child(2) {
           color: $priceColor;
           margin-top: 10px;
-        }
-
-        &:last-child {
-          color: #666;
-          margin-top: 10px;
-
-          i {
-            color: $xtxColor;
-            font-size: 14px;
-            margin-right: 2px;
-          }
-
-          &:hover {
-            color: $xtxColor;
-            cursor: pointer;
-          }
         }
       }
     }
