@@ -3,11 +3,16 @@
 </script>
 
 <template>
-    <!-- 一级路由出口 -->
+     <!-- 一级路由出口 -->
     <RouterView />
+    <div class="test">测试scss
+    </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+.test {
+  color: $xtxColor;
+}
 header {
   line-height: 1.5;
   max-height: 100vh;
