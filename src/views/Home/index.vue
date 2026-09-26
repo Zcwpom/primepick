@@ -1,5 +1,18 @@
 <!-- eslint-disable vue/multi-word-component-names -->
+<script setup>
+import HomeBanner from './components/HomeBanner.vue'
+import HomeCategory from './components/HomeCategory.vue'
+import HomeHot from './components/HomeHot.vue'
+import HomeNew from './components/HomeNew.vue'
+import HomeProduct from './components/HomeProduct.vue'
+</script>
+
 <template>
-我是Home页
-<div style="height: 1300px;"></div>
+<div class="container">
+<HomeBanner />
+<HomeCategory />
+</div>
+<HomeHot />
+<HomeNew />
+<HomeProduct />
 </template>
