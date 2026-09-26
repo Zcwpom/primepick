@@ -4,9 +4,30 @@ import { getDetailAPI } from "@/apis/detail";
 import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import DetailHot from './components/DetailHot.vue'
+import { useCartStore } from '@/stores/cart'
+import { ElMessage } from 'element-plus'
 
 const route = useRoute()
 const goods = ref({})
+const cartStore = useCartStore()
+
+const selectedSku = ref({})
+const count = ref(1)
+
+const skuChange = (sku) => {
+  selectedSku.value = sku
+}
+
+const addToCart = () => {
+  if (!selectedSku.value.skuId) {
+    ElMessage.warning('请选择商品规格')
+    return
+  }
+  cartStore.addCart({
+    skuId: selectedSku.value.skuId,
+    count: count.value
+  })
+}
 
 const getGoods = async () => {
   const res = await getDetailAPI(route.params.id)
@@ -88,12 +109,15 @@ onMounted(() => {
                 </dl>
               </div>
               <!-- sku组件 -->
-               <XtxSku :goods="goods" />
+               <XtxSku :goods="goods" @change="skuChange" />
               <!-- 数据组件 -->
-
+              <div class="number-box">
+                <span class="label">数量</span>
+                <el-input-number v-model="count" :min="1" :max="selectedSku.inventory || 99" />
+              </div>
               <!-- 按钮组件 -->
               <div>
-                <el-button size="large" class="btn">
+                <el-button size="large" class="btn" @click="addToCart">
                   加入购物车
                 </el-button>
               </div>
