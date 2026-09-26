@@ -18,10 +18,15 @@ export default defineConfig([
         ...globals.browser,
       },
     },
+    rules: {
+      // 关闭单单词组件名校验
+      'vue/multi-word-component-names': 0,
+    }
   },
 
   js.configs.recommended,
   ...pluginVue.configs['flat/essential'],
 
   ...pluginOxlint.buildFromOxlintConfigFile('.oxlintrc.json'),
+
 ])
