@@ -11,6 +11,8 @@ const curAddress = ref({})
 const showDialog = ref(false)
 const addFlag = ref(false)
 const activeAddress = ref({})
+const deliveryType = ref(1)
+const payType = ref(1)
 
 const getCheckInfo = async () => {
   const res = await getCheckoutInfoAPI()
@@ -39,8 +41,8 @@ const confirmAddress = () => {
 // 创建订单
 const createOrder = async () => {
   const res = await createOrderAPI({
-    deliveryTimeType: 1,
-    payType: 1,
+    deliveryTimeType: deliveryType.value,
+    payType: payType.value,
     payChannel: 1,
     buyerMessage: '',
     goods: checkInfo.value.goods.map(item => {
@@ -99,7 +101,7 @@ const createOrder = async () => {
             <tbody>
               <tr v-for="i in checkInfo.goods" :key="i.id">
                 <td>
-                  <a href="javascript:;" class="info">
+                  <a href="javascript:;" class="info" @click="router.push('/detail/' + i.skuId)">
                     <img :src="i.picture" alt="">
                     <div class="right">
                       <p>{{ i.name }}</p>
@@ -118,15 +120,15 @@ const createOrder = async () => {
         <!-- 配送时间 -->
         <h3 class="box-title">配送时间</h3>
         <div class="box-body">
-          <a class="my-btn active" href="javascript:;">不限送货时间：周一至周日</a>
-          <a class="my-btn" href="javascript:;">工作日送货：周一至周五</a>
-          <a class="my-btn" href="javascript:;">双休日、假日送货：周六至周日</a>
+          <a class="my-btn" :class="{ active: deliveryType === 1 }" href="javascript:;" @click="deliveryType = 1">不限送货时间：周一至周日</a>
+          <a class="my-btn" :class="{ active: deliveryType === 2 }" href="javascript:;" @click="deliveryType = 2">工作日送货：周一至周五</a>
+          <a class="my-btn" :class="{ active: deliveryType === 3 }" href="javascript:;" @click="deliveryType = 3">双休日、假日送货：周六至周日</a>
         </div>
         <!-- 支付方式 -->
         <h3 class="box-title">支付方式</h3>
         <div class="box-body">
-          <a class="my-btn active" href="javascript:;">在线支付</a>
-          <a class="my-btn" href="javascript:;">货到付款</a>
+          <a class="my-btn" :class="{ active: payType === 1 }" href="javascript:;" @click="payType = 1">在线支付</a>
+          <a class="my-btn" :class="{ active: payType === 2 }" href="javascript:;" @click="payType = 2">货到付款</a>
           <span style="color:#999">货到付款需付5元手续费</span>
         </div>
         <!-- 金额明细 -->
@@ -183,6 +185,15 @@ const createOrder = async () => {
     </template>
   </el-dialog>
   <!-- 添加地址 -->
+  <el-dialog v-model="addFlag" title="添加收货地址" width="30%" center>
+    <el-empty description="添加地址功能开发中" />
+    <template #footer>
+      <span class="dialog-footer">
+        <el-button @click="addFlag = false">取消</el-button>
+        <el-button type="primary" @click="addFlag = false">确定</el-button>
+      </span>
+    </template>
+  </el-dialog>
 </template>
 
 <style scoped lang="scss">

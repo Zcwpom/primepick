@@ -27,7 +27,7 @@ const addCart = () => {
 
 <template>
   <div class="goods-item">
-    <RouterLink to="/" class="goods-link">
+    <RouterLink :to="'/detail/' + goods.id" class="goods-link">
       <img v-img-lazy="goods.picture" alt="" />
       <p class="name ellipsis">{{ goods.name }}</p>
       <p class="desc ellipsis">{{ goods.desc }}</p>

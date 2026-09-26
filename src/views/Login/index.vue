@@ -66,7 +66,7 @@ const doLogin = () => {
     <section class="login-section">
       <div class="wrapper">
         <nav>
-          <a href="javascript:;">账户登录</a>
+          <a>账户登录</a>
         </nav>
         <div class="account-box">
           <div class="form">
@@ -93,13 +93,13 @@ const doLogin = () => {
     <footer class="login-footer">
       <div class="container">
         <p>
-          <a href="javascript:;">关于我们</a>
-          <a href="javascript:;">帮助中心</a>
-          <a href="javascript:;">售后服务</a>
-          <a href="javascript:;">配送与验收</a>
-          <a href="javascript:;">商务合作</a>
-          <a href="javascript:;">搜索推荐</a>
-          <a href="javascript:;">友情链接</a>
+          <a>关于我们</a>
+          <a>帮助中心</a>
+          <a>售后服务</a>
+          <a>配送与验收</a>
+          <a>商务合作</a>
+          <a>搜索推荐</a>
+          <a>友情链接</a>
         </p>
         <p>CopyRight &copy; 小兔鲜儿</p>
       </div>

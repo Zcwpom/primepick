@@ -22,7 +22,7 @@
           <dd class="download">
             <span>扫描二维码</span>
             <span>立马下载APP</span>
-            <a href="javascript:;">下载页面</a>
+            <a>下载页面</a>
           </dd>
         </dl>
         <dl>
@@ -35,15 +35,15 @@
     <div class="extra">
       <div class="container">
         <div class="slogan">
-          <a href="javascript:;">
+          <a>
             <i class="iconfont icon-footer01"></i>
             <span>价格亲民</span>
           </a>
-          <a href="javascript:;">
+          <a>
             <i class="iconfont icon-footer02"></i>
             <span>物流快捷</span>
           </a>
-          <a href="javascript:;">
+          <a>
             <i class="iconfont icon-footer03"></i>
             <span>品质新鲜</span>
           </a>
@@ -51,13 +51,13 @@
         <!-- 版权信息 -->
         <div class="copyright">
           <p>
-            <a href="javascript:;">关于我们</a>
-            <a href="javascript:;">帮助中心</a>
-            <a href="javascript:;">售后服务</a>
-            <a href="javascript:;">配送与验收</a>
-            <a href="javascript:;">商务合作</a>
-            <a href="javascript:;">搜索推荐</a>
-            <a href="javascript:;">友情链接</a>
+            <a>关于我们</a>
+            <a>帮助中心</a>
+            <a>售后服务</a>
+            <a>配送与验收</a>
+            <a>商务合作</a>
+            <a>搜索推荐</a>
+            <a>友情链接</a>
           </p>
           <p>CopyRight © 小兔鲜儿</p>
         </div>

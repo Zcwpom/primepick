@@ -54,7 +54,7 @@ onMounted(() => {
           <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
           <el-breadcrumb-item :to="{ path: `/category/${goods.categories[1].id}` }">{{ goods.categories[1].name }}
           </el-breadcrumb-item>
-          <el-breadcrumb-item :to="{ path: `/category/sub/${goods.categories[0].id}` }">{{ goods.categories[0].name }}
+          <el-breadcrumb-item :to="{ path: `/subCategory/sub/${goods.categories[0].id}` }">{{ goods.categories[0].name }}
           </el-breadcrumb-item>
           <el-breadcrumb-item>抓绒保暖，毛毛虫子儿童运动鞋</el-breadcrumb-item>
         </el-breadcrumb>
@@ -76,17 +76,17 @@ onMounted(() => {
                 <li>
                   <p>商品评价</p>
                   <p> {{ goods.commentCount }}+ </p>
-                  <p><i class="iconfont icon-comment-filling"></i>查看评价</p>
+                  <p @click="ElMessage.info('查看评价功能开发中')"><i class="iconfont icon-comment-filling"></i>查看评价</p>
                 </li>
                 <li>
                   <p>收藏人气</p>
                   <p> {{ goods.collectCount }}+ </p>
-                  <p><i class="iconfont icon-favorite-filling"></i>收藏商品</p>
+                  <p @click="ElMessage.info('收藏功能开发中')"><i class="iconfont icon-favorite-filling"></i>收藏商品</p>
                 </li>
                 <li>
                   <p>品牌信息</p>
                   <p> {{ goods.brand.name }} </p>
-                  <p><i class="iconfont icon-dynamic-filling"></i>品牌主页</p>
+                  <p @click="ElMessage.info('品牌主页功能开发中')"><i class="iconfont icon-dynamic-filling"></i>品牌主页</p>
                 </li>
               </ul>
             </div>
@@ -109,7 +109,7 @@ onMounted(() => {
                     <span>无忧退货</span>
                     <span>快速退款</span>
                     <span>免费包邮</span>
-                    <a href="javascript:;">了解详情</a>
+                    <a href="javascript:;" @click="ElMessage.info('服务详情功能开发中')">了解详情</a>
                   </dd>
                 </dl>
               </div>
@@ -134,7 +134,7 @@ onMounted(() => {
               <!-- 商品详情 -->
               <div class="goods-tabs">
                 <nav>
-                  <a>商品详情</a>
+                  <span>商品详情</span>
                 </nav>
                 <div class="goods-detail">
                   <!-- 属性 -->
@@ -350,7 +350,7 @@ onMounted(() => {
     display: flex;
     border-bottom: 1px solid #f5f5f5;
 
-    a {
+    a, span {
       padding: 0 40px;
       font-size: 18px;
       position: relative;

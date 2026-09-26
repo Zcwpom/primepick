@@ -1,6 +1,10 @@
 <script setup>
 import { getUserOrder } from '@/apis/order'
 import { onMounted, ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { ElMessage } from 'element-plus'
+
+const router = useRouter()
 
 // tab列表
 const tabTypes = [
@@ -94,7 +98,7 @@ const pageChange = (page) => {
               <div class="column goods">
                 <ul>
                   <li v-for="item in order.skus" :key="item.id">
-                    <a class="image" href="javascript:;">
+                    <a class="image" href="javascript:;" @click="router.push('/detail/' + item.skuId)">
                       <img :src="item.image" alt="" />
                     </a>
                     <div class="info">
@@ -113,13 +117,13 @@ const pageChange = (page) => {
               <div class="column state">
                 <p>{{ fomartPayState(order.orderState) }}</p>
                 <p v-if="order.orderState === 3">
-                  <a href="javascript:;" class="green">查看物流</a>
+                  <a href="javascript:;" class="green" @click="ElMessage.info('查看物流功能开发中')">查看物流</a>
                 </p>
                 <p v-if="order.orderState === 4">
-                  <a href="javascript:;" class="green">评价商品</a>
+                  <a href="javascript:;" class="green" @click="ElMessage.info('评价功能开发中')">评价商品</a>
                 </p>
                 <p v-if="order.orderState === 5">
-                  <a href="javascript:;" class="green">查看评价</a>
+                  <a href="javascript:;" class="green" @click="ElMessage.info('查看评价功能开发中')">查看评价</a>
                 </p>
               </div>
               <div class="column amount">
@@ -128,20 +132,20 @@ const pageChange = (page) => {
                 <p>在线支付</p>
               </div>
               <div class="column action">
-                <el-button v-if="order.orderState === 1" type="primary" size="small">
+                <el-button v-if="order.orderState === 1" type="primary" size="small" @click="router.push('/pay?id=' + order.id)">
                   立即付款
                 </el-button>
-                <el-button v-if="order.orderState === 3" type="primary" size="small">
+                <el-button v-if="order.orderState === 3" type="primary" size="small" @click="ElMessage.success('已确认收货')">
                   确认收货
                 </el-button>
-                <p><a href="javascript:;">查看详情</a></p>
+                <p><a href="javascript:;" @click="router.push('/detail/' + (order.skus && order.skus[0] && order.skus[0].skuId || ''))">查看详情</a></p>
                 <p v-if="[2, 3, 4, 5].includes(order.orderState)">
-                  <a href="javascript:;">再次购买</a>
+                  <a href="javascript:;" @click="ElMessage.info('再次购买功能开发中')">再次购买</a>
                 </p>
                 <p v-if="[4, 5].includes(order.orderState)">
-                  <a href="javascript:;">申请售后</a>
+                  <a href="javascript:;" @click="ElMessage.info('售后功能开发中')">申请售后</a>
                 </p>
-                <p v-if="order.orderState === 1"><a href="javascript:;">取消订单</a></p>
+                <p v-if="order.orderState === 1"><a href="javascript:;" @click="ElMessage.info('取消订单功能开发中')">取消订单</a></p>
               </div>
             </div>
           </div>

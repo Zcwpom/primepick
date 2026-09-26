@@ -2,7 +2,10 @@
 import { onMounted, ref } from 'vue'
 import { useUserStore } from '@/stores/userStore'
 import { getLikeListAPI } from '@/apis/home'
+import { useRouter } from 'vue-router'
 import GoodsItem from '@/views/Home/components/GoodsItem.vue'
+
+const router = useRouter()
 
 const userStore = useUserStore()
 
@@ -25,18 +28,18 @@ onMounted(() => getLikeList())
       <h4>{{ userStore.userInfo?.account }}</h4>
     </div>
     <div class="item">
-      <a href="javascript:;">
+      <RouterLink to="/member">
         <span class="iconfont icon-hy"></span>
         <p>会员中心</p>
-      </a>
-      <a href="javascript:;">
+      </RouterLink>
+      <span>
         <span class="iconfont icon-aq"></span>
         <p>安全设置</p>
-      </a>
-      <a href="javascript:;">
+      </span>
+      <span>
         <span class="iconfont icon-dw"></span>
         <p>地址管理</p>
-      </a>
+      </span>
     </div>
   </div>
   <div class="like-container">
@@ -93,10 +96,11 @@ onMounted(() => getLikeList())
       border-right: 1px solid #f4f4f4;
     }
 
-    a {
+    a, span {
       color: white;
       font-size: 16px;
       text-align: center;
+      display: inline-block;
 
       .iconfont {
         font-size: 32px;

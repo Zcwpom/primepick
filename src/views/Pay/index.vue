@@ -47,16 +47,16 @@ const { formatTime, start } = useCountDown()
         <p class="head">选择以下支付方式付款</p>
         <div class="item">
           <p>支付平台</p>
-          <a class="btn wx" href="javascript:;"></a>
+          <a class="btn wx" :href="payUrl"></a>
           <a class="btn alipay" :href="payUrl"></a>
         </div>
         <div class="item">
           <p>支付方式</p>
-          <a class="btn" href="javascript:;">招商银行</a>
-          <a class="btn" href="javascript:;">工商银行</a>
-          <a class="btn" href="javascript:;">建设银行</a>
-          <a class="btn" href="javascript:;">农业银行</a>
-          <a class="btn" href="javascript:;">交通银行</a>
+          <a class="btn" href="javascript:;" @click="window.open(payUrl)">招商银行</a>
+          <a class="btn" href="javascript:;" @click="window.open(payUrl)">工商银行</a>
+          <a class="btn" href="javascript:;" @click="window.open(payUrl)">建设银行</a>
+          <a class="btn" href="javascript:;" @click="window.open(payUrl)">农业银行</a>
+          <a class="btn" href="javascript:;" @click="window.open(payUrl)">交通银行</a>
         </div>
       </div>
     </div>
