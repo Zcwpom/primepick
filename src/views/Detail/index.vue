@@ -1,14 +1,14 @@
 <!-- eslint-disable vue/multi-word-component-names -->
  <script setup>
 import { getDetailAPI } from "@/apis/detail";
-import { onMounted, ref } from 'vue'
+import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 import DetailHot from './components/DetailHot.vue'
 import { useCartStore } from '@/stores/cartStore'
 import { ElMessage } from 'element-plus'
+import { useAsyncData } from '@/composables/useAsyncData'
 
 const route = useRoute()
-const goods = ref({})
 const cartStore = useCartStore()
 
 const selectedSku = ref({})
@@ -34,14 +34,10 @@ const addToCart = () => {
   })
 }
 
-const getGoods = async () => {
+const { data: goods } = useAsyncData(async () => {
   const res = await getDetailAPI(route.params.id)
-  goods.value = res.result
-}
-
-onMounted(() => {
-  getGoods()
-})
+  return res.result
+}, { default: {} })
 
 </script>
 
@@ -56,7 +52,7 @@ onMounted(() => {
           </el-breadcrumb-item>
           <el-breadcrumb-item :to="{ path: `/subCategory/sub/${goods.categories[0].id}` }">{{ goods.categories[0].name }}
           </el-breadcrumb-item>
-          <el-breadcrumb-item>抓绒保暖，毛毛虫子儿童运动鞋</el-breadcrumb-item>
+          <el-breadcrumb-item>{{ goods.name }}</el-breadcrumb-item>
         </el-breadcrumb>
       </div>
       <!-- 商品信息 -->

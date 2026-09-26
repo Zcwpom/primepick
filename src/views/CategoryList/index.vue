@@ -1,11 +1,10 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
 import { getCategoryAPI } from '@/apis/layout'
-import { onMounted, ref } from 'vue'
-const categoryList = ref([])
-onMounted(async () => {
+import { useAsyncData } from '@/composables/useAsyncData'
+const { data: categoryList } = useAsyncData(async () => {
   const res = await getCategoryAPI()
-  categoryList.value = res.result
+  return res.result
 })
 </script>
 

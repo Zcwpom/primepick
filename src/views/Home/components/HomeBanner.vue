@@ -1,15 +1,10 @@
 <script setup>
 import { getBannerAPI } from "@/apis/home";
-import { onMounted , ref } from "vue";
+import { useAsyncData } from "@/composables/useAsyncData";
 //轮播图
-const bannerList = ref([]);
-const getBanner = async () => {
+const { data: bannerList } = useAsyncData(async () => {
   const res = await getBannerAPI();
-  bannerList.value = res.result;
-}
-
-onMounted(() => {
-  getBanner();
+  return res.result;
 })
 </script>
 
@@ -31,10 +26,13 @@ onMounted(() => {
   left: 0;
   top: 0;
   z-index: 98;
+  border-radius: 0 0 12px 12px;
+  overflow: hidden;
 
   img {
     width: 100%;
     height: 500px;
+    object-fit: cover;
   }
 }
 </style>

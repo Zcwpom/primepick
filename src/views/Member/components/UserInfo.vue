@@ -1,21 +1,17 @@
 <script setup>
-import { onMounted, ref } from 'vue'
 import { useUserStore } from '@/stores/userStore'
 import { getLikeListAPI } from '@/apis/home'
 import { useRouter } from 'vue-router'
 import GoodsItem from '@/views/Home/components/GoodsItem.vue'
+import { useAsyncData } from '@/composables/useAsyncData'
 
 const router = useRouter()
-
 const userStore = useUserStore()
 
-const likeList = ref([])
-const getLikeList = async () => {
+const { data: likeList } = useAsyncData(async () => {
   const res = await getLikeListAPI({ limit: 4 })
-  likeList.value = res.result
-}
-
-onMounted(() => getLikeList())
+  return res.result
+})
 </script>
 
 <template>

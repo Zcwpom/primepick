@@ -45,13 +45,15 @@ const addCart = () => {
 .goods-item {
       display: block;
       width: 220px;
-      padding: 20px 30px;
+      padding: 24px 24px 20px;
       text-align: center;
-      transition: all .5s;
+      transition: all .4s ease;
+      background: #fff;
+      border-radius: 8px;
 
       &:hover {
-        transform: translate3d(0, -3px, 0);
-        box-shadow: 0 3px 8px rgb(0 0 0 / 20%);
+        transform: translate3d(0, -4px, 0);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
       }
 
       .goods-link {
@@ -61,24 +63,29 @@ const addCart = () => {
       img {
         width: 160px;
         height: 160px;
+        border-radius: 4px;
       }
 
       p {
-        padding-top: 10px;
+        padding-top: 8px;
       }
 
       .name {
-        font-size: 16px;
+        font-size: 15px;
+        color: #2C2C2C;
+        font-weight: 500;
       }
 
       .desc {
-        color: #999;
-        height: 29px;
+        color: #8C8C8C;
+        height: 24px;
+        font-size: 13px;
       }
 
       .price {
         color: $priceColor;
-        font-size: 20px;
+        font-size: 18px;
+        font-weight: 600;
       }
 
       .cart {

@@ -1,8 +1,8 @@
 <script setup>
 import { getUserOrder } from '@/apis/order'
-import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
+import { usePagination } from '@/composables/usePagination'
 
 const router = useRouter()
 
@@ -41,34 +41,21 @@ const fomartPayState = (payState) => {
   return stateMap[payState]
 }
 
-// 订单列表
-const orderList = ref([])
-const total = ref(0)
-const params = ref({
-  orderState: 0,
-  page: 1,
-  pageSize: 2
-})
+const PAGE_SIZE = 2
 
-const getOrderList = async () => {
-  const res = await getUserOrder(params.value)
-  orderList.value = res.result.items
-  total.value = res.result.counts
-}
-
-onMounted(() => getOrderList())
+const { list: orderList, total, onPageChange, refresh } = usePagination(
+  (req) => getUserOrder(req),
+  { pageSize: PAGE_SIZE, defaultParams: { orderState: 0 } }
+)
 
 // tab切换
 const tabChange = (type) => {
-  params.value.orderState = stateMap[type]
-  params.value.page = 1
-  getOrderList()
+  refresh({ orderState: stateMap[type] })
 }
 
 // 页数切换
 const pageChange = (page) => {
-  params.value.page = page
-  getOrderList()
+  onPageChange(page)
 }
 </script>
 
@@ -150,11 +137,11 @@ const pageChange = (page) => {
             </div>
           </div>
           <!-- 分页 -->
-          <div class="pagination-container" v-if="total > params.pageSize">
+          <div class="pagination-container" v-if="total > PAGE_SIZE">
             <el-pagination
               :total="total"
               @current-change="pageChange"
-              :page-size="params.pageSize"
+              :page-size="PAGE_SIZE"
               background
               layout="prev, pager, next"
             />

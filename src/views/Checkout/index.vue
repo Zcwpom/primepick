@@ -4,9 +4,10 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { getCheckoutInfoAPI, createOrderAPI } from '@/apis/checkout'
 import { onMounted } from 'vue'
+import { useAsyncData } from '@/composables/useAsyncData'
+import AddressForm from '@/views/Member/components/AddressForm.vue'
 
 const router = useRouter()
-const checkInfo = ref({})
 const curAddress = ref({})
 const showDialog = ref(false)
 const addFlag = ref(false)
@@ -14,17 +15,16 @@ const activeAddress = ref({})
 const deliveryType = ref(1)
 const payType = ref(1)
 
-const getCheckInfo = async () => {
+const { data: checkInfo, execute } = useAsyncData(async () => {
   const res = await getCheckoutInfoAPI()
-  checkInfo.value = res.result
-  // 默认选中第一个地址
-  if (res.result.userAddresses && res.result.userAddresses.length > 0) {
-    curAddress.value = res.result.userAddresses[0]
-  }
-}
+  return res.result
+}, { immediate: false, default: {} })
 
-onMounted(() => {
-  getCheckInfo()
+onMounted(async () => {
+  const result = await execute()
+  if (result.userAddresses && result.userAddresses.length > 0) {
+    curAddress.value = result.userAddresses[0]
+  }
 })
 
 // 切换地址
@@ -36,6 +36,14 @@ const switchAddress = (item) => {
 const confirmAddress = () => {
   curAddress.value = activeAddress.value
   showDialog.value = false
+}
+
+// 添加地址成功后重新加载结算信息（获取新地址列表）
+const handleAddressAdded = async () => {
+  const result = await execute()
+  if (result.userAddresses && result.userAddresses.length > 0) {
+    curAddress.value = result.userAddresses[result.userAddresses.length - 1]
+  }
 }
 
 // 创建订单
@@ -185,15 +193,10 @@ const createOrder = async () => {
     </template>
   </el-dialog>
   <!-- 添加地址 -->
-  <el-dialog v-model="addFlag" title="添加收货地址" width="30%" center>
-    <el-empty description="添加地址功能开发中" />
-    <template #footer>
-      <span class="dialog-footer">
-        <el-button @click="addFlag = false">取消</el-button>
-        <el-button type="primary" @click="addFlag = false">确定</el-button>
-      </span>
-    </template>
-  </el-dialog>
+  <AddressForm
+    v-model="addFlag"
+    @success="handleAddressAdded"
+  />
 </template>
 
 <style scoped lang="scss">

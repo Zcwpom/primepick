@@ -1,10 +1,9 @@
 <script setup>
-
 </script>
 
 <template>
-     <!-- 一级路由出口 -->
-    <RouterView />
+  <!-- 一级路由出口 -->
+  <RouterView />
 </template>
 
 <style scoped lang="scss">
@@ -30,10 +29,6 @@ nav {
 
 nav a.router-link-exact-active {
   color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
 }
 
 nav a {

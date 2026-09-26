@@ -1,21 +1,17 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
 import { getOrderAPI } from '@/apis/pay'
-import { onMounted, ref } from 'vue'
+import { onMounted } from 'vue'
 import { useRoute } from 'vue-router'
+import { useAsyncData } from '@/composables/useAsyncData'
 import { useCountDown } from './composables/useCountDown'
 
 const route = useRoute()
-const payInfo = ref({})
 
-const getPayInfo = async () => {
+const { data: payInfo, execute } = useAsyncData(async () => {
   const res = await getOrderAPI(route.query.id)
-  payInfo.value = res.result
-  // 开启倒计时
-  start(res.result.countdown)
-}
-
-onMounted(() => getPayInfo())
+  return res.result
+}, { immediate: false })
 
 // 支付地址
 const baseURL = 'http://pcapi-xiaotuxian-front-devtest.itheima.net/'
@@ -25,6 +21,11 @@ const payUrl = `${baseURL}pay/aliPay?orderId=${route.query.id}&redirect=${redire
 
 // 倒计时
 const { formatTime, start } = useCountDown()
+
+onMounted(async () => {
+  const result = await execute()
+  start(result.countdown)
+})
 </script>
 
 <template>

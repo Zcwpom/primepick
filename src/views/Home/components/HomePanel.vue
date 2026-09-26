@@ -28,24 +28,30 @@ defineProps({
 <style scoped lang='scss'>
 .home-panel {
   background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
 
   .head {
-    padding: 40px 0;
+    padding: 40px 0 20px;
     display: flex;
     align-items: flex-end;
 
     h3 {
       flex: 1;
-      font-size: 32px;
-      font-weight: normal;
+      font-size: 26px;
+      font-weight: 500;
       margin-left: 6px;
       height: 35px;
       line-height: 35px;
+      color: #2C2C2C;
+      letter-spacing: 2px;
 
       small {
-        font-size: 16px;
-        color: #999;
-        margin-left: 20px;
+        font-size: 15px;
+        color: #8C8C8C;
+        margin-left: 16px;
+        font-weight: normal;
+        letter-spacing: 1px;
       }
     }
   }

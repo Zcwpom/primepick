@@ -1,17 +1,17 @@
-/* 只需要重写你需要的即可 */
-@forward 'element-plus/theme-chalk/src/common/var.scss' with ($colors: ('primary': ( // 主色
-      'base': #27ba9b,
+/* 轻奢风 Element Plus 主题 */
+@forward 'element-plus/theme-chalk/src/common/var.scss' with ($colors: ('primary': (
+      'base': #C4A46C,
     ),
-    'success': ( // 成功色
-      'base': #1dc779,
+    'success': (
+      'base': #7A9A7A,
     ),
-    'warning': ( // 警告色
-      'base': #ffb302,
+    'warning': (
+      'base': #D4A84B,
     ),
-    'danger': ( // 危险色
-      'base': #e26237,
+    'danger': (
+      'base': #C45A4A,
     ),
-    'error': ( // 错误色
-      'base': #cf4444,
+    'error': (
+      'base': #C45A4A,
     ),
   ));

@@ -1,20 +1,14 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
-import HomeBanner from './components/HomeBanner.vue'
-import HomeCategory from './components/HomeCategory.vue'
-import HomeHot from './components/HomeHot.vue'
+import HomeHero from './components/HomeHero.vue'
 import HomeNew from './components/HomeNew.vue'
+import HomeBrand from './components/HomeBrand.vue'
 import HomeProduct from './components/HomeProduct.vue'
-import HomePanel from './components/HomePanel.vue'
 </script>
 
 <template>
-<div class="container">
-<HomeBanner />
-<HomeCategory />
-</div>
-<HomeNew />
-<HomeHot />
-<HomeProduct />
-<HomePanel />
+  <HomeHero />
+  <HomeNew />
+  <HomeBrand />
+  <HomeProduct />
 </template>

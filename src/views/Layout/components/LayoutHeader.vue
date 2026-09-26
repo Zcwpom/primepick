@@ -1,54 +1,109 @@
 <script setup>
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import { useCategoryStore } from '@/stores/categoryStore'
 import { useCartStore } from '@/stores/cartStore'
+const router = useRouter()
 const categoryStore = useCategoryStore()
 const cartStore = useCartStore()
+
+const searchKeyword = ref('')
+const hoverCategory = ref(null)
+
+const doSearch = () => {
+  const kw = searchKeyword.value.trim()
+  if (!kw) return
+  router.push({ path: '/search', query: { keyword: kw } })
+}
+
+const onKeyEnter = (e) => {
+  if (e.key === 'Enter') doSearch()
+}
 </script>
 
 <template>
   <header class='app-header'>
-    <div class="container">
-      <h1 class="logo">
-        <RouterLink to="/">小兔鲜</RouterLink>
-      </h1>
-      <ul class="app-header-nav">
-        <li class="home" v-for = "item in categoryStore.categoryList" :key="item.id">
-         <RouterLink  active-class="active" :to="`/category/${item.id}`">{{ item.name }}</RouterLink>
-        </li>
-      </ul>
-      <div class="search">
-        <i class="iconfont icon-search"></i>
-        <input type="text" placeholder="搜一搜">
+    <!-- 第一行：促销信息 -->
+    <div class="header-top">
+      <div class="container">
+        <div class="promo-bar">
+          <span class="promo-item">
+            <i class="iconfont icon-icon-test"></i>
+            满99元包邮
+          </span>
+          <span class="promo-divider">|</span>
+          <span class="promo-item">
+            🔥
+            限时秒杀 每天10点开抢
+          </span>
+          <span class="promo-divider">|</span>
+          <span class="promo-item">
+            🎉
+            新人专享 首单立减20
+          </span>
+          <span class="promo-divider">|</span>
+          <span class="promo-item">
+            📱
+            下载APP领5元红包
+          </span>
+          <span class="promo-divider">|</span>
+          <span class="promo-item">
+            💰
+            会员专享价 折上9.5折
+          </span>
+          <span class="promo-divider">|</span>
+          <span class="promo-item">
+            💳
+            分期免息 3期0手续费
+          </span>
+        </div>
+        <div class="cart">
+          <a class="curr" href="javascript:;">
+            <i class="iconfont icon-cart"></i><em>{{ cartStore.allCount }}</em>
+          </a>
+          <div class="layer">
+            <div class="list">
+              <div class="item" v-for="i in cartStore.cartList" :key="i.skuId">
+                <RouterLink :to="'/detail/' + i.skuId">
+                  <img :src="i.picture" alt="" />
+                  <div class="center">
+                    <p class="name ellipsis-2">{{ i.name }}</p>
+                    <p class="attr ellipsis">{{ i.attrsText }}</p>
+                  </div>
+                  <div class="right">
+                    <p class="price">&yen;{{ i.nowPrice }}</p>
+                    <p class="count">x{{ i.count }}</p>
+                  </div>
+                </RouterLink>
+                <i class="iconfont icon-close-new" @click="cartStore.delCart(i.skuId)"></i>
+              </div>
+            </div>
+            <div class="foot">
+              <div class="total">
+                <p>共 {{ cartStore.allCount }} 件商品</p>
+                <p>&yen; {{ cartStore.allPrice.toFixed(2) }}</p>
+              </div>
+              <el-button size="large" type="primary" @click="$router.push('/cartlist')">去购物车结算</el-button>
+            </div>
+          </div>
+        </div>
       </div>
-      <!-- 头部购物车 -->
-      <div class="cart">
-        <a class="curr" href="javascript:;">
-          <i class="iconfont icon-cart"></i><em>{{ cartStore.allCount }}</em>
-        </a>
-        <div class="layer">
-          <div class="list">
-            <div class="item" v-for="i in cartStore.cartList" :key="i.skuId">
-              <RouterLink :to="'/detail/' + i.skuId">
-                <img :src="i.picture" alt="" />
-                <div class="center">
-                  <p class="name ellipsis-2">{{ i.name }}</p>
-                  <p class="attr ellipsis">{{ i.attrsText }}</p>
-                </div>
-                <div class="right">
-                  <p class="price">&yen;{{ i.nowPrice }}</p>
-                  <p class="count">x{{ i.count }}</p>
-                </div>
-              </RouterLink>
-              <i class="iconfont icon-close-new" @click="cartStore.delCart(i.skuId)"></i>
-            </div>
-          </div>
-          <div class="foot">
-            <div class="total">
-              <p>共 {{ cartStore.allCount }} 件商品</p>
-              <p>&yen; {{ cartStore.allPrice.toFixed(2) }}</p>
-            </div>
-            <el-button size="large" type="primary" @click="$router.push('/cartlist')">去购物车结算</el-button>
-          </div>
+    </div>
+    <!-- 第二行：Logo + 搜索栏 -->
+    <div class="header-bottom">
+      <div class="container">
+        <h1 class="logo">
+          <RouterLink to="/">
+            <span class="logo-main">优品购</span>
+            <span class="logo-tagline">PrimePick</span>
+          </RouterLink>
+        </h1>
+        <div class="search">
+          <el-select class="search-select" placeholder="全部" size="large">
+            <el-option label="全部" value="all" />
+          </el-select>
+          <input v-model="searchKeyword" type="text" placeholder="搜一搜" @keydown="onKeyEnter">
+          <button class="search-btn" @click="doSearch">搜索</button>
         </div>
       </div>
     </div>
@@ -58,41 +113,107 @@ const cartStore = useCartStore()
 
 <style scoped lang='scss'>
 .app-header {
-  background: #fff;
+  background: linear-gradient(180deg, #E8E0D5 0%, #fff 100%);
 
-  .container {
+  .header-top {
+    height: 36px;
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      position: relative;
+    }
+  }
+
+  .promo-bar {
     display: flex;
     align-items: center;
+    gap: 0;
+    font-size: 13px;
+    color: #666;
+  }
+
+  .promo-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+
+    i {
+      font-size: 14px;
+    }
+  }
+
+  .promo-divider {
+    color: #E0DCD7;
+    margin: 0 14px;
+    font-size: 12px;
+  }
+
+  .header-bottom {
+    padding: 12px 0;
+
+    .container {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .search {
+      flex: 1;
+      max-width: 1000px;
+    }
   }
 
   .logo {
-    width: 200px;
+    flex-shrink: 0;
 
     a {
-      display: block;
-      height: 132px;
-      width: 100%;
-      text-indent: -9999px;
-      background: url('@/assets/images/logo.png') no-repeat center 18px / contain;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 40px;
+      text-decoration: none;
+
+      .logo-main {
+        font-size: 26px;
+        font-weight: 700;
+        color: $xtxColor;
+        letter-spacing: 6px;
+        font-family: 'Noto Serif SC', serif;
+        line-height: 1.2;
+      }
+
+      .logo-tagline {
+        font-size: 12px;
+        color: #333;
+        letter-spacing: 4px;
+        line-height: 1;
+        margin-top: 2px;
+      }
     }
   }
 
   .app-header-nav {
-    width: 820px;
+    width: auto;
     display: flex;
-    padding-left: 40px;
+    padding: 0;
     position: relative;
     z-index: 998;
 
     li {
-      margin-right: 40px;
-      width: 38px;
+      margin-right: 48px;
+      width: auto;
       text-align: center;
+      position: relative;
+      padding-bottom: 16px;
 
       a {
-        font-size: 16px;
-        line-height: 32px;
-        height: 32px;
+        font-size: 15px;
+        line-height: 28px;
+        height: 28px;
         display: inline-block;
 
         &:hover {
@@ -105,25 +226,108 @@ const cartStore = useCartStore()
         color: $xtxColor;
         border-bottom: 1px solid $xtxColor;
       }
+
+      // 下拉分类面板
+      .nav-dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 999;
+        padding-top: 8px;
+        opacity: 0;
+        animation: fadeIn 0.2s ease forwards;
+      }
+
+      .dropdown-inner {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 4px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        padding: 8px 0;
+        min-width: 100px;
+      }
+
+      .dropdown-item {
+        display: block;
+        padding: 6px 20px;
+        text-decoration: none;
+        color: #555;
+        font-size: 14px;
+        text-align: left;
+        white-space: nowrap;
+        transition: all 0.15s ease;
+
+        &:hover {
+          color: $xtxColor;
+        }
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-4px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
     }
   }
 
   .search {
-    width: 170px;
-    height: 32px;
-    position: relative;
-    border-bottom: 1px solid #e7e7e7;
-    line-height: 32px;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    border: 2px solid $xtxColor;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: border-color 0.3s;
 
-    .icon-search {
-      font-size: 18px;
-      margin-left: 5px;
+    &:focus-within {
+      border-color: darken($xtxColor, 10%);
+    }
+
+    .search-select {
+      width: 80px;
+      border: none;
+      border-radius: 0;
+
+      :deep(.el-input__wrapper) {
+        background: #F8F6F3;
+        border-radius: 0;
+        box-shadow: none;
+        border-right: 1px solid #E8E4DF;
+      }
+
+      :deep(.el-input__inner) {
+        font-size: 13px;
+        color: #555;
+      }
     }
 
     input {
-      width: 140px;
-      padding-left: 5px;
-      color: #666;
+      flex: 1;
+      height: 100%;
+      border: none;
+      padding: 0 12px;
+      color: #333;
+      font-size: 14px;
+      outline: none;
+      min-width: 200px;
+
+      &::placeholder {
+        color: #bbb;
+      }
+    }
+
+    .search-btn {
+      height: 100%;
+      padding: 0 20px;
+      background: $xtxColor;
+      color: #fff;
+      border: none;
+      font-size: 15px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: background 0.3s;
+
+      &:hover {
+        background: darken($xtxColor, 10%);
+      }
     }
   }
 
@@ -131,16 +335,24 @@ const cartStore = useCartStore()
     width: 50px;
     position: relative;
     z-index: 600;
+    position: absolute;
+    right: 0;
 
     .curr {
-      height: 32px;
-      line-height: 32px;
+      height: 28px;
+      line-height: 28px;
       text-align: center;
       position: relative;
       display: block;
 
       .icon-cart {
         font-size: 22px;
+        color: #555;
+        transition: color 0.3s;
+      }
+
+      &:hover .icon-cart {
+        color: $xtxColor;
       }
 
       em {

@@ -1,18 +1,14 @@
 //获取轮播图数据相关代码
-import { ref, onMounted } from 'vue'
+import { useAsyncData } from '@/composables/useAsyncData'
 import { getBannerAPI } from '@/apis/home'
 
 export function useBanner() {
-  const bannerList = ref([])
-
-  const getBanner = async () => {
+  const { data: bannerList } = useAsyncData(async () => {
     const res = await getBannerAPI({
       distributionSite: '2'
     })
-    bannerList.value = res.result
-  }
-
-  onMounted(() => getBanner())
+    return res.result
+  })
 
   return {
     bannerList

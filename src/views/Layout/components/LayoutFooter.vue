@@ -59,7 +59,7 @@
             <a>搜索推荐</a>
             <a>友情链接</a>
           </p>
-          <p>CopyRight © 小兔鲜儿</p>
+          <p>CopyRight © PrimePick</p>
         </div>
       </div>
     </div>
@@ -69,19 +69,19 @@
 <style scoped lang='scss'>
 .app_footer {
   overflow: hidden;
-  background-color: #f5f5f5;
+  background-color: #F0EDE8;
   padding-top: 20px;
 
   .contact {
     background: #fff;
 
     .container {
-      padding: 60px 0 40px 25px;
+      padding: 50px 0 30px 25px;
       display: flex;
     }
 
     dl {
-      height: 190px;
+      height: 170px;
       text-align: center;
       padding: 0 72px;
       border-right: 1px solid #f2f2f2;
@@ -99,16 +99,19 @@
 
     dt {
       line-height: 1;
-      font-size: 18px;
+      font-size: 16px;
+      color: #555;
+      font-weight: 500;
+      letter-spacing: 1px;
     }
 
     dd {
-      margin: 36px 12px 0 0;
+      margin: 30px 12px 0 0;
       float: left;
       width: 92px;
       height: 92px;
       padding-top: 10px;
-      border: 1px solid #ededed;
+      border: 1px solid #EDE9E4;
 
       .iconfont {
         font-size: 36px;
@@ -131,7 +134,7 @@
       width: 92px;
       height: 92px;
       padding: 7px;
-      border: 1px solid #ededed;
+      border: 1px solid #EDE9E4;
     }
 
     .download {
@@ -173,57 +176,63 @@
   }
 
   .extra {
-    background-color: #333;
+    background-color: #1A1A1A;
   }
 
   .slogan {
-    height: 178px;
-    line-height: 58px;
-    padding: 60px 100px;
-    border-bottom: 1px solid #434343;
+    height: 150px;
+    line-height: 50px;
+    padding: 50px 100px;
+    border-bottom: 1px solid #333;
     display: flex;
     justify-content: space-between;
 
     a {
-      height: 58px;
-      line-height: 58px;
-      color: #fff;
-      font-size: 28px;
+      height: 50px;
+      line-height: 50px;
+      color: #E8E4DF;
+      font-size: 22px;
+      letter-spacing: 2px;
 
       i {
-        font-size: 50px;
+        font-size: 40px;
         vertical-align: middle;
         margin-right: 10px;
         font-weight: 100;
+        color: $xtxColor;
       }
 
       span {
         vertical-align: middle;
-        text-shadow: 0 0 1px #333;
       }
     }
   }
 
   .copyright {
-    height: 170px;
-    padding-top: 40px;
+    height: 140px;
+    padding-top: 35px;
     text-align: center;
-    color: #999;
-    font-size: 15px;
+    color: #888;
+    font-size: 14px;
 
     p {
       line-height: 1;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
+      letter-spacing: 0.5px;
     }
 
     a {
-      color: #999;
+      color: #888;
       line-height: 1;
-      padding: 0 10px;
-      border-right: 1px solid #999;
+      padding: 0 12px;
+      border-right: 1px solid #555;
 
       &:last-child {
         border-right: none;
+      }
+
+      &:hover {
+        color: $xtxColor;
       }
     }
   }

@@ -8,10 +8,12 @@
         <h4>我的账户</h4>
         <div class="links">
           <RouterLink to="/member/user">个人中心</RouterLink>
+          <RouterLink to="/">回到首页</RouterLink>
         </div>
         <h4>交易管理</h4>
         <div class="links">
           <RouterLink to="/member/order">我的订单</RouterLink>
+          <RouterLink to="/member/address">收货地址</RouterLink>
         </div>
       </div>
     </div>

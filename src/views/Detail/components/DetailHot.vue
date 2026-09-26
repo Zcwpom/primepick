@@ -1,10 +1,9 @@
 <script setup>
 import { getHotGoodsAPI } from "@/apis/detail";
-import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
 import { computed } from "vue";
+import { useAsyncData } from "@/composables/useAsyncData";
 
-const hotList = ref([]);
 const route = useRoute();
 // type适配不同类型热榜数据
 const props = defineProps({
@@ -19,17 +18,12 @@ const TITLEMAP = {
 }
 const title = computed(() => TITLEMAP[props.hotType])
 
-const getHotList = async () => {
+const { data: hotList } = useAsyncData(async () => {
   const res = await getHotGoodsAPI({
     id: route.params.id,
     type: props.hotType,
   });
-  hotList.value = res.result
-}
-
-
-onMounted(() => {
-  getHotList();
+  return res.result
 })
 </script>
 
@@ -47,8 +41,8 @@ onMounted(() => {
 </template>
 
 <style scoped lang="scss">
-$helpColor: #ccc;
-$priceColor: red;
+$helpColor: #FF4400;
+$priceColor: #FF4400;
 
 .goods-hot {
   h3 {

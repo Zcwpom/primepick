@@ -45,22 +45,24 @@ const confirm = () => {
 
 <style scoped lang="scss">
 .app-topnav {
-  background: #333;
+  background: #1A1A1A;
   ul {
     display: flex;
-    height: 53px;
+    height: 44px;
     justify-content: flex-end;
     align-items: center;
     li {
       a {
-        padding: 0 15px;
-        color: #cdcdcd;
+        padding: 0 16px;
+        color: #999;
         line-height: 1;
         display: inline-block;
+        font-size: 13px;
+        letter-spacing: 0.5px;
 
         i {
           font-size: 14px;
-          margin-right: 2px;
+          margin-right: 4px;
         }
 
         &:hover {
@@ -70,7 +72,7 @@ const confirm = () => {
 
       ~li {
         a {
-          border-left: 2px solid #666;
+          border-left: 1px solid #444;
         }
       }
     }

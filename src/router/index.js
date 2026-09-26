@@ -1,4 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { ElMessage } from 'element-plus'
+import { useUserStore } from '@/stores/userStore'
 
 import Layout from '@/views/Layout/index.vue'
 import Login from '@/views/Login/index.vue'
@@ -11,9 +13,11 @@ import CartList from '@/views/CartList/index.vue'
 import Checkout from '@/views/Checkout/index.vue'
 import Pay from '@/views/Pay/index.vue'
 import PayBack from '@/views/PayBack/index.vue'
+import Search from '@/views/Search/index.vue'
 import Member from '@/views/Member/index.vue'
 import MemberInfo from '@/views/Member/components/UserInfo.vue'
 import MemberOrder from '@/views/Member/components/UserOrder.vue'
+import MemberAddress from '@/views/Member/components/UserAddress.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -58,6 +62,10 @@ const router = createRouter({
           path: 'paycallback',
           component: PayBack
         },
+        {
+          path: 'search',
+          component: Search
+        },
       ]
     },
     {
@@ -75,6 +83,10 @@ const router = createRouter({
         {
           path: 'order',
           component: MemberOrder
+        },
+        {
+          path: 'address',
+          component: MemberAddress
         }
       ]
     },
@@ -87,6 +99,22 @@ const router = createRouter({
   scrollBehavior() {
     return { top: 0 }
   },
+})
+
+// 需要登录才能访问的路由白名单
+const authRoutes = ['/checkout', '/pay', '/paycallback', '/member']
+
+router.beforeEach((to, from, next) => {
+  const needAuth = authRoutes.some(url => to.path.startsWith(url))
+  if (needAuth) {
+    const userStore = useUserStore()
+    if (!userStore.userInfo?.token) {
+      ElMessage.warning('请先登录')
+      next(`/login?redirectUrl=${to.path}`)
+      return
+    }
+  }
+  next()
 })
 
 export default router

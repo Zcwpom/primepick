@@ -10,11 +10,10 @@ html {
 
 body {
   height: 100%;
-  color: #333;
+  color: #2C2C2C;
   min-width: 1240px;
-  font: 1em/1.4 'Microsoft Yahei', 'PingFang SC', 'Avenir', 'Segoe UI',
-    'Hiragino Sans GB', 'STHeiti', 'Microsoft Sans Serif', 'WenQuanYi Micro Hei',
-    sans-serif;
+  font: 1em/1.6 'PingFang SC', 'Noto Serif SC', 'Microsoft Yahei', 'Avenir',
+    'Segoe UI', sans-serif;
 }
 
 body,
@@ -65,7 +64,7 @@ ul {
 }
 
 #app {
-  background: #f5f5f5;
+  background: #F8F6F3;
   user-select: none;
 }
 
