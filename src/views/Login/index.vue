@@ -4,9 +4,10 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
 import 'element-plus/theme-chalk/el-message.css'
-import { loginAPI } from '@/apis/user'
+import { useUserStore } from '@/stores/user'
 
 const router = useRouter()
+const userStore = useUserStore()
 
 const formRef = ref(null)
 
@@ -37,13 +38,9 @@ const doLogin = () => {
   const { account, password } = userInfo.value
   formRef.value.validate(async (valid) => {
     if (!valid) return
-    try {
-      await loginAPI({ account, password })
-      ElMessage({ type: 'success', message: '登录成功' })
-      router.replace({ path: '/' })
-    } catch (e) {
-      ElMessage({ type: 'error', message: e.response?.data?.message || '登录失败' })
-    }
+    await userStore.getUserInfo({ account, password })
+    ElMessage({ type: 'success', message: '登录成功' })
+    router.replace({ path: '/' })
   })
 }
 </script>
