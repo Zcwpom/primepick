@@ -7,11 +7,12 @@ import router from './router'
 //引入初始样式
 import './styles/common.scss'
 import { lazyPlugin } from '@/directives'
+import { componentPlugin } from '@/components'
 
 const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
-
+app.use(componentPlugin)
 app.mount('#app')
 app.use(lazyPlugin)
