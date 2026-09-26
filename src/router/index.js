@@ -2,22 +2,12 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { ElMessage } from 'element-plus'
 import { useUserStore } from '@/stores/userStore'
 
+// Layout 是所有页面的外壳，首屏必然渲染，保持同步引入；
+// 其余页面全部路由级懒加载（动态 import），让构建工具按路由拆包，
+// 避免所有页面被塞进同一个首屏 chunk。
 import Layout from '@/views/Layout/index.vue'
-import Login from '@/views/Login/index.vue'
-import Home from '@/views/Home/index.vue'
-import Category from '@/views/Category/index.vue'
-import CategoryList from '@/views/CategoryList/index.vue'
-import SubCategory from '@/views/SubCategory/index.vue'
-import Detail from '@/views/Detail/index.vue'
-import CartList from '@/views/CartList/index.vue'
-import Checkout from '@/views/Checkout/index.vue'
-import Pay from '@/views/Pay/index.vue'
-import PayBack from '@/views/PayBack/index.vue'
-import Search from '@/views/Search/index.vue'
-import Member from '@/views/Member/index.vue'
-import MemberInfo from '@/views/Member/components/UserInfo.vue'
-import MemberOrder from '@/views/Member/components/UserOrder.vue'
-import MemberAddress from '@/views/Member/components/UserAddress.vue'
+
+const APP_NAME = '优品购 PrimePick'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -28,93 +18,138 @@ const router = createRouter({
       children: [
         {
           path: '',
-          component: Home,
+          name: 'home',
+          component: () => import('@/views/Home/index.vue'),
+          meta: { title: '首页' },
         },
         {
           path: 'category',
-          component: CategoryList,
+          name: 'category-list',
+          component: () => import('@/views/CategoryList/index.vue'),
+          meta: { title: '全部分类' },
         },
         {
           path: 'category/:id',
-          component: Category,
+          name: 'category',
+          component: () => import('@/views/Category/index.vue'),
+          meta: { title: '分类商品' },
         },
         {
           path: 'subCategory/sub/:id',
-          component: SubCategory,
+          name: 'sub-category',
+          component: () => import('@/views/SubCategory/index.vue'),
+          meta: { title: '商品筛选' },
         },
         {
           path: 'detail/:id',
-          component: Detail,
+          name: 'detail',
+          component: () => import('@/views/Detail/index.vue'),
+          meta: { title: '商品详情' },
         },
         {
           path: 'cartlist',
-          component: CartList
+          name: 'cart-list',
+          component: () => import('@/views/CartList/index.vue'),
+          meta: { title: '购物车' },
         },
         {
           path: 'checkout',
-          component: Checkout
+          name: 'checkout',
+          component: () => import('@/views/Checkout/index.vue'),
+          meta: { title: '订单结算', requiresAuth: true },
         },
         {
           path: 'pay',
-          component: Pay
+          name: 'pay',
+          component: () => import('@/views/Pay/index.vue'),
+          meta: { title: '订单支付', requiresAuth: true },
         },
         {
           path: 'paycallback',
-          component: PayBack
+          name: 'pay-callback',
+          component: () => import('@/views/PayBack/index.vue'),
+          meta: { title: '支付结果', requiresAuth: true },
         },
         {
           path: 'search',
-          component: Search
+          name: 'search',
+          component: () => import('@/views/Search/index.vue'),
+          meta: { title: '商品搜索' },
         },
-      ]
+        // 兜底路由：未匹配的地址渲染 404 页面，而不是白屏
+        {
+          path: ':pathMatch(.*)*',
+          name: 'not-found',
+          component: () => import('@/views/NotFound/index.vue'),
+          meta: { title: '页面不存在' },
+        },
+      ],
     },
     {
       path: '/member',
-      component: Member,
+      // 父路由声明 requiresAuth，子路由通过 to.matched 自动继承，无需逐条重复
+      component: () => import('@/views/Member/index.vue'),
+      meta: { requiresAuth: true },
       children: [
         {
           path: '',
-          component: MemberInfo
+          name: 'member-info',
+          component: () => import('@/views/Member/components/UserInfo.vue'),
+          meta: { title: '会员中心' },
         },
         {
           path: 'user',
-          redirect: '/member'
+          redirect: '/member',
         },
         {
           path: 'order',
-          component: MemberOrder
+          name: 'member-order',
+          component: () => import('@/views/Member/components/UserOrder.vue'),
+          meta: { title: '我的订单' },
         },
         {
           path: 'address',
-          component: MemberAddress
-        }
-      ]
+          name: 'member-address',
+          component: () => import('@/views/Member/components/UserAddress.vue'),
+          meta: { title: '收货地址' },
+        },
+      ],
     },
     {
       path: '/login',
-      component: Login,
-    }
+      name: 'login',
+      component: () => import('@/views/Login/index.vue'),
+      meta: { title: '登录' },
+    },
   ],
-  //路由滚动行为定制
-  scrollBehavior() {
+
+  // 路由滚动行为定制
+  scrollBehavior(to, from, savedPosition) {
+    // 浏览器前进/后退时恢复原滚动位置，其余情况回到顶部
+    if (savedPosition) return savedPosition
+    if (to.hash) return { el: to.hash, behavior: 'smooth' }
     return { top: 0 }
   },
 })
 
-// 需要登录才能访问的路由白名单
-const authRoutes = ['/checkout', '/pay', '/paycallback', '/member']
+// 需要登录的路由在 meta 里声明 requiresAuth。
+// 相比维护一份手写的路径白名单，这样新增页面不会漏配，
+// 且父路由的 meta 会被子路由自动继承（to.matched 包含所有匹配到的层级）。
+router.beforeEach((to) => {
+  const needAuth = to.matched.some((record) => record.meta.requiresAuth)
+  if (!needAuth) return
 
-router.beforeEach((to, from, next) => {
-  const needAuth = authRoutes.some(url => to.path.startsWith(url))
-  if (needAuth) {
-    const userStore = useUserStore()
-    if (!userStore.userInfo?.token) {
-      ElMessage.warning('请先登录')
-      next(`/login?redirectUrl=${to.path}`)
-      return
-    }
+  const userStore = useUserStore()
+  if (!userStore.userInfo?.token) {
+    ElMessage.warning('请先登录')
+    // 用 fullPath 而不是 path，登录后能带着 query / hash 回到原页面
+    return { path: '/login', query: { redirectUrl: to.fullPath } }
   }
-  next()
+})
+
+// 根据路由 meta 同步文档标题，配合 index.html 的默认标题使用
+router.afterEach((to) => {
+  document.title = to.meta.title ? `${to.meta.title} · ${APP_NAME}` : APP_NAME
 })
 
 export default router
