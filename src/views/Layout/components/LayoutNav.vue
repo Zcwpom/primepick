@@ -5,6 +5,12 @@ import { useUserStore } from '@/stores/user'
 const router = useRouter()
 const userStore = useUserStore()
 
+const confirm = () => {
+  // 1. 清除用户信息
+  userStore.clearUserInfo()
+  // 2. 跳转到登录页
+  router.push('/login')
+}
 </script>
 
 <template>
@@ -14,7 +20,7 @@ const userStore = useUserStore()
         <template v-if="userStore.userInfo.token">
           <li><a href="javascript:;"><i class="iconfont icon-user"></i>{{ userStore.userInfo.account }}</a></li>
           <li>
-            <el-popconfirm title="确认退出吗?" confirm-button-text="确认" cancel-button-text="取消">
+            <el-popconfirm title="确认退出吗?" confirm-button-text="确认" cancel-button-text="取消" @confirm="confirm">
               <template #reference>
                 <a href="javascript:;">退出登录</a>
               </template>
