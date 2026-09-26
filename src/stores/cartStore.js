@@ -18,10 +18,10 @@ export const useCartStore = defineStore('cart', () => {
     if (isLogin.value) {
       // 登录之后的加入购物车逻辑
       await insertCartAPI({ skuId, count })
-      updateNewList()
+      fetchCartList()
     } else {
       // 未登录
-      const item = cartList.value.find((item) => goods.skuId === item.skuId)
+      const item = cartList.value.find((cartItem) => goods.skuId === cartItem.skuId)
       if (item) {
         item.count++
       } else {
@@ -29,8 +29,8 @@ export const useCartStore = defineStore('cart', () => {
       }
     }
   }
-  // 获取最新购物车列表
-  const updateNewList = async () => {
+  // 获取最新购物车列表（对外暴露：登录态恢复后需要主动同步一次）
+  const fetchCartList = async () => {
     const res = await getCartListAPI()
     cartList.value = res.result
   }
@@ -38,7 +38,7 @@ export const useCartStore = defineStore('cart', () => {
   const delCart = async (skuId) => {
     if (isLogin.value) {
       await delCartAPI([skuId])
-      updateNewList()
+      fetchCartList()
     } else {
       const idx = cartList.value.findIndex((item) => skuId === item.skuId)
       cartList.value.splice(idx, 1)
@@ -56,14 +56,18 @@ export const useCartStore = defineStore('cart', () => {
       count: item.count
     }))
     if (localCart.length > 0) {
-      await mergeCartAPI(localCart)
+      try {
+        await mergeCartAPI(localCart)
+      } catch {
+        // 忽略合并失败，清理本地购物车继续登录
+      }
     }
     cartList.value = []
-    await updateNewList()
+    await fetchCartList()
   }
   // 单选功能
   const singleCheck = (skuId, selected) => {
-    const item = cartList.value.find((item) => item.skuId === skuId)
+    const item = cartList.value.find((cartItem) => cartItem.skuId === skuId)
     item.selected = selected
   }
   // 全选功能
@@ -82,6 +86,7 @@ export const useCartStore = defineStore('cart', () => {
   const selectedPrice = computed(() => cartList.value.filter(item => item.selected).reduce((a, c) => a + c.count * c.nowPrice, 0))
   return {
     cartList,
+    fetchCartList,
     addCart,
     delCart,
     clearCart,
