@@ -1,8 +1,8 @@
-<!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { getCheckoutInfoAPI, createOrderAPI } from '@/apis/checkout'
+import { EVENTS, track } from '@/utils/analytics'
 import { onMounted } from 'vue'
 import { useAsyncData } from '@/composables/useAsyncData'
 import AddressForm from '@/views/Member/components/AddressForm.vue'
@@ -62,6 +62,12 @@ const createOrder = async () => {
     addressId: curAddress.value.id
   })
   const orderId = res.result.id
+  // 支付漏斗的第一步：创建订单（pay_submitted / pay_confirmed 在支付页记录）
+  track(EVENTS.ORDER_CREATED, {
+    orderId,
+    amount: checkInfo.value.summary?.totalPayPrice,
+    goodsCount: checkInfo.value.summary?.goodsCount,
+  })
   router.push({
     path: '/pay',
     query: {
@@ -401,7 +407,7 @@ const createOrder = async () => {
     &.active,
     &:hover {
       border-color: $xtxColor;
-      background: lighten($xtxColor, 50%);
+      background: color.adjust($xtxColor, $lightness: 50%);
     }
 
     >ul {

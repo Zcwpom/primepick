@@ -1,10 +1,23 @@
 <script setup>
-import { getUserOrder } from '@/apis/order'
+import { onMounted, onUnmounted, ref } from 'vue'
+import { cancelOrderAPI, getUserOrder, receiveOrderAPI } from '@/apis/order'
 import { useRouter } from 'vue-router'
-import { ElMessage } from 'element-plus'
+import { ElMessage, ElMessageBox } from 'element-plus'
 import { usePagination } from '@/composables/usePagination'
+import { formatCountdown } from '@/composables/useCountDown'
+import { canCancel, canReceive, isUnpaid, orderStateText } from '@/domain/order-state'
+import { EVENTS, track } from '@/utils/analytics'
+import { notifyOrderChanged, onOrderChanged } from '@/utils/crossTab'
 
 const router = useRouter()
+
+// 「付款截止」倒计时：整张列表共用一个每秒 tick，
+// 而不是每个订单行各开一个定时器（N 个订单 = N 个 interval）
+const now = ref(Date.now())
+const tickTimer = setInterval(() => {
+  now.value = Date.now()
+}, 1000)
+onUnmounted(() => clearInterval(tickTimer))
 
 // tab列表
 const tabTypes = [
@@ -17,8 +30,8 @@ const tabTypes = [
   { name: "cancel", label: "已取消" }
 ]
 
-// 订单状态映射
-const stateMap = {
+// tab 名称 → 订单状态码
+const orderStateMap = {
   all: 0,
   unpay: 1,
   deliver: 2,
@@ -28,18 +41,8 @@ const stateMap = {
   cancel: 6
 }
 
-// 格式化订单状态显示
-const fomartPayState = (payState) => {
-  const stateMap = {
-    1: '待付款',
-    2: '待发货',
-    3: '待收货',
-    4: '待评价',
-    5: '已完成',
-    6: '已取消'
-  }
-  return stateMap[payState]
-}
+// 订单状态文案与「能做哪些操作」都来自 domain/order-state.js，
+// 这里原先还有一份重复的状态文案映射表，已删除
 
 const PAGE_SIZE = 2
 
@@ -48,9 +51,65 @@ const { list: orderList, total, onPageChange, refresh } = usePagination(
   { pageSize: PAGE_SIZE, defaultParams: { orderState: 0 } }
 )
 
+/**
+ * 正在处理中的操作：key 为 `${订单id}:${动作}`。
+ * 用来做**幂等保护** —— 用户连点两下「取消订单」只会发出一次请求，
+ * 否则会产生两次状态变更（真实后端可能因此报错或生成重复流水）。
+ */
+// 其它标签页支付成功 / 取消订单后，本页的订单列表也要刷新
+let offOrderChanged = null
+onMounted(() => {
+  offOrderChanged = onOrderChanged(() => refresh())
+})
+onUnmounted(() => offOrderChanged?.())
+
+const acting = ref({})
+const isActing = (id, action) => Boolean(acting.value[`${id}:${action}`])
+
+async function runAction(id, action, task) {
+  const key = `${id}:${action}`
+  if (acting.value[key]) return
+  acting.value[key] = true
+  try {
+    await task()
+  } catch {
+    // 用户点了弹窗取消，或接口失败（失败提示已由 axios 拦截器统一给出）
+  } finally {
+    delete acting.value[key]
+  }
+}
+
+/** 取消订单：不可逆操作，先二次确认 */
+const cancelOrder = (order) => runAction(order.id, 'cancel', async () => {
+  await ElMessageBox.confirm('取消后订单不可恢复，确定取消这笔订单吗？', '取消订单', {
+    confirmButtonText: '确定取消',
+    cancelButtonText: '再想想',
+    type: 'warning',
+  })
+  await cancelOrderAPI(order.id)
+  track(EVENTS.ORDER_CANCELLED, { orderId: order.id })
+  notifyOrderChanged({ orderId: order.id }) // 其它标签页的订单列表同样要刷新
+  ElMessage.success('订单已取消')
+  await refresh()
+})
+
+/** 确认收货：会把订单推进到「待评价」 */
+const confirmReceive = (order) => runAction(order.id, 'receive', async () => {
+  await ElMessageBox.confirm('请确认已收到全部商品，确认后订单交易完成。', '确认收货', {
+    confirmButtonText: '确认收货',
+    cancelButtonText: '还没收到',
+    type: 'info',
+  })
+  await receiveOrderAPI(order.id)
+  track(EVENTS.ORDER_RECEIVED, { orderId: order.id })
+  notifyOrderChanged({ orderId: order.id })
+  ElMessage.success('已确认收货')
+  await refresh()
+})
+
 // tab切换
 const tabChange = (type) => {
-  refresh({ orderState: stateMap[type] })
+  refresh({ orderState: orderStateMap[type] })
 }
 
 // 页数切换
@@ -75,17 +134,17 @@ const pageChange = (page) => {
             <div class="head">
               <span>下单时间：{{ order.createTime }}</span>
               <span>订单编号：{{ order.id }}</span>
-              <!-- 未付款，倒计时时间还有 -->
+              <!-- 未付款，显示距离支付截止还剩多久（原来直接渲染接口返回的秒数，页面会显示「付款截止: -1」） -->
               <span class="down-time" v-if="order.orderState === 1">
                 <i class="iconfont icon-down-time"></i>
-                <b>付款截止: {{order.countdown}}</b>
+                <b>付款截止: {{ formatCountdown(order.payLatestTime, now) }}</b>
               </span>
             </div>
             <div class="body">
               <div class="column goods">
                 <ul>
                   <li v-for="item in order.skus" :key="item.id">
-                    <a class="image" href="javascript:;" @click="router.push('/detail/' + item.skuId)">
+                    <a class="image" href="javascript:;" @click="router.push('/detail/' + item.spuId)">
                       <img :src="item.image" alt="" />
                     </a>
                     <div class="info">
@@ -101,17 +160,10 @@ const pageChange = (page) => {
                   </li>
                 </ul>
               </div>
+              <!-- 只展示状态本身：物流 / 评价 / 售后都需要后端支撑，
+                   在接口就绪之前不做「点了只弹提示」的假入口 -->
               <div class="column state">
-                <p>{{ fomartPayState(order.orderState) }}</p>
-                <p v-if="order.orderState === 3">
-                  <a href="javascript:;" class="green" @click="ElMessage.info('查看物流功能开发中')">查看物流</a>
-                </p>
-                <p v-if="order.orderState === 4">
-                  <a href="javascript:;" class="green" @click="ElMessage.info('评价功能开发中')">评价商品</a>
-                </p>
-                <p v-if="order.orderState === 5">
-                  <a href="javascript:;" class="green" @click="ElMessage.info('查看评价功能开发中')">查看评价</a>
-                </p>
+                <p>{{ orderStateText(order) }}</p>
               </div>
               <div class="column amount">
                 <p class="red">¥{{ order.payMoney?.toFixed(2) }}</p>
@@ -119,20 +171,24 @@ const pageChange = (page) => {
                 <p>在线支付</p>
               </div>
               <div class="column action">
-                <el-button v-if="order.orderState === 1" type="primary" size="small" @click="router.push('/pay?id=' + order.id)">
+                <el-button v-if="isUnpaid(order)" type="primary" size="small" @click="router.push('/pay?id=' + order.id)">
                   立即付款
                 </el-button>
-                <el-button v-if="order.orderState === 3" type="primary" size="small" @click="ElMessage.success('已确认收货')">
+                <el-button
+                  v-if="canReceive(order)"
+                  type="primary"
+                  size="small"
+                  :loading="isActing(order.id, 'receive')"
+                  @click="confirmReceive(order)"
+                >
                   确认收货
                 </el-button>
-                <p><a href="javascript:;" @click="router.push('/detail/' + (order.skus && order.skus[0] && order.skus[0].skuId || ''))">查看详情</a></p>
-                <p v-if="[2, 3, 4, 5].includes(order.orderState)">
-                  <a href="javascript:;" @click="ElMessage.info('再次购买功能开发中')">再次购买</a>
+                <p>
+                  <a href="javascript:;" @click="router.push('/detail/' + (order.skus?.[0]?.spuId || ''))">查看详情</a>
                 </p>
-                <p v-if="[4, 5].includes(order.orderState)">
-                  <a href="javascript:;" @click="ElMessage.info('售后功能开发中')">申请售后</a>
+                <p v-if="canCancel(order)">
+                  <a href="javascript:;" @click="cancelOrder(order)">取消订单</a>
                 </p>
-                <p v-if="order.orderState === 1"><a href="javascript:;" @click="ElMessage.info('取消订单功能开发中')">取消订单</a></p>
               </div>
             </div>
           </div>
