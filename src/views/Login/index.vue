@@ -1,6 +1,14 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { ElMessage } from 'element-plus'
+import 'element-plus/theme-chalk/el-message.css'
+import { loginAPI } from '@/apis/user'
+
+const router = useRouter()
+
+const formRef = ref(null)
 
 const userInfo = ref({
   account: '1311111111',
@@ -23,6 +31,20 @@ const rules = {
       }
     }
   ]
+}
+
+const doLogin = () => {
+  const { account, password } = userInfo.value
+  formRef.value.validate(async (valid) => {
+    if (!valid) return
+    try {
+      await loginAPI({ account, password })
+      ElMessage({ type: 'success', message: '登录成功' })
+      router.replace({ path: '/' })
+    } catch (e) {
+      ElMessage({ type: 'error', message: e.response?.data?.message || '登录失败' })
+    }
+  })
 }
 </script>
 
@@ -61,7 +83,7 @@ const rules = {
                   我已同意隐私条款和服务条款
                 </el-checkbox>
               </el-form-item>
-              <el-button size="large" class="subBtn">点击登录</el-button>
+              <el-button size="large" class="subBtn" @click="doLogin">点击登录</el-button>
             </el-form>
           </div>
         </div>
