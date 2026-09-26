@@ -1,8 +1,12 @@
 import { http } from 'msw'
 import { apiPath, fixture, jsonFail, jsonOk, mockDelay } from '../utils'
 
-/** 登录：README 里公开的本地演示账号 */
-const MOCK_ACCOUNT = { account: 'xiaotuxian001', password: '123456' }
+/**
+ * 本地演示账号（README 里公开）。
+ * 必须与登录页预填值（src/views/Login/index.vue 的 DEMO_ACCOUNT）保持一致 ——
+ * 冒烟脚本里有一条断言专门盯着这对凭据能不能真的登上。
+ */
+const MOCK_ACCOUNT = { account: 'demo', password: '123456' }
 
 export const userHandlers = [
   http.post(apiPath('/login'), async ({ request }) => {

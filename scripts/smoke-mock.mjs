@@ -169,11 +169,33 @@ async function main() {
     // 上一轮就是这里漏检：mock 生成的订单项字段名写错（realPrice ≠ realPay），
     // 首页冒烟完全覆盖不到，直到截图才发现订单列表金额是空的。
     // 现在把「下单 → 支付页 → 点击支付 → 结果页 → 订单状态」整条链路纳入断言。
+    // ---------- 演示账号 ----------
+    // README / 登录页预填 / mock 校验 三处的凭据必须一致，
+    // 否则面试官按 README 输入却登不进去 —— 这种低级失配值得一条断言盯着。
+    console.log('\n  演示账号：')
+    const loginOk = await apiCall(client, '/api/login', {
+      method: 'POST',
+      body: { account: 'demo', password: '123456' },
+    })
+    checks.push({
+      name: `演示账号 demo 可以登录（${loginOk.body?.result?.token ? '已签发 token' : '未签发 token'}）`,
+      pass: Number(loginOk.body?.code) === 1 && Boolean(loginOk.body?.result?.token),
+    })
+
+    const loginBad = await apiCall(client, '/api/login', {
+      method: 'POST',
+      body: { account: 'demo', password: 'wrong-password' },
+    })
+    checks.push({
+      name: `错误密码被拒绝（HTTP ${loginBad.status}）`,
+      pass: loginBad.status >= 400 || Number(loginBad.body?.code) !== 1,
+    })
+
     console.log('\n  支付链路：')
     await evaluate(
       client,
       `localStorage.setItem('user', ${JSON.stringify(JSON.stringify({
-        userInfo: { token: 'mock-token-smoke', account: 'xiaotuxian001', nickname: 'smoke', avatar: '' },
+        userInfo: { token: 'mock-token-smoke', account: 'demo', nickname: 'smoke', avatar: '' },
       }))})`,
     )
 

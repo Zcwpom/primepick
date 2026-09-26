@@ -207,12 +207,14 @@ docker run -p 8080:80 primepick
 
 `nginx.conf` 包含 SPA 回退、`/assets` 一年强缓存（文件名带内容 hash）、`index.html` 不缓存、gzip 与基础安全响应头。
 
-## 本地测试账号
+## 本地演示账号
 
 ```
-账号：xiaotuxian001
+账号：demo
 密码：123456
 ```
+
+登录页已预填这组凭据，直接点「登录」即可进入会员中心。
 
 ## 已知限制与迭代计划
 

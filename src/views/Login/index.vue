@@ -14,9 +14,12 @@ const cartStore = useCartStore()
 const formRef = ref(null)
 const loginMode = ref('password') // password | sms
 
+// 本地演示账号：与 mocks/handlers/user.js 的 MOCK_ACCOUNT 保持一致（README 里公开）。
+// 抽成常量是为了避免「登录页预填一个账号、mock 校验另一个账号」这种对不上的情况。
+const DEMO_ACCOUNT = { account: 'demo', password: '123456' }
+
 const userInfo = ref({
-  account: 'xiaotuxian001',
-  password: '123456',
+  ...DEMO_ACCOUNT,
   agree: true
 })
 
