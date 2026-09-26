@@ -9,7 +9,7 @@
       {
         "id": "1005999003",
         "name": "居家生活用品",
-        "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-22/7f6a7b20-7902-4b43-b9c5-f33151ef1334.jpg",
+        "picture": "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-22/7f6a7b20-7902-4b43-b9c5-f33151ef1334.jpg",
         "parentId": null,
         "parentName": null,
         "goods": [
@@ -18,7 +18,7 @@
             "name": "钻石陶瓷涂层多用锅18cm 小奶锅",
             "desc": "安全耐用，易于清洗",
             "price": "149.00",
-            "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/6fdcac19-dd44-442c-9212-f7ec3cf3ed18.jpg",
+            "picture": "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/6fdcac19-dd44-442c-9212-f7ec3cf3ed18.jpg",
             "orderNum": 310
           },
           {
@@ -26,7 +26,7 @@
             "name": "极光限定 珠光蓝珐琅锅",
             "desc": null,
             "price": "199.00",
-            "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/7f483771-6831-4a7a-abdb-2625acb755f3.png",
+            "picture": "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/7f483771-6831-4a7a-abdb-2625acb755f3.png",
             "orderNum": 234
           }
         ],

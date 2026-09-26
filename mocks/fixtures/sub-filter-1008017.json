@@ -122,8 +122,8 @@
         "id": "1",
         "name": "咏汉定制",
         "nameEn": "yh",
-        "logo": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-22/fdbc5113-dcca-4b7f-b1d6-c51faf8e3de9.jpg",
-        "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-22/fdbc5113-dcca-4b7f-b1d6-c51faf8e3de9.jpg",
+        "logo": "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-22/fdbc5113-dcca-4b7f-b1d6-c51faf8e3de9.jpg",
+        "picture": "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-22/fdbc5113-dcca-4b7f-b1d6-c51faf8e3de9.jpg",
         "type": null,
         "desc": "优秀的品牌，优秀的传扬",
         "place": "中国江苏传智"

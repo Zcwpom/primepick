@@ -17,11 +17,11 @@
     "mainVideos": [],
     "videoScale": null,
     "mainPictures": [
-      "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/6fdcac19-dd44-442c-9212-f7ec3cf3ed18.jpg",
-      "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/45fd1372-05d2-4ff8-8669-79463a1e589f.jpg",
-      "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/e5a9f569-accc-4006-9064-2180e7f2b691.jpg",
-      "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/81119a14-5311-4011-af4a-273894375c74.jpg",
-      "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/dafec715-761b-438b-afc8-1e3f55bf3c1c.png"
+      "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/6fdcac19-dd44-442c-9212-f7ec3cf3ed18.jpg",
+      "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/45fd1372-05d2-4ff8-8669-79463a1e589f.jpg",
+      "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/e5a9f569-accc-4006-9064-2180e7f2b691.jpg",
+      "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/81119a14-5311-4011-af4a-273894375c74.jpg",
+      "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/dafec715-761b-438b-afc8-1e3f55bf3c1c.png"
     ],
     "specs": [
       {
@@ -30,12 +30,12 @@
         "values": [
           {
             "name": "黑色",
-            "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/cd6c46b6-b944-4479-b547-cdee294568a1.png",
+            "picture": "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/cd6c46b6-b944-4479-b547-cdee294568a1.png",
             "desc": ""
           },
           {
             "name": "蓝色",
-            "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/2d5ba800-1868-48c8-9213-1a5f8965a05b.png",
+            "picture": "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/2d5ba800-1868-48c8-9213-1a5f8965a05b.png",
             "desc": ""
           }
         ]
@@ -85,7 +85,7 @@
         "price": "128.00",
         "oldPrice": "200.00",
         "inventory": 0,
-        "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/2d5ba800-1868-48c8-9213-1a5f8965a05b.png",
+        "picture": "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/2d5ba800-1868-48c8-9213-1a5f8965a05b.png",
         "specs": [
           {
             "name": "颜色",
@@ -107,7 +107,7 @@
         "price": "128.00",
         "oldPrice": "200.00",
         "inventory": 99654,
-        "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/cd6c46b6-b944-4479-b547-cdee294568a1.png",
+        "picture": "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/cd6c46b6-b944-4479-b547-cdee294568a1.png",
         "specs": [
           {
             "name": "颜色",
@@ -129,7 +129,7 @@
         "price": "128.00",
         "oldPrice": "200.00",
         "inventory": 99706,
-        "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/2d5ba800-1868-48c8-9213-1a5f8965a05b.png",
+        "picture": "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/2d5ba800-1868-48c8-9213-1a5f8965a05b.png",
         "specs": [
           {
             "name": "颜色",
@@ -151,7 +151,7 @@
         "price": "128.00",
         "oldPrice": "200.00",
         "inventory": 99926,
-        "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/cd6c46b6-b944-4479-b547-cdee294568a1.png",
+        "picture": "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/cd6c46b6-b944-4479-b547-cdee294568a1.png",
         "specs": [
           {
             "name": "颜色",
@@ -173,7 +173,7 @@
         "price": "128.00",
         "oldPrice": "210.00",
         "inventory": 99797,
-        "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/2d5ba800-1868-48c8-9213-1a5f8965a05b.png",
+        "picture": "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/2d5ba800-1868-48c8-9213-1a5f8965a05b.png",
         "specs": [
           {
             "name": "颜色",
@@ -195,7 +195,7 @@
         "price": "128.00",
         "oldPrice": "200.00",
         "inventory": 99843,
-        "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/cd6c46b6-b944-4479-b547-cdee294568a1.png",
+        "picture": "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/cd6c46b6-b944-4479-b547-cdee294568a1.png",
         "specs": [
           {
             "name": "颜色",
@@ -217,7 +217,7 @@
         "price": "128.00",
         "oldPrice": "200.00",
         "inventory": 99429,
-        "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/2d5ba800-1868-48c8-9213-1a5f8965a05b.png",
+        "picture": "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/2d5ba800-1868-48c8-9213-1a5f8965a05b.png",
         "specs": [
           {
             "name": "颜色",
@@ -239,7 +239,7 @@
         "price": "128.00",
         "oldPrice": "200.00",
         "inventory": 0,
-        "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/cd6c46b6-b944-4479-b547-cdee294568a1.png",
+        "picture": "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/cd6c46b6-b944-4479-b547-cdee294568a1.png",
         "specs": [
           {
             "name": "颜色",
@@ -261,7 +261,7 @@
         "price": "128.00",
         "oldPrice": "200.00",
         "inventory": 99936,
-        "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/2d5ba800-1868-48c8-9213-1a5f8965a05b.png",
+        "picture": "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/2d5ba800-1868-48c8-9213-1a5f8965a05b.png",
         "specs": [
           {
             "name": "颜色",
@@ -283,7 +283,7 @@
         "price": "128.00",
         "oldPrice": "200.00",
         "inventory": 99952,
-        "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/cd6c46b6-b944-4479-b547-cdee294568a1.png",
+        "picture": "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/cd6c46b6-b944-4479-b547-cdee294568a1.png",
         "specs": [
           {
             "name": "颜色",
@@ -305,7 +305,7 @@
         "price": "148.00",
         "oldPrice": "190.00",
         "inventory": 99805,
-        "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/2d5ba800-1868-48c8-9213-1a5f8965a05b.png",
+        "picture": "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/2d5ba800-1868-48c8-9213-1a5f8965a05b.png",
         "specs": [
           {
             "name": "颜色",
@@ -327,7 +327,7 @@
         "price": "148.00",
         "oldPrice": "210.00",
         "inventory": 99645,
-        "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/cd6c46b6-b944-4479-b547-cdee294568a1.png",
+        "picture": "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/cd6c46b6-b944-4479-b547-cdee294568a1.png",
         "specs": [
           {
             "name": "颜色",
@@ -365,9 +365,9 @@
     ],
     "details": {
       "pictures": [
-        "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/fcc3e819-87b7-4e3c-8717-4fa1eda492bf.jpg",
-        "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/e5a9f569-accc-4006-9064-2180e7f2b691.jpg",
-        "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/049e0be5-4eca-4ef2-b5ee-a64f1c797027.jpg"
+        "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/fcc3e819-87b7-4e3c-8717-4fa1eda492bf.jpg",
+        "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/e5a9f569-accc-4006-9064-2180e7f2b691.jpg",
+        "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/049e0be5-4eca-4ef2-b5ee-a64f1c797027.jpg"
       ],
       "properties": [
         {
@@ -410,7 +410,7 @@
         "name": "钻石陶瓷涂层多用锅18cm 小奶锅",
         "desc": "安全耐用，易于清洗",
         "price": "149.00",
-        "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/6fdcac19-dd44-442c-9212-f7ec3cf3ed18.jpg",
+        "picture": "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-05/6fdcac19-dd44-442c-9212-f7ec3cf3ed18.jpg",
         "orderNum": 310
       },
       {

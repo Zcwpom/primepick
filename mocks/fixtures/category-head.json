@@ -5,12 +5,12 @@
     {
       "id": "1005000",
       "name": "居家",
-      "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-05-06/201516e3-25d0-48f5-bcee-7f0cafb14176.png",
+      "picture": "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-05-06/201516e3-25d0-48f5-bcee-7f0cafb14176.png",
       "children": [
         {
           "id": "1005999003",
           "name": "居家生活用品",
-          "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-22/7f6a7b20-7902-4b43-b9c5-f33151ef1334.jpg?quality=95&imageView",
+          "picture": "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-04-22/7f6a7b20-7902-4b43-b9c5-f33151ef1334.jpg?quality=95&imageView",
           "children": null,
           "goods": null
         },
@@ -135,7 +135,7 @@
     {
       "id": "1005002",
       "name": "美食",
-      "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-05-06/cf82e5b4-bf1b-4c68-aa86-96f66e8e5282.png",
+      "picture": "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-05-06/cf82e5b4-bf1b-4c68-aa86-96f66e8e5282.png",
       "children": [
         {
           "id": "1005012",
@@ -258,7 +258,7 @@
     {
       "id": "1010000",
       "name": "服饰",
-      "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-05-06/33e1f5de-0fdb-4cfa-9ba9-781233024b53.png",
+      "picture": "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-05-06/33e1f5de-0fdb-4cfa-9ba9-781233024b53.png",
       "children": [
         {
           "id": "109303000",
@@ -381,7 +381,7 @@
     {
       "id": "1011000",
       "name": "母婴",
-      "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-05-06/b514a526-4010-4ce8-8cb9-757ed382f84a.png",
+      "picture": "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-05-06/b514a526-4010-4ce8-8cb9-757ed382f84a.png",
       "children": [
         {
           "id": "1020003",
@@ -504,7 +504,7 @@
     {
       "id": "1013001",
       "name": "个护",
-      "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-05-06/d38a73b8-cd03-48aa-a60b-e7c4e16667ed.png",
+      "picture": "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-05-06/d38a73b8-cd03-48aa-a60b-e7c4e16667ed.png",
       "children": [
         {
           "id": "1009000",
@@ -627,7 +627,7 @@
     {
       "id": "1019000",
       "name": "严选",
-      "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-05-06/4b02f01f-a365-4b6c-9f7a-8b0f591dda02.png",
+      "picture": "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-05-06/4b02f01f-a365-4b6c-9f7a-8b0f591dda02.png",
       "children": [
         {
           "id": "1065004",
@@ -743,7 +743,7 @@
     {
       "id": "1043000",
       "name": "数码",
-      "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-05-06/9660870d-6a59-4624-8064-b3a8cbf50d5c.png",
+      "picture": "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-05-06/9660870d-6a59-4624-8064-b3a8cbf50d5c.png",
       "children": [
         {
           "id": "1008006",
@@ -866,7 +866,7 @@
     {
       "id": "109243029",
       "name": "运动",
-      "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-05-06/7d19752c-baff-49b6-bd02-5ece1d729214.png",
+      "picture": "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-05-06/7d19752c-baff-49b6-bd02-5ece1d729214.png",
       "children": [
         {
           "id": "109312000",
@@ -989,7 +989,7 @@
     {
       "id": "19999999",
       "name": "杂项",
-      "picture": "http://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-05-06/4ff20b9e-8150-4bd3-87a3-0cd6766938dd.png",
+      "picture": "https://yjy-xiaotuxian-dev.oss-cn-beijing.aliyuncs.com/picture/2021-05-06/4ff20b9e-8150-4bd3-87a3-0cd6766938dd.png",
       "children": [
         {
           "id": "19999999001",
