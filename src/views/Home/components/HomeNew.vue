@@ -9,7 +9,7 @@ const getNewList = async () => {
   newList.value = res.result
 }
 
-onMounted(() => {
+ onMounted(() => {
   getNewList()
 })
 
