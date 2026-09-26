@@ -127,7 +127,7 @@ export default {
       if (selectedArr.length === props.goods.specs.length) {
         // 从路径字典中得到skuId
         const skuId = pathMap[selectedArr.join(spliter)][0]
-        const sku = props.goods.skus.find(sku => sku.id === skuId)
+        const sku = props.goods.skus.find(s => s.id === skuId)
         // 传递数据给父组件
         emit('change', {
           skuId: sku.id,

@@ -101,7 +101,7 @@ const submitForm = async () => {
 
     visible.value = false
     emit('success')
-  } catch (err) {
+  } catch {
     // 全局 http 拦截器已处理错误提示
   } finally {
     loading.value = false

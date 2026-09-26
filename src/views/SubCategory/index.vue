@@ -1,14 +1,15 @@
-<!-- eslint-disable vue/multi-word-component-names -->
  <script setup>
 import { getCategoryFilterAPI , getSubCategoryAPI } from '@/apis/category'
 import { ref, watch, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
+import { useInfiniteScroll } from '@vueuse/core'
 import GoodsItem from '../Home/components/GoodsItem.vue'
 import { useAsyncData } from '@/composables/useAsyncData'
 import { usePagination } from '@/composables/usePagination'
 
 
 const route = useRoute()
+const bodyRef = ref(null)
 
 const { data: categoryData, execute: fetchCategory } = useAsyncData(
   async (id) => {
@@ -19,7 +20,7 @@ const { data: categoryData, execute: fetchCategory } = useAsyncData(
 )
 
 const sortField = ref('publishTime')
-const { list: goodsList, isFinished, loadMore, refresh: refreshGoods } = usePagination(
+const { list: goodsList, loadMore, refresh: refreshGoods } = usePagination(
   (req) => getSubCategoryAPI(req),
   { pageSize: 20, defaultParams: { categoryId: route.params.id, sortField: 'publishTime' } }
 )
@@ -37,6 +38,9 @@ watch(() => route.params.id, (newId) => {
   fetchCategory(newId)
   refreshGoods({ categoryId: newId, sortField: sortField.value })
 })
+
+// 无限滚动加载（替代弃用的 v-infinite-scroll）
+useInfiniteScroll(bodyRef, loadMore, { distance: 100 })
 </script>
 
 <template>
@@ -56,7 +60,7 @@ watch(() => route.params.id, (newId) => {
         <el-tab-pane label="最高人气" name="orderNum"></el-tab-pane>
         <el-tab-pane label="评论最多" name="evaluateNum"></el-tab-pane>
       </el-tabs>
-      <div class="body" v-infinite-scroll="loadMore" :infinite-scroll-disabled="isFinished">
+      <div class="body" ref="bodyRef">
          <!-- 商品列表-->
           <GoodsItem v-for="good in goodsList" :goods="good" :key="good.id" />
       </div>

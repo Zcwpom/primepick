@@ -1,14 +1,11 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { useCategoryStore } from '@/stores/categoryStore'
 import { useCartStore } from '@/stores/cartStore'
 const router = useRouter()
-const categoryStore = useCategoryStore()
 const cartStore = useCartStore()
 
 const searchKeyword = ref('')
-const hoverCategory = ref(null)
 
 const doSearch = () => {
   const kw = searchKeyword.value.trim()
@@ -182,7 +179,7 @@ const onKeyEnter = (e) => {
         font-weight: 700;
         color: $xtxColor;
         letter-spacing: 6px;
-        font-family: 'Noto Serif SC', serif;
+        font-family: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', SimSun, serif;
         line-height: 1.2;
       }
 
@@ -278,7 +275,7 @@ const onKeyEnter = (e) => {
     transition: border-color 0.3s;
 
     &:focus-within {
-      border-color: darken($xtxColor, 10%);
+      border-color: color.adjust($xtxColor, $lightness: -10%);
     }
 
     .search-select {
@@ -326,7 +323,7 @@ const onKeyEnter = (e) => {
       transition: background 0.3s;
 
       &:hover {
-        background: darken($xtxColor, 10%);
+        background: color.adjust($xtxColor, $lightness: -10%);
       }
     }
   }

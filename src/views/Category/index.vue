@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
 import GoodsItem from '../Home/components/GoodsItem.vue'
 import { useBanner } from './composables/useBanner'

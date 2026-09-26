@@ -189,7 +189,7 @@ watch(() => route.query.keyword, (newKw) => {
         transition: border-color 0.3s;
 
         &:focus {
-          border-color: darken($xtxColor, 10%);
+          border-color: color.adjust($xtxColor, $lightness: -10%);
         }
       }
 

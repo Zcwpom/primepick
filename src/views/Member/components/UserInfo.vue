@@ -1,11 +1,9 @@
 <script setup>
 import { useUserStore } from '@/stores/userStore'
 import { getLikeListAPI } from '@/apis/home'
-import { useRouter } from 'vue-router'
 import GoodsItem from '@/views/Home/components/GoodsItem.vue'
 import { useAsyncData } from '@/composables/useAsyncData'
 
-const router = useRouter()
 const userStore = useUserStore()
 
 const { data: likeList } = useAsyncData(async () => {

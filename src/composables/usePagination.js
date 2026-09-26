@@ -74,7 +74,7 @@ export function usePagination(apiFn, options = {}) {
   const loadMore = async () => {
     if (isFinished.value || loading.value) return
     currentPage.value++
-    const items = await requestData(false)
+    await requestData(false)
     if (isFinished.value) {
       currentPage.value-- // 回滚页码
     }

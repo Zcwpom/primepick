@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
 import HomeHero from './components/HomeHero.vue'
 import HomeNew from './components/HomeNew.vue'

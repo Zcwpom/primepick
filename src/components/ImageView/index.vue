@@ -1,5 +1,6 @@
-<!-- eslint-disable vue/multi-word-component-names -->
- <script setup>
+<script setup>
+// 该组件以 XtxImageView 名称全局注册，显式声明组件名以符合多词命名规范
+defineOptions({ name: 'XtxImageView' })
 // 图片列表
 import { ref, watch } from 'vue'
 import { useMouseInElement } from '@vueuse/core'

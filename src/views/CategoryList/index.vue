@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
 import { getCategoryAPI } from '@/apis/layout'
 import { useAsyncData } from '@/composables/useAsyncData'
