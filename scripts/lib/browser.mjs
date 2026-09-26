@@ -22,11 +22,35 @@ const BROWSERS = [
   'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
   'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
   '/usr/bin/google-chrome',
+  '/usr/bin/google-chrome-stable',
+  '/usr/bin/chromium',
   '/usr/bin/chromium-browser',
+  '/opt/google/chrome/chrome',
+  '/snap/bin/chromium',
   '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
 ]
 
-export const findBrowser = () => BROWSERS.find((path) => existsSync(path))
+/**
+ * 找浏览器：先查常见安装路径，再退回 PATH 里的可执行名。
+ * 之所以要有 PATH 兜底：不同环境（本地 Windows / CI 的 ubuntu runner / 各种发行版）
+ * 安装位置都不一样，只靠一张路径列表会在换环境时**静默失效** ——
+ * 而冒烟脚本找不到浏览器只会报「启动超时」，非常难排查。
+ */
+export function findBrowser() {
+  const byPath = BROWSERS.find((path) => existsSync(path))
+  if (byPath) return byPath
+
+  const lookup = process.platform === 'win32' ? 'where' : 'which'
+  for (const name of ['google-chrome', 'google-chrome-stable', 'chromium', 'chromium-browser', 'chrome', 'msedge']) {
+    const result = spawnSync(lookup, [name], { encoding: 'utf8' })
+    const candidate = String(result.stdout || '')
+      .split(/\r?\n/)
+      .map((line) => line.trim())
+      .find(Boolean)
+    if (candidate && existsSync(candidate)) return candidate
+  }
+  return undefined
+}
 
 /** 杀掉整棵进程树（Windows 上 npm / 浏览器都会派生子进程） */
 export function killTree(pid) {
