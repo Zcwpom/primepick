@@ -4,7 +4,7 @@ import { getDetailAPI } from "@/apis/detail";
 import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import DetailHot from './components/DetailHot.vue'
-import { useCartStore } from '@/stores/cart'
+import { useCartStore } from '@/stores/cartStore'
 import { ElMessage } from 'element-plus'
 
 const route = useRoute()
@@ -25,7 +25,12 @@ const addToCart = () => {
   }
   cartStore.addCart({
     skuId: selectedSku.value.skuId,
-    count: count.value
+    count: count.value,
+    picture: goods.value.mainPictures[0],
+    name: goods.value.name,
+    price: selectedSku.value.price,
+    nowPrice: selectedSku.value.price,
+    attrsText: selectedSku.value.specsText
   })
 }
 

@@ -4,10 +4,12 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
 import 'element-plus/theme-chalk/el-message.css'
-import { useUserStore } from '@/stores/user'
+import { useUserStore } from '@/stores/userStore'
+import { useCartStore } from '@/stores/cartStore'
 
 const router = useRouter()
 const userStore = useUserStore()
+const cartStore = useCartStore()
 
 const formRef = ref(null)
 
@@ -39,6 +41,7 @@ const doLogin = () => {
   formRef.value.validate(async (valid) => {
     if (!valid) return
     await userStore.getUserInfo({ account, password })
+    await cartStore.mergeLocalCart()
     ElMessage({ type: 'success', message: '登录成功' })
     router.replace({ path: '/' })
   })

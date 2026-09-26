@@ -2,8 +2,8 @@
 
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
-import { useUserStore } from './user'
-import { insertCartAPI, getCartListAPI, delCartAPI } from '@/apis/cart'
+import { useUserStore } from './userStore'
+import { insertCartAPI, getCartListAPI, delCartAPI, mergeCartAPI } from '@/apis/cart'
 
 
 export const useCartStore = defineStore('cart', () => {
@@ -44,6 +44,23 @@ export const useCartStore = defineStore('cart', () => {
       cartList.value.splice(idx, 1)
     }
   }
+  // 清空购物车
+  const clearCart = () => {
+    cartList.value = []
+  }
+  // 合并本地购物车到服务器
+  const mergeLocalCart = async () => {
+    const localCart = cartList.value.map(item => ({
+      skuId: item.skuId,
+      selected: item.selected,
+      count: item.count
+    }))
+    if (localCart.length > 0) {
+      await mergeCartAPI(localCart)
+    }
+    cartList.value = []
+    await updateNewList()
+  }
   // 单选功能
   const singleCheck = (skuId, selected) => {
     const item = cartList.value.find((item) => item.skuId === skuId)
@@ -67,6 +84,8 @@ export const useCartStore = defineStore('cart', () => {
     cartList,
     addCart,
     delCart,
+    clearCart,
+    mergeLocalCart,
     singleCheck,
     allCheck,
     isAll,
