@@ -1,0 +1,18 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["oxc"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn"
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2024": true
+  },
+  "ignorePatterns": ["dist/**", "dist-ssr/**", "coverage/**", "docs/**", "node_modules/**", "public/mockServiceWorker.js"],
+  "rules": {
+    "no-unused-vars": "error",
+    "no-console": "off"
+  }
+}
