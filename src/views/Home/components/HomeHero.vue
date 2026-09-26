@@ -79,8 +79,16 @@ const onSlideChange = (index) => {
           indicator-position="none"
           @change="onSlideChange"
         >
-          <el-carousel-item v-for="item in bannerList" :key="item.id">
-            <img class="banner-img" :src="item.imgUrl" :alt="item.title" />
+          <el-carousel-item v-for="(item, index) in bannerList" :key="item.id">
+            <!-- alt 兜底：banner fixture 里没有 title 字段，直接绑 item.title 会渲染出「无 alt 属性」，
+                 读屏软件与 SEO 都会判定为缺失（Lighthouse 的 image-alt 就是这么被点出来的）。
+                 fetchpriority 只给首屏第一张 —— 五张全设 high 等于没设优先级。 -->
+            <img
+              class="banner-img"
+              :src="item.imgUrl"
+              :alt="item.title || '优品购首页轮播图'"
+              :fetchpriority="index === 0 ? 'high' : 'auto'"
+            />
           </el-carousel-item>
         </el-carousel>
 
@@ -97,7 +105,9 @@ const onSlideChange = (index) => {
       <!-- 右侧人气推荐 -->
       <aside class="hero-right">
         <div class="hot-header">
-          <h3>人气推荐</h3>
+          <!-- h2 而非 h3：页面第一个标题是布局里的 h1（logo），跳到 h3 会破坏标题层级
+               （Lighthouse 的 heading-order 审计项） -->
+          <h2>人气推荐</h2>
           <RouterLink to="/category" class="more-link">更多</RouterLink>
         </div>
         <div class="hot-list" v-if="hotList?.length">

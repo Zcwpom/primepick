@@ -23,7 +23,7 @@ onMounted(() => {
  <div> <LayoutFixed /> </div>
  <div> <LayoutNav /> </div>
  <div> <LayoutHeader /> </div>
- <div> <RouterView /> </div>
+ <main> <RouterView /> </main>
  <LayoutSidebar />
  <div> <LayoutFooter /> </div>
 </template>

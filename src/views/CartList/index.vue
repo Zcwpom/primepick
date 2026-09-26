@@ -49,7 +49,7 @@ const allCheck = (selected) => {
                 <p>&yen;{{ i.nowPrice }}</p>
               </td>
               <td class="tc">
-                <el-input-number v-model="i.count" :min="1" />
+                <el-input-number v-model="i.count" :min="1" :aria-label="'购买数量：' + i.name" />
               </td>
               <td class="tc">
                 <p class="f16 red">&yen;{{ (i.nowPrice * i.count).toFixed(2) }}</p>

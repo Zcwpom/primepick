@@ -34,7 +34,15 @@ const addCart = () => {
       <p class="price">&yen;{{ goods.price }}</p>
     </RouterLink>
     <div class="cart">
-      <el-input-number v-model="count" :min="1" :max="99" size="small" />
+      <!-- aria-label 带上商品名：读屏用户听到的是「购买数量：xxx 商品」，而不是一个孤零零的 spinbutton。
+           这个组件在首页渲染约 190 次，所以一处改动就覆盖了 Lighthouse 报的绝大多数 label 缺失 -->
+      <el-input-number
+        v-model="count"
+        :min="1"
+        :max="99"
+        size="small"
+        :aria-label="'购买数量：' + goods.name"
+      />
       <el-button type="primary" size="small" @click="addCart">加入购物车</el-button>
     </div>
   </div>

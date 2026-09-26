@@ -96,10 +96,12 @@ const onKeyEnter = (e) => {
           </RouterLink>
         </h1>
         <div class="search">
-          <el-select class="search-select" placeholder="全部" size="large">
+          <!-- aria-label：Element Plus 的 inner input 不会从 placeholder 得到可访问名。
+               placeholder 只是视觉提示，读屏软件读不到（Lighthouse 的 label 审计项） -->
+          <el-select class="search-select" placeholder="全部" size="large" aria-label="选择搜索分类">
             <el-option label="全部" value="all" />
           </el-select>
-          <input v-model="searchKeyword" type="text" placeholder="搜一搜" @keydown="onKeyEnter">
+          <input v-model="searchKeyword" type="text" placeholder="搜一搜" aria-label="搜索商品" @keydown="onKeyEnter">
           <button class="search-btn" @click="doSearch">搜索</button>
         </div>
       </div>

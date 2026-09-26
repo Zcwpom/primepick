@@ -123,7 +123,7 @@ const breadcrumbs = computed(() => {
               <!-- 数据组件 -->
               <div class="number-box">
                 <span class="label">数量</span>
-                <el-input-number v-model="count" :min="1" :max="selectedSku.inventory || 99" />
+                <el-input-number v-model="count" :min="1" :max="selectedSku.inventory || 99" aria-label="购买数量" />
               </div>
               <!-- 按钮组件 -->
               <div>
