@@ -11,6 +11,7 @@ const route = useRoute()
 
 const getCategoryFilter = async () => {
   const res = await getCategoryFilterAPI(route.params.id)
+  console.log('分类筛选数据:', res)
   categoryData.value = res.result
 }
 
