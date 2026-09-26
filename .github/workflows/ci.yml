@@ -1,0 +1,86 @@
+name: CI
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+
+# 同一分支连续推送时，取消上一次未跑完的任务，避免浪费 runner 时间
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint (oxlint + eslint)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: 安装依赖
+        run: npm ci
+
+      - name: 代码检查
+        run: npm run lint
+
+  test:
+    name: Unit tests (Vitest)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: 安装依赖
+        run: npm ci
+
+      - name: 单元测试
+        run: npm run test
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: 安装依赖
+        run: npm ci
+
+      - name: 生产构建
+        run: npm run build
+
+      # 首屏体积预算门禁：超预算直接失败，体积回退不会悄悄溜进 master
+      - name: 首屏体积检查
+        run: npm run size
+
+      # 体积明细写入 Job Summary，回退时在 CI 页面上直接可见
+      - name: 产物体积报告
+        if: always()
+        run: npm run size -- --markdown >> "$GITHUB_STEP_SUMMARY"
+
+      # 端到端冒烟：真的用无头浏览器打开构建产物，确认 mock 数据渲染到了页面上
+      # （ubuntu runner 预装 google-chrome，脚本会自动探测可执行文件路径）
+      - name: 浏览器端到端冒烟
+        run: npm run smoke
+
+      - name: 上传构建产物
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+          retention-days: 7
+
+# 迭代 2 会在这里补上 test job（Vitest 单测 + Playwright 主链路，替换目前的冒烟脚本）

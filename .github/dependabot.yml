@@ -1,0 +1,32 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: chore
+      include: scope
+    groups:
+      # 把同一类依赖的升级合并成一个 PR，避免刷屏
+      vue-ecosystem:
+        patterns:
+          - vue
+          - vue-router
+          - pinia
+          - pinia-plugin-persistedstate
+          - '@vueuse/*'
+      lint-toolchain:
+        patterns:
+          - eslint
+          - eslint-*
+          - oxlint
+          - '@eslint/*'
+          - globals
+      build-toolchain:
+        patterns:
+          - vite
+          - '@vitejs/*'
+          - sass
+          - unplugin-*
