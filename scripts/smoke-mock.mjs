@@ -5,6 +5,8 @@
  * 用法：
  *   npm run smoke                         # 自起 preview 检查构建产物
  *   node scripts/smoke-mock.mjs --base http://127.0.0.1:5173   # 检查已在运行的 dev server
+ *   node scripts/smoke-mock.mjs --base https://<user>.github.io/<repo> --api-base /<repo>/api
+ *                                         # 直接对线上（子路径部署）跑同一套断言
  *
  * 为什么需要它：
  * lint / build 只能证明「代码能编译」，证明不了「浏览器里真的有数据」。
@@ -44,7 +46,7 @@ async function apiCall(client, path, { method = 'GET', body } = {}) {
 
   const res = await client.send('Runtime.evaluate', {
     expression: `(async () => {
-      const response = await fetch(${JSON.stringify(path)}, { ${parts.join(', ')} })
+      const response = await fetch(${JSON.stringify(withApiBase(path))}, { ${parts.join(', ')} })
       return JSON.stringify({ status: response.status, body: await response.json().catch(() => ({})) })
     })()`,
     awaitPromise: true,
@@ -64,6 +66,30 @@ const PORT = 4173
 const SERVER = `http://127.0.0.1:${PORT}`
 const BASE = (baseIndex === -1 ? SERVER : argv[baseIndex + 1]).replace(/\/$/, '')
 const DEBUG_PORT = 9222
+
+/**
+ * 接口前缀。默认 /api（根路径部署）。
+ * 子路径部署（GitHub Pages 的 /<repo>/）下必须传 --api-base /<repo>/api ——
+ * 否则请求会落到 Service Worker 作用域之外，mock 拦不住，接口全部 404。
+ */
+const apiBaseIndex = argv.indexOf('--api-base')
+const API_BASE = (apiBaseIndex === -1 ? '/api' : argv[apiBaseIndex + 1]).replace(/\/$/, '')
+const withApiBase = (path) => (API_BASE === '/api' ? path : path.replace(/^\/api/, API_BASE))
+
+/**
+ * 站点自身的路径前缀（子路径部署时非空，例如 /primepick）。
+ * 断言「当前在哪个页面」时必须带上它，否则子路径部署下会全部误报失败 ——
+ * 第一版就是写死了 location.pathname === '/pay'，在本地根路径通过、一放到
+ * 子路径就报错，而真正的失败原因（页面其实没跳错）被掩盖了。
+ */
+const BASE_PATH = (() => {
+  try {
+    return new URL(BASE).pathname.replace(/\/$/, '')
+  } catch {
+    return ''
+  }
+})()
+const pagePath = (suffix) => `${BASE_PATH}${suffix}`
 const HOME_TITLE_HEX = 'e9a696e9a1b5' // 「首页」的 UTF-8 十六进制，避免脚本里硬编码中文
 
 async function main() {
@@ -210,7 +236,11 @@ async function main() {
     await waitForValue(client, '!!document.querySelector(".submit .el-button")', 25000)
     await sleep(600)
     await evaluate(client, 'document.querySelector(".submit .el-button").click() ?? true')
-    const reachedPayPage = await waitForValue(client, 'location.pathname === "/pay"', 20000)
+    const reachedPayPage = await waitForValue(client, `location.pathname === ${JSON.stringify(pagePath('/pay'))}`, 20000)
+    if (!reachedPayPage) {
+      // 断言失败时把期望值与实际值都打出来，避免「只有一句未通过」没法排查
+      console.log(`  [!!]   未进入支付页：期望 pathname=${pagePath('/pay')}，实际=${await evaluate(client, 'location.pathname')}`)
+    }
     const orderId = String((await evaluate(client, 'new URLSearchParams(location.search).get("id")')) || '')
     const before = orderId ? await apiCall(client, `/api/member/order/${orderId}`) : { body: {} }
     console.log(`  [..]   已创建订单 ${orderId}（支付前状态 ${before.body?.result?.orderState}）`)
@@ -233,7 +263,10 @@ async function main() {
 
     // 点一次「我已完成支付」，等它跳到支付结果页
     await evaluate(client, 'document.querySelector(".pay-btn")?.click() ?? true')
-    const reachedCallback = await waitForValue(client, 'location.pathname === "/paycallback"', 20000)
+    const reachedCallback = await waitForValue(client, `location.pathname === ${JSON.stringify(pagePath('/paycallback'))}`, 20000)
+    if (!reachedCallback) {
+      console.log(`  [!!]   未进入支付结果页：期望 pathname=${pagePath('/paycallback')}，实际=${await evaluate(client, 'location.pathname')}`)
+    }
     const callbackProbe = JSON.parse((await evaluate(client, `JSON.stringify({
       success: !!document.querySelector('.pay-result .green'),
       // 埋点耗时是否真的渲染出来了（支付结果页的「支付耗时：X.X 秒」）
