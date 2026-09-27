@@ -2,11 +2,12 @@
 
 > 电商 SPA —— Vue 3 + Vite 8 + Pinia，覆盖「浏览 → 搜索 → 加购 → 结算 → 支付 → 订单」完整购物链路
 >
-> **构建状态**：![CI](https://github.com/Zcwpom/primepick/actions/workflows/ci.yml/badge.svg) ｜ **仓库**：https://github.com/Zcwpom/primepick
+> **在线演示**：**https://zcwpom.github.io/primepick/** ｜ **构建状态**：![CI](https://github.com/Zcwpom/primepick/actions/workflows/ci.yml/badge.svg) ｜ **仓库**：https://github.com/Zcwpom/primepick
 
 > [!TIP]
-> **本地体验**：`npm install && npm run dev` —— 内置 MSW 数据层，**不需要任何后端**，克隆即可跑通完整购物链路。
-> **在线演示**：部署配置已就绪（`vercel.json` / `public/_redirects` / `Dockerfile` / `nginx.conf`），导入本仓库即可发布。
+> 在线演示由 `.github/workflows/pages.yml` 自动发布到 GitHub Pages（推送到 `main` 即更新）。
+> 本地体验：`npm install && npm run dev` —— 内置 MSW 数据层，**不需要任何后端**，克隆即可跑通完整购物链路。
+> 演示账号：**`demo` / `123456`**（登录页已预填，直接点「登录」即可）。
 
 ---
 
