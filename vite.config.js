@@ -14,6 +14,11 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd())
 
   return {
+    // 部署到子路径时（例如 GitHub Pages 的 /<仓库名>/）必须设置 base，
+    // 否则产物里的资源路径仍是 /assets/... 会全部 404。
+    // 路由（createWebHistory）与 MSW 的 Service Worker 注册都读 import.meta.env.BASE_URL，
+    // 所以只需要改这一个地方，不用散落地去改代码。
+    base: env.VITE_BASE || '/',
     plugins: [
       vue(),
       vueDevTools(),

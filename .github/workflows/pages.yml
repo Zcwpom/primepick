@@ -1,0 +1,73 @@
+name: Deploy to GitHub Pages
+
+# 与 ci.yml 的分工：ci.yml 是「质量门禁」（lint / test / build / 体积 / 浏览器冒烟），
+# 这个 workflow 只负责把构建产物发到 GitHub Pages —— 不需要任何第三方账号就能拿到在线演示地址。
+#
+# 子路径部署的三个要点（都已在代码/本文件里处理）：
+#   1. VITE_BASE      让产物资源指向 /<仓库名>/
+#   2. VITE_API_BASE  必须落在 Service Worker 的作用域内（/<仓库名>/api），
+#                     否则跨作用域的请求拦不住，mock 数据全部失效
+#   3. 404.html       把 index.html 复制一份，作为 SPA 深链回退
+#                     （Pages 对未知路径返回 404，不会自动回退到 index.html）
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build (子路径)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: 安装依赖
+        run: npm ci
+
+      - name: 构建（base 指向仓库子路径）
+        env:
+          VITE_BASE: /${{ github.event.repository.name }}/
+          VITE_API_BASE: /${{ github.event.repository.name }}/api
+        run: npm run build
+
+      - name: SPA 深链回退（复制 index.html 为 404.html）
+        run: cp dist/index.html dist/404.html
+
+      - name: 配置 Pages
+        uses: actions/configure-pages@v5
+        with:
+          # 首次运行时代为在仓库设置里启用 Pages（Source = GitHub Actions）。
+          # 若组织策略不允许，这一步会失败，此时需要人工去 Settings → Pages 选一次。
+          enablement: true
+
+      - name: 上传产物
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 发布到 GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

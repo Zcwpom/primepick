@@ -219,6 +219,18 @@ $ npm run smoke
 
 **Vercel / Netlify**：仓库已包含 `vercel.json`（含 `assets` 长缓存与 `index.html` 不缓存的响应头）和 `public/_redirects`，导入仓库即可；构建命令 `npm run build`，输出目录 `dist`。
 
+**GitHub Pages**（零第三方账号）：推送到 `main` 后由 `.github/workflows/pages.yml` 自动构建并发布。
+子路径部署有三个必须处理的点，都已落在代码里：
+
+| 点 | 处理方式 |
+| --- | --- |
+| 资源路径 | 构建时注入 `VITE_BASE=/<仓库名>/`，`vite.config.js` 读取它设置 `base`（路由与 MSW 注册都读 `import.meta.env.BASE_URL`，所以只需改这一处） |
+| SPA 深链 | 构建后把 `index.html` 复制为 `404.html` —— Pages 对未知路径返回 404，不会自动回退到 `index.html` |
+| **mock 数据** | `VITE_API_BASE` 必须落在 Service Worker 的作用域内（`/<仓库名>/api`）。否则请求跑出作用域、SW 拦不住，接口会全部 404 —— 这是子路径部署最容易踩的坑 |
+
+> 冒烟脚本支持**直接对线上环境**跑同一套断言（含子路径）：
+> `node scripts/smoke-mock.mjs --base https://<user>.github.io/<repo> --api-base /<repo>/api`
+
 **Docker（Nginx）**：
 
 ```bash
