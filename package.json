@@ -24,14 +24,14 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@vueuse/core": "^14.2.1",
+    "@vueuse/core": "^15.0.0",
     "axios": "^1.15.2",
     "element-plus": "^2.13.7",
-    "pinia": "^3.0.4",
+    "pinia": "^4.0.3",
     "pinia-plugin-persistedstate": "^4.7.1",
     "qrcode": "^1.5.4",
-    "vue": "^3.5.32",
-    "vue-router": "^5.0.4"
+    "vue": "^3.5.43",
+    "vue-router": "^5.3.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^21.2.3",
